@@ -58,9 +58,9 @@ var Controller = function(){
 
     }
 
-    this.GetDayIncome =function (id) {
+    this.GetDayIncome =function (date) {
         return new Promise(function (resolve, reject) {
-            IncomeSchema.find({id:id}).exec().then(function (data) {
+            IncomeSchema.find({date:date}).exec().then(function (data) {
                 var totalamount = 0;
                 for(var n =0; n<data.length; n++)
                 {
