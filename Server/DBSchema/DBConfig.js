@@ -39,6 +39,10 @@ var IncomeSchema = new Schema({
 //IT16033856
 
 var patientDetails = new Schema({
+    id: {
+        type: String,
+        require: true
+    },
     fullName: {
         type: String,
         require: true
