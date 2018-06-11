@@ -5,6 +5,7 @@ var Controller = function() {
     this.addPatient = function() {
         return new Promise(function(resolve, reject){
             var patient = new patientDetails({
+                id: data.id,
                 fullName: data.fullName,
                 contactNumber: data.contactNumber,
                 language: data.language,
