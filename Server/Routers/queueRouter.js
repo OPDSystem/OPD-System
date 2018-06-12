@@ -10,3 +10,5 @@ router.get("/id", function(request, response) {
         response.status(err.status).send({message: err.message});
     });
 });
+
+module.exports = router;
