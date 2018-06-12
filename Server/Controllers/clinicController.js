@@ -2,28 +2,27 @@ const mongoose = require("../DBSchema/DBConfig");
 const clinic = mongoose.model("clinicschema");
 
 var Controller = function() {
-    this.addClinic = function() {
+    this.assigndoctor = function() {
         return new Promise(function(resolve, reject){
             var clinic = new clinicdetails({
-                Name: data.clinicname,
+                id:data.id,
+                doctor:data.doctor,
                 time:data.time,
                 date:data.date,
-                doctor:data.doctor,
                 patients:data.patients
-
             });
 
             clinic.save().then(function(data) {
                 resolve({status: 200, message: "Successfully Added"});
             }).catch(function(err) {
-                reject({status: 500, message: "Failed to add clinic" + err});
+                reject({status: 500, message: "Failed to assign doctor" + err});
             });
         });
     }
 
-    this.updateClinic = function(Name, data) {
+    this.updateClinic = function(id, data) {
         return new Promise(function(resolve, reject) {
-            clinicdetails.update({clinicname: Name}, data).then(function(data) {
+            clinicdetails.update({id: id}, data).then(function(data) {
                 resolve({status: 200, message: "Successfully Updated"});
             }).catch(function(err) {
                 reject({status: 500, message: "Failed to update clinic" + err});
@@ -31,9 +30,9 @@ var Controller = function() {
         });
     }
 
-    this.deleteClinic = function(Name) {
+    this.deleteClinic = function(id) {
         return new Promise(function(resolve, reject) {
-            clinicdetails.delete(Name).then(function(data) {
+            clinicdetails.delete(id).then(function(data) {
                 resolve({status: 200, message: "Successfully Deleted"});
             }).catch(function(err) {
                 reject({status: 500, message: "Failed to delete clinic" + err});
@@ -41,9 +40,9 @@ var Controller = function() {
         });
     }
 
-    this.findClinic = function(Name) {
+    this.findClinic = function(id) {
         return new Promise(function(resolve, reject) {
-            clinicdetails.find({clinicname: Name}).exec().then(function(data) {
+            clinicdetails.find({id: id}).exec().then(function(data) {
                 resolve({status: 200, clinicdata: data});
             }).catch(function(err) {
                 reject({status: 500, message: "Failed to search clinic" + err});

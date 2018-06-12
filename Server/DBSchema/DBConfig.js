@@ -70,7 +70,11 @@ var patientDetails = new Schema({
 });
 
 var clinicschema= new Schema({
-    clinicname:{
+    id:{
+    type:String,
+    require:true
+    },
+    doctor:{
         type: String,
         require:true
     },
@@ -82,11 +86,7 @@ var clinicschema= new Schema({
         type:date,
         require:true
     },
-    doctor:{
-        type:string,
-        require:true
-    },
-    patients: [String]
+    patients:[String]
 })
 
 var questionnaireSchema=new Schema({

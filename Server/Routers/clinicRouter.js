@@ -3,15 +3,15 @@ const Controller = require('../Controllers/clinicController');
 const router = Express.Router();
 
 router.post('/clinic',function(req,res){
-    Controller.addClinic(req.body).then(function (data) {
+    Controller.assigndoctor(req.body).then(function (data) {
         res.status(data.status).send({message: data.message});
     }).catch(function (err) {
         res.status(err.status).send({message: err.message});
     })
 });
 
-router.get('/clinic/:Name',function (req,res) {
-    Controller.findClinic(req.params.Name).then(function (data) {
+router.get('/clinic/:id',function (req,res) {
+    Controller.findClinic(req.params.id).then(function (data) {
         res.status(data.status).send({data:data.clinicdata});
     }).catch(function (err) {
         res.status(err.status).send({message: err.message});
@@ -28,8 +28,8 @@ router.get('/clinic',function (req,res) {
 
 });
 
-router.put('/clinic/:Name',function (req,res) {
-    Controller.updateClinic(req.params.Name,req.body).then(function (response) {
+router.put('/clinic/:id',function (req,res) {
+    Controller.updateClinic(req.params.id,req.body).then(function (response) {
         res.status(response.status).send(response);
     }).catch(function (err) {
         res.status(err.status).send({message: err.message});
@@ -37,7 +37,7 @@ router.put('/clinic/:Name',function (req,res) {
 
 });
 
-router.delete("/:Name", function(request, resolve) {
+router.delete("/:id", function(request, resolve) {
     Controller.deleteClinic({id: request.params.id}).then(function(data) {
         response.status(data.status).send({message: data.message})
     }).catch(function(err) {
