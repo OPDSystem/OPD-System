@@ -2,7 +2,7 @@ const mongoose = require("../DBSchema/DBConfig");
 const patientDetails = mongoose.model("patientDetails");
 
 var Controller = function() {
-    this.addPatient = function() {
+    this.addPatient = function(data) {
         return new Promise(function(resolve, reject){
             var patient = new patientDetails({
                 id: data.id,
