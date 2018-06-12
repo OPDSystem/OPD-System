@@ -1,7 +1,7 @@
 const mongoose = require("../DBSchema/DBConfig");
 const questionnaire = mongoose.model("Quessionnaire");
 
-var controller= function(){
+var Controller= function(){
     this.addQuestionnaire= function(data){
         return new Promise(function(resolve,reject){
             var questionnaireDetails= new questionnaire({
