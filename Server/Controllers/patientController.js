@@ -46,7 +46,7 @@ var Controller = function() {
         return new Promise(function(resolve, reject) {
             patientDetails.find().exec().then(function(data) {
                 resolve({status: 200, searchedPatients: data});
-            }).reject(function(err) {
+            }).catch(function(err) {
                 reject({status: 500, message: "Failed to search patients" + err});
             });
         });
