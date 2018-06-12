@@ -28,7 +28,7 @@ router.post("/", function(request, response) {
 });
 
 router.put("/:id", function(request, response) {
-    patientController.updatePatient({id: request.params.id}, request.body).then(function(data) {
+    patientController.updatePatient(request.params.id, request.body).then(function(data) {
         response.status(data.status).send({message: data.message})
     }).catch(function(err) {
         response.status(err.status).send({message: err.message});
@@ -36,7 +36,7 @@ router.put("/:id", function(request, response) {
 });
 
 router.delete("/:id", function(request, response) {
-    patientController.deletePatient({id: request.params.id}).then(function(data) {
+    patientController.deletePatient(request.params.id).then(function(data) {
         response.status(data.status).send({message: data.message})
     }).catch(function(err) {
         response.status(err.status).send({message: err.message});
