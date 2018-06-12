@@ -122,7 +122,7 @@ var patientQueue= new Schema({
             type: String, required: true
         }, // nature of the illness
          age: {
-             type: number, required: true
+             type: Number, required: true
         }, 
          
 })
