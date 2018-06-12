@@ -31,6 +31,16 @@ var Controller = function() {
             });
         });
     }
+
+    this.deletePatient = function(id) {
+        return new Promise(function(resolve, reject) {
+            patientDetails.delete(id).then(function(data) {
+                resolve({status: 200, message: "Successfully Deleted"});
+            }).catch(function(err) {
+                reject({status: 500, message: "Failed to delete patient" + err});
+            });
+        });
+    }
 }
 
 module.exports = new Controller();
