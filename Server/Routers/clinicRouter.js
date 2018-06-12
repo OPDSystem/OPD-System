@@ -36,3 +36,5 @@ router.put('/clinic/:Name',function (req,res) {
     })
 
 });
+
+module.exports = router;
