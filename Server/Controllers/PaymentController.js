@@ -6,7 +6,7 @@ var Controller = function(){
     this.AddCustomerPayment = function(data){
         return new Promise(function (resolve,reject) {
             var Customer = new CustomerSchema({
-                id:data,id,
+                id:data.id,
                 name:data.name,
                 date:data.date,
                 amount:data.amount,
@@ -24,7 +24,7 @@ var Controller = function(){
     this.AddIncomeDetails = function(data){
         return new Promise(function (resolve,reject) {
             var Income = new IncomeSchema({
-                id:data,id,
+                id:data.id,
                 date:data.date,
                 amount:data.amount
             });
