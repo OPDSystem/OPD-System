@@ -1,5 +1,5 @@
-const mongoose = require("../DBSchema/DBConfig");
-const questionnaire = mongoose.model("Quessionnaire");
+const Mongoose = require("../DBSchema/DBConfig");
+const questionnaire = Mongoose.model("Quessionnaire");
 
 var Controller= function(){
     this.addQuestionnaire= function(data){
