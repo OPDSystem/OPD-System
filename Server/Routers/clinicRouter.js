@@ -37,4 +37,12 @@ router.put('/clinic/:Name',function (req,res) {
 
 });
 
+router.delete("/:Name", function(request, resolve) {
+    Controller.deleteClinic({id: request.params.id}).then(function(data) {
+        response.status(data.status).send({message: data.message})
+    }).catch(function(err) {
+        response.status(err.status).send({message: err.message});
+    });
+});
+
 module.exports = router;
