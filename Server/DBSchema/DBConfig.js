@@ -89,7 +89,7 @@ var clinicschema= new Schema({
     patients:[String]
 })
 
-var appointment= new Schema({
+var description= new Schema({
     
     id: {
         type: String, 
@@ -98,11 +98,11 @@ var appointment= new Schema({
    description: {
        type: String, 
        require: true
-   },
+   }/*,
    consult:{
        type:boolean,
        require:true
-   }
+   }*/
     
 })
 
