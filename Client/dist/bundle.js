@@ -816,6 +816,498 @@ exports.default = GetSubjects;
 
 /***/ }),
 
+/***/ "./Patient/AddPatient.jsx":
+/*!********************************!*\
+  !*** ./Patient/AddPatient.jsx ***!
+  \********************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+
+var _react2 = _interopRequireDefault(_react);
+
+var _propTypes = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var AddPatient = function (_Component) {
+    _inherits(AddPatient, _Component);
+
+    _createClass(AddPatient, null, [{
+        key: 'propTypes',
+        get: function get() {
+            return {
+                addPatient: _propTypes2.default.func,
+                id: _propTypes2.default.string,
+                name: _propTypes2.default.string,
+                contactnum: _propTypes2.default.number,
+                language: _propTypes2.default.string,
+                Age: _propTypes2.default.number,
+                gender: _propTypes2.default.string,
+                gadcontactnum: _propTypes2.default.number
+            };
+        }
+    }]);
+
+    function AddPatient(props) {
+        _classCallCheck(this, AddPatient);
+
+        return _possibleConstructorReturn(this, (AddPatient.__proto__ || Object.getPrototypeOf(AddPatient)).call(this, props));
+    }
+
+    _createClass(AddPatient, [{
+        key: 'onIdChange',
+        value: function onIdChange(event) {
+            event.preventDefault();
+            event.stopPropagation();
+            this.id = event.target.value;
+        }
+    }, {
+        key: 'onPhoNumChange',
+        value: function onPhoNumChange(event) {
+            event.preventDefault();
+            event.stopPropagation();
+            this.contactnum = event.target.value;
+        }
+    }, {
+        key: 'onNameChange',
+        value: function onNameChange(event) {
+            event.preventDefault();
+            event.stopPropagation();
+            this.name = event.target.value;
+        }
+    }, {
+        key: 'onLanguageChange',
+        value: function onLanguageChange(event) {
+            event.preventDefault();
+            event.stopPropagation();
+            this.language = event.target.value;
+        }
+    }, {
+        key: 'onAgeChange',
+        value: function onAgeChange(event) {
+            event.preventDefault();
+            event.stopPropagation();
+            this.Age = event.target.value;
+        }
+    }, {
+        key: 'onGenderChange',
+        value: function onGenderChange(event) {
+            event.preventDefault();
+            event.stopPropagation();
+            this.gender = event.target.value;
+        }
+    }, {
+        key: 'onGPhoNumChange',
+        value: function onGPhoNumChange(event) {
+            event.preventDefault();
+            event.stopPropagation();
+            this.gadcontactnum = event.target.value;
+        }
+    }, {
+        key: 'onSubmit',
+        value: function onSubmit(event) {
+            event.preventDefault();
+            event.stopPropagation();
+
+            this.props.addPatient({ id: this.id, name: this.name, contactnum: this.contactnum, language: this.language, Age: this.Age, gender: this.gender, gadcontactnum: this.gadcontactnum });
+        }
+    }, {
+        key: 'render',
+        value: function render() {
+            var _this2 = this;
+
+            return _react2.default.createElement(
+                'div',
+                null,
+                _react2.default.createElement(
+                    'form',
+                    { onSubmit: function onSubmit(event) {
+                            return _this2.onSubmit(event);
+                        } },
+                    _react2.default.createElement(
+                        'label',
+                        null,
+                        'id:'
+                    ),
+                    _react2.default.createElement('input', { type: 'text', onChange: function onChange(event) {
+                            return _this2.onIdChange(event);
+                        } }),
+                    _react2.default.createElement(
+                        'label',
+                        null,
+                        'Name:'
+                    ),
+                    _react2.default.createElement('input', { type: 'text', onChange: function onChange(event) {
+                            return _this2.onNameChange(event);
+                        } }),
+                    _react2.default.createElement(
+                        'label',
+                        null,
+                        'Phone Num:'
+                    ),
+                    _react2.default.createElement('input', { type: 'text', onChange: function onChange(event) {
+                            return _this2.onPhoNumChange(event);
+                        } }),
+                    _react2.default.createElement(
+                        'label',
+                        null,
+                        'Language:'
+                    ),
+                    _react2.default.createElement('input', { type: 'text', onChange: function onChange(event) {
+                            return _this2.onLanguageChange(event);
+                        } }),
+                    _react2.default.createElement(
+                        'label',
+                        null,
+                        'Age:'
+                    ),
+                    _react2.default.createElement('input', { type: 'text', onChange: function onChange(event) {
+                            return _this2.onAgeChange(event);
+                        } }),
+                    _react2.default.createElement(
+                        'label',
+                        null,
+                        'Gender:'
+                    ),
+                    _react2.default.createElement('input', { type: 'text', onChange: function onChange(event) {
+                            return _this2.onGenderChange(event);
+                        } }),
+                    _react2.default.createElement(
+                        'label',
+                        null,
+                        'Gudian Contact Num:'
+                    ),
+                    _react2.default.createElement('input', { type: 'text', onChange: function onChange(event) {
+                            return _this2.onGPhoNumChange(event);
+                        } }),
+                    _react2.default.createElement(
+                        'button',
+                        { type: 'submit' },
+                        'Add'
+                    )
+                )
+            );
+        }
+    }]);
+
+    return AddPatient;
+}(_react.Component);
+
+exports.default = AddPatient;
+
+/***/ }),
+
+/***/ "./Patient/Patient.jsx":
+/*!*****************************!*\
+  !*** ./Patient/Patient.jsx ***!
+  \*****************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+
+var _react2 = _interopRequireDefault(_react);
+
+var _propTypes = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+var _axios = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+
+var _axios2 = _interopRequireDefault(_axios);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Patient = function (_Component) {
+    _inherits(Patient, _Component);
+
+    _createClass(Patient, null, [{
+        key: 'propTypes',
+        get: function get() {
+            return {
+                patient: _propTypes2.default.object,
+                getAllPatient: _propTypes2.default.func
+
+            };
+        }
+    }]);
+
+    function Patient(props) {
+        _classCallCheck(this, Patient);
+
+        var _this = _possibleConstructorReturn(this, (Patient.__proto__ || Object.getPrototypeOf(Patient)).call(this, props));
+
+        _this.patient = _this.props.patient;
+        _this.getAllPatient = _this.props.getAllPatient;
+        return _this;
+    }
+
+    _createClass(Patient, [{
+        key: 'update',
+        value: function update(id, fullName, contactNumber, language, age, gender, gudianContactNumber) {
+            var _this2 = this;
+
+            var updatedName = prompt("Please enter updated Name:", fullName);
+            var updatedconactnum = prompt("Please enter updated phonenumber:", contactNumber);
+            var updatedlanguage = prompt("Please enter updated Language:", language);
+            var updatedage = prompt("Please enter updated Age:", age);
+            var updatedgender = prompt("Please enter updated Gender:", gender);
+            var updatedgadcontactnum = prompt("Please enter updated Gudian PhoneNumber:", gudianContactNumber);
+            _axios2.default.put('http://localhost:8080/patients/' + id, { fullName: updatedName, contactNumber: updatedconactnum, language: updatedlanguage, age: updatedage, gender: updatedgender, gudianContactNumber: updatedgadcontactnum }).then(function (results) {
+                if (results.status == 200) {
+                    _this2.getAllPatient();
+                }
+            });
+        }
+    }, {
+        key: 'delete',
+        value: function _delete(id) {
+            var _this3 = this;
+
+            _axios2.default.delete('http://localhost:8080/patients/' + id).then(function (results) {
+                if (results.status == 200) {
+                    _this3.getAllPatient();
+                }
+            });
+        }
+    }, {
+        key: 'render',
+        value: function render() {
+            var _this4 = this;
+
+            return _react2.default.createElement(
+                'tr',
+                null,
+                _react2.default.createElement(
+                    'td',
+                    null,
+                    this.patient.id
+                ),
+                _react2.default.createElement(
+                    'td',
+                    null,
+                    this.patient.fullName
+                ),
+                _react2.default.createElement(
+                    'td',
+                    null,
+                    this.patient.contactNumber
+                ),
+                _react2.default.createElement(
+                    'td',
+                    null,
+                    this.patient.language
+                ),
+                _react2.default.createElement(
+                    'td',
+                    null,
+                    this.patient.age
+                ),
+                _react2.default.createElement(
+                    'td',
+                    null,
+                    this.patient.gender
+                ),
+                _react2.default.createElement(
+                    'td',
+                    null,
+                    this.patient.gudianContactNumber
+                ),
+                _react2.default.createElement(
+                    'button',
+                    { onClick: function onClick(e) {
+                            return _this4.update(_this4.patient.id, _this4.patient.fullName, _this4.patient.contactNumber, _this4.patient.language, _this4.patient.age, _this4.patient.gender, _this4.patient.gudianContactNumber);
+                        } },
+                    'Update'
+                ),
+                '\xA0',
+                _react2.default.createElement(
+                    'button',
+                    { onClick: function onClick(e) {
+                            return _this4.delete(_this4.patient.id);
+                        } },
+                    'Delete'
+                )
+            );
+        }
+    }]);
+
+    return Patient;
+}(_react.Component);
+
+exports.default = Patient;
+
+/***/ }),
+
+/***/ "./Patient/Patients.jsx":
+/*!******************************!*\
+  !*** ./Patient/Patients.jsx ***!
+  \******************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+
+var _react2 = _interopRequireDefault(_react);
+
+var _propTypes = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+var _Patient = __webpack_require__(/*! ./Patient */ "./Patient/Patient.jsx");
+
+var _Patient2 = _interopRequireDefault(_Patient);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Patients = function (_Component) {
+  _inherits(Patients, _Component);
+
+  _createClass(Patients, null, [{
+    key: 'propTypes',
+    get: function get() {
+      return {
+        patients: _propTypes2.default.array
+      };
+    }
+  }]);
+
+  function Patients(props) {
+    _classCallCheck(this, Patients);
+
+    return _possibleConstructorReturn(this, (Patients.__proto__ || Object.getPrototypeOf(Patients)).call(this, props));
+  }
+
+  _createClass(Patients, [{
+    key: 'componentWillReceiveProps',
+    value: function componentWillReceiveProps(props) {
+      this.setState(props);
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      var _this2 = this;
+
+      this.patients = this.props.patients;
+      return _react2.default.createElement(
+        'div',
+        null,
+        _react2.default.createElement(
+          'table',
+          null,
+          _react2.default.createElement(
+            'thead',
+            null,
+            _react2.default.createElement(
+              'tr',
+              null,
+              _react2.default.createElement(
+                'th',
+                null,
+                'ID'
+              ),
+              _react2.default.createElement(
+                'th',
+                null,
+                'Name'
+              ),
+              _react2.default.createElement(
+                'th',
+                null,
+                'Phone Num'
+              ),
+              _react2.default.createElement(
+                'th',
+                null,
+                'Language'
+              ),
+              _react2.default.createElement(
+                'th',
+                null,
+                'Age'
+              ),
+              _react2.default.createElement(
+                'th',
+                null,
+                'Gender'
+              ),
+              _react2.default.createElement(
+                'th',
+                null,
+                'Gudian PhoNum'
+              )
+            )
+          ),
+          _react2.default.createElement(
+            'tbody',
+            null,
+            this.patients.map(function (data) {
+              return _react2.default.createElement(_Patient2.default, { key: data.id, patient: data, getAllPatient: function getAllPatient() {
+                  return _this2.props.getAllPatient();
+                } });
+            })
+          )
+        )
+      );
+    }
+  }]);
+
+  return Patients;
+}(_react.Component);
+
+exports.default = Patients;
+
+/***/ }),
+
 /***/ "./node_modules/axios/index.js":
 /*!*************************************!*\
   !*** ./node_modules/axios/index.js ***!
@@ -13790,6 +14282,10 @@ var _Paymentdetails = __webpack_require__(/*! ./Paymentdetails */ "./public/Paym
 
 var _Paymentdetails2 = _interopRequireDefault(_Paymentdetails);
 
+var _Patient = __webpack_require__(/*! ./Patient */ "./public/Patient.jsx");
+
+var _Patient2 = _interopRequireDefault(_Patient);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -13856,6 +14352,15 @@ var AppContainer = function (_Component) {
                                         { to: '/Paymentdetails' },
                                         'Paymentdetails'
                                     )
+                                ),
+                                _react2.default.createElement(
+                                    'div',
+                                    { className: 'col-sm' },
+                                    _react2.default.createElement(
+                                        _reactRouterDom.Link,
+                                        { to: '/Patient' },
+                                        'Patient'
+                                    )
                                 )
                             ),
                             _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/Invoice', render: function render(props) {
@@ -13866,6 +14371,9 @@ var AppContainer = function (_Component) {
                                 } }),
                             _react2.default.createElement(_reactRouterDom.Route, { path: '/Paymentdetails', render: function render(props) {
                                     return _react2.default.createElement(_Paymentdetails2.default, null);
+                                } }),
+                            _react2.default.createElement(_reactRouterDom.Route, { path: '/Patient', render: function render(props) {
+                                    return _react2.default.createElement(_Patient2.default, null);
                                 } })
                         )
                     )
@@ -14092,6 +14600,116 @@ var Invoice = function (_Component) {
 }(_react.Component);
 
 exports.default = Invoice;
+
+/***/ }),
+
+/***/ "./public/Patient.jsx":
+/*!****************************!*\
+  !*** ./public/Patient.jsx ***!
+  \****************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+
+var _react2 = _interopRequireDefault(_react);
+
+var _axios = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+
+var _axios2 = _interopRequireDefault(_axios);
+
+var _AddPatient = __webpack_require__(/*! ../Patient/AddPatient */ "./Patient/AddPatient.jsx");
+
+var _AddPatient2 = _interopRequireDefault(_AddPatient);
+
+var _Patients = __webpack_require__(/*! ../Patient/Patients */ "./Patient/Patients.jsx");
+
+var _Patients2 = _interopRequireDefault(_Patients);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Patient = function (_Component) {
+    _inherits(Patient, _Component);
+
+    function Patient(props) {
+        _classCallCheck(this, Patient);
+
+        var _this = _possibleConstructorReturn(this, (Patient.__proto__ || Object.getPrototypeOf(Patient)).call(this, props));
+
+        _this.state = {
+            patients: []
+        };
+        _this.getAllPatient();
+        return _this;
+    }
+
+    _createClass(Patient, [{
+        key: 'getAllPatient',
+        value: function getAllPatient() {
+            var _this2 = this;
+
+            _axios2.default.get('http://localhost:8080/patients/').then(function (res) {
+                _this2.setState({
+                    patients: res.data.data
+                });
+            });
+        }
+    }, {
+        key: 'addPatient',
+        value: function addPatient(data) {
+            var _this3 = this;
+
+            _axios2.default.post('http://localhost:8080/patients/', { id: data.id, fullName: data.name, contactNumber: data.contactnum, language: data.language, age: data.Age, gender: data.gender, gudianContactNumber: data.gadcontactnum }).then(function (result) {
+                if (result.status == 200) {
+                    _this3.getAllPatient();
+                    console.log("ADDED!!");
+                }
+            }).catch(function (err) {
+                alert(err);
+            });
+        }
+    }, {
+        key: 'render',
+        value: function render() {
+            var _this4 = this;
+
+            return _react2.default.createElement(
+                'div',
+                null,
+                _react2.default.createElement(
+                    'h2',
+                    null,
+                    'REGISTER PATIENTS'
+                ),
+                _react2.default.createElement(_AddPatient2.default, { addPatient: function addPatient(data) {
+                        return _this4.addPatient(data);
+                    } }),
+                _react2.default.createElement(_Patients2.default, { patients: this.state.patients, getAllPatient: function getAllPatient() {
+                        return _this4.getAllPatient();
+                    } })
+            );
+        }
+    }]);
+
+    return Patient;
+}(_react.Component);
+
+exports.default = Patient;
 
 /***/ }),
 

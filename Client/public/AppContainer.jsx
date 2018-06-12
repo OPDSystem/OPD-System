@@ -9,6 +9,7 @@ import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
 import Income from './Income';
 import Invoice from './Invoice';
 import Paymentdetails from './Paymentdetails';
+import Patient   from './Patient'
 
 
 export default class AppContainer extends Component {
@@ -35,6 +36,9 @@ export default class AppContainer extends Component {
                         <div className="col-sm">
                             <Link to="/Paymentdetails">Paymentdetails</Link>
                         </div>
+                        <div className="col-sm">
+                            <Link to="/Patient">Patient</Link>
+                        </div>
                     </div>
                     <Route exact path="/Invoice" render={props => {
                         return <Invoice/>
@@ -44,6 +48,9 @@ export default class AppContainer extends Component {
                     }}/>
                     <Route path="/Paymentdetails" render={props => {
                         return <Paymentdetails/>
+                    }}/>
+                    <Route path="/Patient" render={props => {
+                        return <Patient/>
                     }}/>
                 </div>
             </Router>
