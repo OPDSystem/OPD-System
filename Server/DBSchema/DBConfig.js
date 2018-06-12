@@ -93,12 +93,16 @@ var description= new Schema({
     
     id: {
         type: String, 
-        require: false
+        require: true
 },
    description: {
        type: String, 
        require: true
-   },
+   }/*,
+   consult:{
+       type:boolean,
+       require:true
+   }*/
     
 })
 
