@@ -69,9 +69,30 @@ var patientDetails = new Schema({
     }
 });
 
+var clinicschema= new Schema({
+    clinicname:{
+        type: string,
+        require:true
+    },
+    time:{
+        type: date,
+        require: true
+    },
+    date:{
+        type:date,
+        require:true
+    },
+    doctor:{
+        type:string,
+        require:true
+    },
+    patients: [string]
+})
+
 Mongoose.model("patientDetails", patientDetails);
 Mongoose.model('Customer',CustomerSchema);
 Mongoose.model('Income', IncomeSchema);
+Mongoose.model('clinic',clinicschema);
 
 Mongoose.connect('mongodb://127.0.0.1:27017/OPD', function (err) {
     if(err)
