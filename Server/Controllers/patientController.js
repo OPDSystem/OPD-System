@@ -51,6 +51,16 @@ var Controller = function() {
             });
         });
     }
+
+    this.findPatient = function(id) {
+        return new Promise(function(resolve, reject) {
+            patientDetails.find({id: id}).exec().then(function(data) {
+                resolve({status: 200, searchedPatient: data});
+            }).catch(function(err) {
+                reject({status: 500, message: "Failed to search patient" + err});
+            })
+        })
+    }
 }
 
 module.exports = new Controller();
