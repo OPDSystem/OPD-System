@@ -41,5 +41,23 @@ var Controller = function() {
         });
     }
 
-    
+    this.findClinic = function(Name) {
+        return new Promise(function(resolve, reject) {
+            clinicdetails.find({clinicname: Name}).exec().then(function(data) {
+                resolve({status: 200, clinic: data});
+            }).catch(function(err) {
+                reject({status: 500, message: "Failed to search clinic" + err});
+            })
+        })
+    }
+
+    this.findAllClinic = function() {
+        return new Promise(function(resolve, reject) {
+            clinicdetails.find().exec().then(function(data) {
+                resolve({status: 200, clinics: data});
+            }).reject(function(err) {
+                reject({status: 500, message: "Failed to search clinics" + err});
+            });
+        });
+    }
 }
