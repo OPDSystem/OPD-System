@@ -9,7 +9,7 @@ var Controller = function() {
                 fullName: data.fullName,
                 contactNumber: data.contactNumber,
                 language: data.language,
-                dob: data.dob,
+                age: data.age,
                 gender: data.gender,
                 gudianContactNumber: data.gudianContactNumber
             });
