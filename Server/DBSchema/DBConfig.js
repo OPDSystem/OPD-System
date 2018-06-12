@@ -111,24 +111,17 @@ var questionnaireSchema=new Schema({
 });
 
 var patientQueue= new Schema({
-    patientId: {
-         type: Schema.Types.ObjectId, ref: 'patient'
-    },
-         doctorId: {
-             type: Schema.Types.ObjectId, ref: 'systemUser'
-    },
-         relative: {
+    
+         name: {
              type: String, required: false
     },
         illness: {
             type: String, required: true
         }, // nature of the illness
-         status: {
-             type: String, required: true, default: 1
-        }, // 1 - On the list, 0 - Appointed
-         createdDateTime: {
-              type: Date, default: Date.now 
-        },
+         age: {
+             type: number, required: true
+        }, 
+         
 })
 
 Mongoose.model("patientDetails", patientDetails);
