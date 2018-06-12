@@ -40,9 +40,9 @@ var Controller = function() {
         });
     }
 
-    this.findClinic = function(id) {
+    this.findClinic = function(date) {
         return new Promise(function(resolve, reject) {
-            clinicdetails.find({id: id}).exec().then(function(data) {
+            clinicdetails.find({date: date}).exec().then(function(data) {
                 resolve({status: 200, clinicdata: data});
             }).catch(function(err) {
                 reject({status: 500, message: "Failed to search clinic" + err});

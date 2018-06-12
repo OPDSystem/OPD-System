@@ -89,6 +89,19 @@ var clinicschema= new Schema({
     patients:[String]
 })
 
+var description= new Schema({
+    
+    id: {
+        type: String, 
+        require: false
+},
+   description: {
+       type: String, 
+       require: true
+   },
+    
+})
+
 var questionnaireSchema=new Schema({
     id:{
         type:String
@@ -113,18 +126,7 @@ var questionnaireSchema=new Schema({
 }
 });
 
-var description= new Schema({
-    
-         id: {
-             type: String, 
-             require: false
-    },
-        description: {
-            type: String, 
-            require: true
-        },
-         
-})
+
 
 Mongoose.model("patientDetails", patientDetails);
 Mongoose.model('Customer',CustomerSchema);
