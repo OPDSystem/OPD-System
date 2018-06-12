@@ -55,8 +55,8 @@ var patientDetails = new Schema({
         type: String,
         require: true
     },
-    dob: {
-        type: Date,
+    age: {
+        type: Number,
         require: true
     },
     gender: {
