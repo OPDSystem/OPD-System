@@ -1,7 +1,7 @@
 const mongoose = require("../DBSchema/DBConfig");
 const clinic = mongoose.model("clinic");
 const patientDetails= mongoose.model("patientDetails");
-const description= mongoose.model("queue");
+const description= mongoose.model("Queue");
 
 var Controller= function(){
     this.viewQueue = function (id) {
