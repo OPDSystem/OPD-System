@@ -41,6 +41,16 @@ var Controller = function() {
             });
         });
     }
+
+    this.findAllPatient = function() {
+        return new Promise(function(resolve, reject) {
+            patientDetails.find().exec().then(function(data) {
+                resolve({status: 200, searchedPatients: data});
+            }).reject(function(err) {
+                reject({status: 500, message: "Failed to search patients" + err});
+            });
+        });
+    }
 }
 
 module.exports = new Controller();
