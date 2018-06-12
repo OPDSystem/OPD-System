@@ -113,17 +113,16 @@ var questionnaireSchema=new Schema({
 }
 });
 
-var patientQueue= new Schema({
+var description= new Schema({
     
-         name: {
-             type: String, required: false
+         id: {
+             type: String, 
+             require: false
     },
-        illness: {
-            type: String, required: true
-        }, // nature of the illness
-         age: {
-             type: Number, required: true
-        }, 
+        description: {
+            type: String, 
+            require: true
+        },
          
 })
 
@@ -132,7 +131,7 @@ Mongoose.model('Customer',CustomerSchema);
 Mongoose.model('Income', IncomeSchema);
 Mongoose.model('clinic',clinicschema);
 Mongoose.model('Quessionnaire',questionnaireSchema);
-Mongoose.model('Queue',patientQueue);
+Mongoose.model('Queue',description);
 
 Mongoose.connect('mongodb://127.0.0.1:27017/OPD', function (err) {
     if(err)
