@@ -61,3 +61,5 @@ var Controller = function() {
         });
     }
 }
+
+module.exports = new Controller();
