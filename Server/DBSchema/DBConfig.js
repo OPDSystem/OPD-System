@@ -90,7 +90,10 @@ var clinicschema= new Schema({
 })
 
 var questionnaireSchema=new Schema({
-     question : {
+    id:{
+        type:String
+    },
+    question : {
          type : String 
 },
     answer1 : {
