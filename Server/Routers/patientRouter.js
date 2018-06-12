@@ -29,7 +29,7 @@ router.post("/", function(request, response) {
 
 router.put("/:id", function(request, response) {
     patientController.updatePatient(request.params.id, request.body).then(function(data) {
-        response.status(data.status).send({message: data.message})
+        response.status(data.status).send({data: data.message})
     }).catch(function(err) {
         response.status(err.status).send({message: err.message});
     });

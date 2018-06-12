@@ -24,7 +24,7 @@ var Controller = function() {
 
     this.updatePatient = function(id, data) {
         return new Promise(function(resolve, reject) {
-            patientDetails.update({id: id}, data).then(function(data) {
+            patientDetails.update({id : id}, data).then(function(data) {
                 resolve({status: 200, message: "Successfully Updated"});
             }).catch(function(err) {
                 reject({status: 500, message: "Failed to update patient" + err});
@@ -34,7 +34,7 @@ var Controller = function() {
 
     this.deletePatient = function(id) {
         return new Promise(function(resolve, reject) {
-            patientDetails.delete(id).then(function(data) {
+            patientDetails.remove({id: id}).then(function(data) {
                 resolve({status: 200, message: "Successfully Deleted"});
             }).catch(function(err) {
                 reject({status: 500, message: "Failed to delete patient" + err});
