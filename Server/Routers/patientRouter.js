@@ -35,7 +35,7 @@ router.put("/:id", function(request, response) {
     });
 });
 
-router.delete("/:id", function(request, resolve) {
+router.delete("/:id", function(request, response) {
     patientController.deletePatient({id: request.params.id}).then(function(data) {
         response.status(data.status).send({message: data.message})
     }).catch(function(err) {

@@ -1,5 +1,5 @@
 const mongoose = require("../DBSchema/DBConfig");
-const clinic = mongoose.model("clinicschema");
+const clinic = mongoose.model("clinic");
 
 var Controller = function() {
     this.assigndoctor = function() {
@@ -22,7 +22,7 @@ var Controller = function() {
 
     this.updateClinic = function(id, data) {
         return new Promise(function(resolve, reject) {
-            clinicdetails.update({id: id}, data).then(function(data) {
+            clinic.update({id: id}, data).then(function(data) {
                 resolve({status: 200, message: "Successfully Updated"});
             }).catch(function(err) {
                 reject({status: 500, message: "Failed to update clinic" + err});
@@ -32,7 +32,7 @@ var Controller = function() {
 
     this.deleteClinic = function(id) {
         return new Promise(function(resolve, reject) {
-            clinicdetails.delete(id).then(function(data) {
+            clinic.delete(id).then(function(data) {
                 resolve({status: 200, message: "Successfully Deleted"});
             }).catch(function(err) {
                 reject({status: 500, message: "Failed to delete clinic" + err});
@@ -42,7 +42,7 @@ var Controller = function() {
 
     this.findClinic = function(date) {
         return new Promise(function(resolve, reject) {
-            clinicdetails.find({date: date}).exec().then(function(data) {
+            clinic.find({date: date}).exec().then(function(data) {
                 resolve({status: 200, clinicdata: data});
             }).catch(function(err) {
                 reject({status: 500, message: "Failed to search clinic" + err});
@@ -52,7 +52,7 @@ var Controller = function() {
 
     this.findAllClinic = function() {
         return new Promise(function(resolve, reject) {
-            clinicdetails.find().exec().then(function(data) {
+            clinic.find().exec().then(function(data) {
                 resolve({status: 200, clinicsdata: data});
             }).reject(function(err) {
                 reject({status: 500, message: "Failed to search clinics" + err});
