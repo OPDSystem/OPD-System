@@ -79,11 +79,11 @@ var clinicschema= new Schema({
         require:true
     },
     time:{
-        type: Date,
+        type: String,
         require: true
     },
     date:{
-        type:Date,
+        type:String,
         require:true
     },
     patients:[String]
