@@ -61,6 +61,16 @@ var Controller = function(){
     this.GetDayIncome =function (date) {
         return new Promise(function (resolve, reject) {
             IncomeSchema.find({date : date}).exec().then(function (data) {
+                resolve({status:200, incomedata: data});
+            }).catch(function (reason) {
+                reject({status:404 ,message:"Error" + reason});
+            })
+        })
+    }
+
+    this.GetDayIncomeFee =function (date) {
+        return new Promise(function (resolve, reject) {
+            IncomeSchema.find({date : date}).exec().then(function (data) {
                 var totalamount = 0;
                 for(var n =0; n<data.length; n++)
                 {
