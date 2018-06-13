@@ -85,6 +85,30 @@ export default class AppContainer extends Component {
                   return <PatientView />;
                 }}
               />
+              <Route
+                path="/AppointmentView"
+                render={props => {
+                  return <AppointmentView />;
+                }}
+              />
+              <Route
+                path="/Appointment"
+                render={props => {
+                  return <Appointment />;
+                }}
+              />
+              <Route
+                path="/ClinicView"
+                render={props => {
+                  return <ClinicView />;
+                }}
+              />
+              <Route
+                path="/Clinic"
+                render={props => {
+                  return <Clinic />;
+                }}
+              />
             </div>
           </Router>
         </div>
