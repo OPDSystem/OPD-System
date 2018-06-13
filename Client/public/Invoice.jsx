@@ -3,6 +3,9 @@
 import React, {Component} from 'react';
 import AddDes from '../Invoice/AddDescription';
 import Describ from '../Invoice/Descriptions';
+import Pay from '../Invoice/PrintInvoice'
+
+import axios   from 'axios';
 
 export default class Invoice extends Component {
     constructor(props) {
@@ -21,6 +24,23 @@ export default class Invoice extends Component {
      
     }
 
+    addPatient(data){
+        axios.post('http://localhost:8080/payment/customer',{name:data.name, date:data.date, amount:data.Totalamount}).then(result => {
+   			if(result.status == 200) {
+                   
+                   console.log("ADDED Cus!!");
+			}
+		})
+    }
+
+    addIncome(data){
+        axios.post('http://localhost:8080/payment/income',{ date:data.date, amount:data.Totalamount}).then(result => {
+   			if(result.status == 200) {
+                  
+                   console.log("ADDED inc!!");
+			}
+		})
+    }
    
      
     
@@ -28,8 +48,9 @@ export default class Invoice extends Component {
     render() {
         return <div>
             <h3>Invoice</h3>
-            <AddDes addDescrib={data => this.addDescrib(data)}/>
+            <AddDes addDescrib={data => this.addDescrib(data)} addPatient={data =>this.addPatient(data)} addIncome={data => this.addIncome(data)}/>
             <Describ Recipt={this.state.Recipt}/>
+            <Pay />
            
         </div>;
     }
