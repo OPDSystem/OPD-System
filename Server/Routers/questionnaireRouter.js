@@ -12,15 +12,15 @@ router.post("/", function(request, response) {
 });
 
 router.put("/:id", function(request, response) {
-    questionnaireController.editQuestionnaire({id: request.params.id}, request.body).then(function(data) {
+    questionnaireController.editQuestionnaire(request.params.id, request.body).then(function(data) {
         response.status(data.status).send({message: data.message})
     }).catch(function(err) {
         response.status(err.status).send({message: err.message});
     });
 });
 
-router.delete("/:id", function(request, resolve) {
-    questionnaireController.deleteQuestionnaire({id: request.params.id}).then(function(data) {
+router.delete("/:id", function(request, response) {
+    questionnaireController.deleteQuestionnaire(request.params.id).then(function(data) {
         response.status(data.status).send({message: data.message})
     }).catch(function(err) {
         response.status(err.status).send({message: err.message});

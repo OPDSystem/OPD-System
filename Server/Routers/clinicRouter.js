@@ -7,25 +7,23 @@ router.post('/',function(req,res){
         res.status(data.status).send({message: data.message});
     }).catch(function (err) {
         res.status(err.status).send({message: err.message});
-    })
+    });
 });
 
-router.get('/:id',function (req,res) {
-    Controller.findClinic(req.params.id).then(function (data) {
+router.get('/:date',function (req,res) {
+    Controller.findClinic(req.params.date).then(function (data) {
         res.status(data.status).send({data:data.clinicdata});
     }).catch(function (err) {
         res.status(err.status).send({message: err.message});
-    })
-
+    });
 });
 
 router.get('/',function (req,res) {
-    Controller.findAllClinic(req.params.date).then(function (data) {
+    Controller.findAllClinic().then(function (data) {
         res.status(data.status).send({data:data.clinicsdata});
     }).catch(function (err) {
         res.status(err.status).send({message: err.message});
-    })
-
+    });
 });
 
 router.put('/:id',function (req,res) {
@@ -37,11 +35,11 @@ router.put('/:id',function (req,res) {
 
 });
 
-router.delete("/:id", function(request, resolve) {
-    Controller.deleteClinic({id: request.params.id}).then(function(data) {
-        response.status(data.status).send({message: data.message})
+router.delete("/:id", function(req, res) {
+    Controller.deleteClinic(req.params.id).then(function(data) {
+        res.status(data.status).send({message: data.message})
     }).catch(function(err) {
-        response.status(err.status).send({message: err.message});
+        res.status(err.status).send({message: err.message});
     });
 });
 

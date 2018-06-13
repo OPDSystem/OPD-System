@@ -10,7 +10,7 @@ var Controller = function() {
                 doctor:data.doctor
             });
 
-            appointment.save().then(function(data) {
+            appointmentdetails.save().then(function(data) {
                 resolve({status: 200, message: "Appointment made successfully"});
             }).catch(function(err) {
                 reject({status: 500, message: "Appointment cannot be made" + err});

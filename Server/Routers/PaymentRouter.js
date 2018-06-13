@@ -29,8 +29,18 @@ router.get('/customer/:id',function (req,res) {
 
 });
 
-router.get('/customer/:date',function (req,res) {
+router.get('/income/:date',function (req,res) {
     Controller.GetDayIncome(req.params.date).then(function (data) {
+        res.status(data.status).send({data:data.incomedata});
+    }).catch(function (err) {
+        res.status(err.status).send({message: err.message});
+    })
+
+});
+
+
+router.get('/income/fee/:date',function (req,res) {
+    Controller.GetDayIncomeFee(req.params.date).then(function (data) {
         res.status(data.status).send({data:data.totalincome});
     }).catch(function (err) {
         res.status(err.status).send({message: err.message});

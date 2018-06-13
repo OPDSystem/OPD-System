@@ -2,9 +2,11 @@ const mongoose = require("../DBSchema/DBConfig");
 const clinic = mongoose.model("clinic");
 
 var Controller = function() {
-    this.assigndoctor = function() {
+    this.assigndoctor = function(data) {
         return new Promise(function(resolve, reject){
+
             var clinicdetails = new clinic({
+
                 id:data.id,
                 doctor:data.doctor,
                 time:data.time,
@@ -12,7 +14,7 @@ var Controller = function() {
                 patients:data.patients
             });
 
-            clinic.save().then(function(data) {
+            clinicdetails.save().then(function(data) {
                 resolve({status: 200, message: "Successfully Added"});
             }).catch(function(err) {
                 reject({status: 500, message: "Failed to assign doctor" + err});
@@ -32,7 +34,7 @@ var Controller = function() {
 
     this.deleteClinic = function(id) {
         return new Promise(function(resolve, reject) {
-            clinic.delete(id).then(function(data) {
+            clinic.remove({id : id}).then(function(data) {
                 resolve({status: 200, message: "Successfully Deleted"});
             }).catch(function(err) {
                 reject({status: 500, message: "Failed to delete clinic" + err});
@@ -54,7 +56,7 @@ var Controller = function() {
         return new Promise(function(resolve, reject) {
             clinic.find().exec().then(function(data) {
                 resolve({status: 200, clinicsdata: data});
-            }).reject(function(err) {
+            }).catch(function(err) {
                 reject({status: 500, message: "Failed to search clinics" + err});
             });
         });
