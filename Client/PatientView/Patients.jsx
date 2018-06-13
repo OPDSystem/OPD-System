@@ -37,7 +37,7 @@ export default class Patients extends Component {
         <tbody>
           {
               this.patients.map(data => {
-                  return <Patient key={data.id} patient={data} getAllPatient={() => this.props.getAllPatient()}/>
+                  return <Patient key={data.id} patient={data} getOnePatient={() => this.props.getOnePatient()}/>
               })
           }
         </tbody>

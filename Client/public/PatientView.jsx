@@ -3,7 +3,7 @@
 import React, {Component} from 'react';
 import axios                from 'axios';
 import Searchpatient  from '../PatientView/SearchPatient';
-import Register from '../Patient/Patients';
+import View from '../PatientView/Patients';
 
 export default class PatientView extends Component {
     constructor(props) {
@@ -23,14 +23,18 @@ export default class PatientView extends Component {
     }
 
     getOnePatient(id){
-        
+        axios.get('http://localhost:8080/patients/patientName/'+id).then(res => {
+            this.setState({
+				patients: res.data.data
+			});
+        })
     }
 
    	render() {
         return <div>
            <h2>PATIENT VIEW</h2>
             <Searchpatient getOnePatient={id => this.getOnePatient(id)}/>
-            <Register patients={this.state.patients} getAllPatient = {() => this.getAllPatient()}/>
+            <View patients={this.state.patients} getOnePatient = {() => this.getOnePatient()}/>
         </div>;
 	}
 }
