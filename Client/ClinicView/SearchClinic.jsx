@@ -1,0 +1,50 @@
+'use strict';
+
+import React, {Component} 	from 'react';
+import PropTypes 			from "prop-types"
+
+
+export default class SearchClinic extends Component{
+    static get propTypes() {
+        return {
+           date: PropTypes.string
+
+        }
+    }
+
+    constructor(props) {
+        super(props);
+        
+    }
+
+    ondateChange(event) {
+        event.preventDefault();
+        event.stopPropagation();
+        this.date = event.target.value;
+    }
+
+    
+
+    onSubmit(event) {
+        event.preventDefault();
+        event.stopPropagation();
+        
+        
+            this.props.getOneClinic(this.date);
+            
+            
+            
+        }
+
+    render() {
+        return <div>
+            <form onSubmit={event => this.onSubmit(event)}>
+                <div>
+                <label>Clinic Date:</label>
+                <input type="text" onChange={event => this.ondateChange(event)}/>
+                <button type="Submit">Find</button>
+                </div>
+            </form>
+        </div>;
+    }
+}
