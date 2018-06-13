@@ -27,16 +27,6 @@ export default class Incomes extends Component {
                 );
             });
 
-        let Amount;
-
-            Amount = this.props.Amount.map(function (data) {
-                return(
-                    <Totalamo key={data.data} incomes={data} getdayamount={() => this.prop.getdayamount()} />
-                );
-            });
-           
-        
-
 
         return <div class="table">
             <table>
@@ -45,19 +35,10 @@ export default class Incomes extends Component {
                     <th>Recipt Id</th>
                     <th>Date</th>
                     <th>Amount</th>
-                    <th>total</th>
                 </tr>
                 </thead>
                 <tbody>
                 {Income}
-                </tbody>
-            </table>
-            <table>
-                <tbody>
-                <tr>
-                    <th>Total Amount</th>
-                </tr>
-                {Amount}
                 </tbody>
             </table>
         </div>;
