@@ -15953,9 +15953,9 @@ var Paymentdetails = function (_Component) {
     value: function getAllPaymentDetails() {
       var _this2 = this;
 
-      _axios2.default.get("http://localhost:8080/payment/customer/").then(function (res) {
+      _axios2.default.get("http://localhost:8081/customer/").then(function (res) {
         _this2.setState({
-          payments: res.data.data
+          payments: res.data
         });
       });
     }
