@@ -1,10 +1,6 @@
 .idea/
 node_modules/
-<<<<<<< HEAD
 .DS_Store
 dist/
 Server/package.json
 package-lock.json
-=======
-.DS_Store
->>>>>>> 87831b5eadf09f5636f790ed5ff9a9903680de76
