@@ -40,15 +40,12 @@ export default class Incomes extends Component {
 
         return <div class="table">
             <table>
-                <thead>
+                <tbody>
                 <tr>
                     <th>Recipt Id</th>
                     <th>Date</th>
                     <th>Amount</th>
-                    <th>total</th>
                 </tr>
-                </thead>
-                <tbody>
                 {Income}
                 </tbody>
             </table>

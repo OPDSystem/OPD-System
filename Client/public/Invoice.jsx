@@ -21,16 +21,20 @@ export default class Invoice extends Component {
      
     }
 
-   
+    getTotal(data){
+        this.setState({
+            Total:this.state.Recipt.concat({Totalamount:data.Totalamount})
+            
+        })
      
-    
+    }
     
     render() {
         return <div>
-            <h3>Invoice</h3>
+            <h3>invoice</h3>
             <AddDes addDescrib={data => this.addDescrib(data)}/>
             <Describ Recipt={this.state.Recipt}/>
-           
+            <h3>Total Amount:{this.state.Recipt.Totalamount}</h3>
         </div>;
     }
 }

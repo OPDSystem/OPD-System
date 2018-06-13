@@ -4,10 +4,10 @@ import React, {Component} 	from 'react';
 import PropTypes 			from "prop-types"
 
 
-export default class Getdate extends Component{
+export default class SearchClinic extends Component{
     static get propTypes() {
         return {
-           Date: PropTypes.string
+           date: PropTypes.string
 
         }
     }
@@ -17,7 +17,7 @@ export default class Getdate extends Component{
         
     }
 
-    onDateChange(event) {
+    ondateChange(event) {
         event.preventDefault();
         event.stopPropagation();
         this.date = event.target.value;
@@ -30,8 +30,8 @@ export default class Getdate extends Component{
         event.stopPropagation();
         
         
-            this.props.getdayincome(this.date);
-            this.props.getdayamount(this.date);
+            this.props.getOneClinic(this.date);
+            
             
             
         }
@@ -40,11 +40,9 @@ export default class Getdate extends Component{
         return <div>
             <form onSubmit={event => this.onSubmit(event)}>
                 <div>
-                <label>Description:</label>
-                </div>
-                <div>
-                <input type="text" onChange={event => this.onDateChange(event)}/>
-                <button type="submit">Find</button>
+                <label>Clinic Date:</label>
+                <input type="text" onChange={event => this.ondateChange(event)}/>
+                <button type="Submit">Find</button>
                 </div>
             </form>
         </div>;
