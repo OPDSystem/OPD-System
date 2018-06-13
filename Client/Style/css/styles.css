@@ -53,7 +53,7 @@ footer{
 }
 
 table thead tr{
-	background:gray;//#00a885;
+	background:gray;
 	color:white;
 }
 #contentView{
@@ -97,7 +97,7 @@ table thead tr{
 	background:white;
 }
 
-//------------------------------------------------------------------------------
+
 
 .mywrapper{
 	width:100%;
