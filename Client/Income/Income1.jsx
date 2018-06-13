@@ -7,7 +7,11 @@ export default class Income1 extends Component {
 
     constructor(props) {
         super(props);
+        this.total = 0;
+    }
 
+    getTotal(amount){
+        this.total={amount}
     }
 
 
