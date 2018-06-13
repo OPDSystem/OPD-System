@@ -27,7 +27,7 @@ export default class GetSubjects extends Component {
         
 
 
-        return <div>
+        return <div class="table">
             <table>
                 <tbody>
                 <tr>

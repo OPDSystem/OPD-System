@@ -42,7 +42,7 @@ export default class SearchPatient extends Component{
                 <div>
                 <label>Patient Name:</label>
                 <input type="text" onChange={event => this.onNameChange(event)}/>
-                <button type="submit">Find</button>
+                <button type="Submit">Find</button>
                 </div>
             </form>
         </div>;
