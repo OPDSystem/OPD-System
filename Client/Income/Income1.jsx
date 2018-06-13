@@ -11,15 +11,15 @@ export default class Income1 extends Component {
     }
 
     getTotal(amount){
-        this.total={amount}
+        this.total= this.total+{amount};
     }
 
 
 
     render() {
-        return <tr>
-            <td>{this.props.incomes.data}</td>
-        </tr>
+        return <div>
+            <h3>Total Income:{this.total}</h3>
+        </div>;
     }
 
 }

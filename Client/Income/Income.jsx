@@ -7,7 +7,7 @@ export default class Income extends Component {
 
     constructor(props) {
         super(props);
-        this.props.getTotal({amount:this.props.income.amount})
+        this.props.getTotal(this.props.income.amount)
 
     }
 
