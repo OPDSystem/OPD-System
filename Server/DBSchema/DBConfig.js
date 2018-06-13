@@ -17,8 +17,7 @@ var CustomerSchema = new Schema({
     amount:{
         type:Number,
         require:true
-    },
-    description:[String]
+    }
 });
 
 var IncomeSchema = new Schema({
