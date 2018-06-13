@@ -53,7 +53,7 @@ footer{
 }
 
 table thead tr{
-	background:gray;//#00a885;
+	background:gray;
 	color:white;
 }
 #contentView{
@@ -97,7 +97,7 @@ table thead tr{
 	background:white;
 }
 
-//------------------------------------------------------------------------------
+
 
 .mywrapper{
 	width:100%;
@@ -146,4 +146,32 @@ table thead tr{
 	padding:20px;
 	
 	
+}
+
+
+input[type=text] {
+    width: 50%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #f2f2f2;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+ .form{
+    border-radius: 5px;
+    background-color: #b8b4b4de;
+    padding: 20px;
+}
+
+button[type=submit] {
+    width: 50%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
 }
