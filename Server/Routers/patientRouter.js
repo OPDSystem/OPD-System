@@ -19,6 +19,14 @@ router.get("/:id", function(request, response) {
     });
 });
 
+router.get("/:name", function(request, response) {
+    patientController.findPatient(request.params.name).then(function(data) {
+        response.status(data.status).send({data: data.patientByName});
+    }).catch(function(err) {
+        response.status(err.status).send({message: err.message});
+    });
+});
+
 router.post("/", function(request, response) {
     patientController.addPatient(request.body).then(function(data) {
         response.status(data.status).send({message: data.message});

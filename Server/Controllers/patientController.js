@@ -61,6 +61,16 @@ var Controller = function() {
             })
         })
     }
+
+    this.findPatientByName = function(name) {
+        return new Promise(function(resolve, reject) {
+            patientDetails.find({fullName: name}).exec().then(function(data) {
+                resolve({status: 200, patientByName: data});
+            }).catch(function(err) {
+                reject({status: 500, message: "Failed to search patient" + err});
+            })
+        })
+    }
 }
 
 module.exports = new Controller();
