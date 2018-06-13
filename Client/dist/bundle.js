@@ -166,6 +166,7 @@ var Getdate = function (_Component) {
                         _react2.default.createElement('input', { type: 'text', onChange: function onChange(event) {
                                 return _this2.onDateChange(event);
                             } }),
+                        _react2.default.createElement('div', null),
                         _react2.default.createElement(
                             'button',
                             { type: 'submit' },
@@ -222,7 +223,11 @@ var Income = function (_Component) {
     function Income(props) {
         _classCallCheck(this, Income);
 
-        return _possibleConstructorReturn(this, (Income.__proto__ || Object.getPrototypeOf(Income)).call(this, props));
+        var _this = _possibleConstructorReturn(this, (Income.__proto__ || Object.getPrototypeOf(Income)).call(this, props));
+
+        _this.total = _this.total + _this.props.income.amount;
+
+        return _this;
     }
 
     _createClass(Income, [{
@@ -245,6 +250,11 @@ var Income = function (_Component) {
                     'td',
                     null,
                     this.props.income.amount
+                ),
+                _react2.default.createElement(
+                    'td',
+                    null,
+                    this.total
                 )
             );
         }
@@ -404,7 +414,7 @@ var Incomes = function (_Component) {
                     'table',
                     null,
                     _react2.default.createElement(
-                        'tbody',
+                        'thead',
                         null,
                         _react2.default.createElement(
                             'tr',
@@ -423,8 +433,17 @@ var Incomes = function (_Component) {
                                 'th',
                                 null,
                                 'Amount'
+                            ),
+                            _react2.default.createElement(
+                                'th',
+                                null,
+                                'total'
                             )
-                        ),
+                        )
+                    ),
+                    _react2.default.createElement(
+                        'tbody',
+                        null,
                         Income
                     )
                 ),
@@ -500,7 +519,9 @@ var AddDescription = function (_Component) {
                 Unit: _propTypes2.default.number,
                 Price: _propTypes2.default.number,
                 Total: _propTypes2.default.number,
-                Totalamount: _propTypes2.default.number
+                Totalamount: _propTypes2.default.number,
+                name: _propTypes2.default.string,
+                data: _propTypes2.default.string
 
             };
         }
@@ -537,6 +558,20 @@ var AddDescription = function (_Component) {
             this.Price = event.target.value;
         }
     }, {
+        key: 'onNameChange',
+        value: function onNameChange(event) {
+            event.preventDefault();
+            event.stopPropagation();
+            this.name = event.target.value;
+        }
+    }, {
+        key: 'onDateChange',
+        value: function onDateChange(event) {
+            event.preventDefault();
+            event.stopPropagation();
+            this.date = event.target.value;
+        }
+    }, {
         key: 'onSubmit',
         value: function onSubmit(event) {
             event.preventDefault();
@@ -547,6 +582,14 @@ var AddDescription = function (_Component) {
             this.props.addDescrib({ Description: this.Description, Unit: this.Unit, Price: this.Price, Total: this.Total, Totalamount: this.Totalamount });
         }
     }, {
+        key: 'onNameSubmit',
+        value: function onNameSubmit(event) {
+            event.preventDefault();
+            event.stopPropagation();
+            this.name = this.name;
+            this.date = this.date;
+        }
+    }, {
         key: 'render',
         value: function render() {
             var _this2 = this;
@@ -555,66 +598,120 @@ var AddDescription = function (_Component) {
                 'div',
                 null,
                 _react2.default.createElement(
-                    'form',
-                    { onSubmit: function onSubmit(event) {
-                            return _this2.onSubmit(event);
-                        } },
+                    'div',
+                    { 'class': 'form' },
                     _react2.default.createElement(
-                        'div',
-                        null,
+                        'form',
+                        { onSubmit: function onSubmit(event) {
+                                return _this2.onNameSubmit(event);
+                            } },
                         _react2.default.createElement(
-                            'label',
+                            'div',
                             null,
-                            'Description:'
-                        )
-                    ),
-                    _react2.default.createElement(
-                        'div',
-                        null,
-                        _react2.default.createElement('input', { type: 'text', onChange: function onChange(event) {
-                                return _this2.onDescriptionChange(event);
-                            } })
-                    ),
-                    _react2.default.createElement(
-                        'div',
-                        null,
+                            _react2.default.createElement(
+                                'label',
+                                { 'for': 'name' },
+                                'Patient Name:'
+                            ),
+                            _react2.default.createElement('div', null),
+                            _react2.default.createElement('input', { type: 'text', id: 'name', onChange: function onChange(event) {
+                                    return _this2.onNameChange(event);
+                                } })
+                        ),
                         _react2.default.createElement(
-                            'label',
+                            'div',
                             null,
-                            'Unit:'
+                            _react2.default.createElement(
+                                'label',
+                                { 'for': 'Date' },
+                                'Date:'
+                            ),
+                            _react2.default.createElement('div', null),
+                            _react2.default.createElement('input', { type: 'text', id: 'Date', onChange: function onChange(event) {
+                                    return _this2.onDateChange(event);
+                                } })
                         )
-                    ),
+                    )
+                ),
+                _react2.default.createElement(
+                    'div',
+                    { 'class': 'form' },
                     _react2.default.createElement(
-                        'div',
-                        null,
-                        _react2.default.createElement('input', { type: 'text', onChange: function onChange(event) {
-                                return _this2.onUnitChange(event);
-                            } })
-                    ),
-                    _react2.default.createElement(
-                        'div',
-                        null,
+                        'form',
+                        { onSubmit: function onSubmit(event) {
+                                return _this2.onSubmit(event);
+                            } },
                         _react2.default.createElement(
-                            'label',
+                            'div',
                             null,
-                            'Price:'
-                        )
-                    ),
-                    _react2.default.createElement(
-                        'div',
-                        null,
-                        _react2.default.createElement('input', { type: 'text', onChange: function onChange(event) {
-                                return _this2.onPriceChange(event);
-                            } })
-                    ),
-                    _react2.default.createElement(
-                        'div',
-                        null,
+                            _react2.default.createElement(
+                                'label',
+                                { 'for': 'describ' },
+                                'Description:'
+                            ),
+                            _react2.default.createElement('div', null),
+                            _react2.default.createElement('input', { type: 'text', id: 'describ', onChange: function onChange(event) {
+                                    return _this2.onDescriptionChange(event);
+                                } })
+                        ),
                         _react2.default.createElement(
-                            'button',
-                            { type: 'submit' },
-                            'Add'
+                            'div',
+                            null,
+                            _react2.default.createElement(
+                                'label',
+                                { 'for': 'unit' },
+                                'Unit:'
+                            ),
+                            _react2.default.createElement('div', null),
+                            _react2.default.createElement('input', { type: 'text', id: 'unit', onChange: function onChange(event) {
+                                    return _this2.onUnitChange(event);
+                                } })
+                        ),
+                        _react2.default.createElement(
+                            'div',
+                            null,
+                            _react2.default.createElement(
+                                'label',
+                                { 'for': 'price' },
+                                'Price:'
+                            ),
+                            _react2.default.createElement('div', null),
+                            _react2.default.createElement('input', { type: 'text', id: 'price', onChange: function onChange(event) {
+                                    return _this2.onPriceChange(event);
+                                } })
+                        ),
+                        _react2.default.createElement(
+                            'div',
+                            null,
+                            _react2.default.createElement(
+                                'button',
+                                { type: 'submit' },
+                                'Add'
+                            )
                         )
+                    )
+                ),
+                _react2.default.createElement(
+                    'div',
+                    null,
+                    _react2.default.createElement(
+                        'h4',
+                        null,
+                        'Name        :',
+                        this.name
+                    ),
+                    _react2.default.createElement(
+                        'h4',
+                        null,
+                        'Date        :',
+                        this.date
+                    ),
+                    _react2.default.createElement(
+                        'h4',
+                        null,
+                        'Total Amount:',
+                        this.Totalamount,
+                        ' '
                     )
                 )
             );
@@ -776,7 +873,7 @@ var GetSubjects = function (_Component) {
                     'table',
                     null,
                     _react2.default.createElement(
-                        'tbody',
+                        'thead',
                         null,
                         _react2.default.createElement(
                             'tr',
@@ -801,7 +898,11 @@ var GetSubjects = function (_Component) {
                                 null,
                                 'Total Unit Price'
                             )
-                        ),
+                        )
+                    ),
+                    _react2.default.createElement(
+                        'tbody',
+                        null,
                         Recipt
                     )
                 )
@@ -1675,7 +1776,7 @@ var SearchPatient = function (_Component) {
 
             return _react2.default.createElement(
                 'div',
-                null,
+                { 'class': 'form' },
                 _react2.default.createElement(
                     'form',
                     { onSubmit: function onSubmit(event) {
@@ -1688,13 +1789,18 @@ var SearchPatient = function (_Component) {
                             'label',
                             null,
                             'Patient Name:'
-                        ),
+                        )
+                    ),
+                    _react2.default.createElement(
+                        'div',
+                        null,
                         _react2.default.createElement('input', { type: 'text', onChange: function onChange(event) {
                                 return _this2.onNameChange(event);
                             } }),
+                        _react2.default.createElement('div', null),
                         _react2.default.createElement(
                             'button',
-                            { type: 'Search' },
+                            { type: 'Submit' },
                             'Find'
                         )
                     )
@@ -14858,9 +14964,10 @@ var income = function (_Component) {
 
         _this.state = {
             Income: [],
-            Amount: []
+            Amount: [],
+            total: Number
         };
-
+        _this.total = 0;
         return _this;
     }
 
@@ -14871,9 +14978,11 @@ var income = function (_Component) {
 
             _axios2.default.get('http://localhost:8080/payment/income/' + data).then(function (res) {
                 _this2.setState({
-                    Income: res.data.data
+                    Income: res.data.data,
+                    total: res.data.data.amount
                 });
             });
+            // this.total = this.state.Income.amount;
         }
     }, {
         key: 'getdayamount',
@@ -14908,7 +15017,13 @@ var income = function (_Component) {
                         return _this4.getdayincome();
                     }, Amount: this.state.Amount, getdayamount: function getdayamount() {
                         return _this4.getdayamount();
-                    } })
+                    } }),
+                _react2.default.createElement(
+                    'h3',
+                    null,
+                    'total :',
+                    this.total
+                )
             );
         }
     }]);
@@ -14980,14 +15095,6 @@ var Invoice = function (_Component) {
             });
         }
     }, {
-        key: 'getTotal',
-        value: function getTotal(data) {
-            this.setState({
-                Total: this.state.Recipt.concat({ Totalamount: data.Totalamount })
-
-            });
-        }
-    }, {
         key: 'render',
         value: function render() {
             var _this2 = this;
@@ -14998,18 +15105,12 @@ var Invoice = function (_Component) {
                 _react2.default.createElement(
                     'h3',
                     null,
-                    'invoice'
+                    'Invoice'
                 ),
                 _react2.default.createElement(_AddDescription2.default, { addDescrib: function addDescrib(data) {
                         return _this2.addDescrib(data);
                     } }),
-                _react2.default.createElement(_Descriptions2.default, { Recipt: this.state.Recipt }),
-                _react2.default.createElement(
-                    'h3',
-                    null,
-                    'Total Amount:',
-                    this.state.Recipt.Totalamount
-                )
+                _react2.default.createElement(_Descriptions2.default, { Recipt: this.state.Recipt })
             );
         }
     }]);

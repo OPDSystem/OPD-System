@@ -11,7 +11,9 @@ export default class AddDescription extends Component{
             Unit: PropTypes.number,
             Price: PropTypes.number,
             Total:PropTypes.number,
-            Totalamount:PropTypes.number
+            Totalamount:PropTypes.number,
+            name:PropTypes.string,
+            data:PropTypes.string
 
         }
     }
@@ -39,6 +41,18 @@ export default class AddDescription extends Component{
         this.Price = event.target.value;
     }
 
+    onNameChange(event) {
+        event.preventDefault();
+        event.stopPropagation();
+        this.name = event.target.value;
+    }
+
+    onDateChange(event) {
+        event.preventDefault();
+        event.stopPropagation();
+        this.date = event.target.value;
+    }
+
     onSubmit(event) {
         event.preventDefault();
         event.stopPropagation();
@@ -49,31 +63,58 @@ export default class AddDescription extends Component{
             
         }
 
+        onNameSubmit(event) {
+            event.preventDefault();
+            event.stopPropagation();
+            this.name = this.name;
+            this.date = this.date;
+                
+            }
+
     render() {
-        return <div>
+        return <div >
+            <div class = "form">
+            <form onSubmit={event => this.onNameSubmit(event)}>
+                <div>
+                <label for="name">Patient Name:</label>
+                <div />
+                <input type="text" id="name" onChange={event => this.onNameChange(event)}/>
+                </div>
+                <div>
+                <label for ="Date">Date:</label>
+                <div />
+                <input type="text" id="Date" onChange={event => this.onDateChange(event)}/>
+                </div>
+            </form>
+            </div>
+
+            <div class = "form">
             <form onSubmit={event => this.onSubmit(event)}>
                 <div>
-                <label>Description:</label>
+                <label for="describ">Description:</label>
+                <div />
+                <input type="text" id="describ" onChange={event => this.onDescriptionChange(event)}/>
                 </div>
                 <div>
-                <input type="text" onChange={event => this.onDescriptionChange(event)}/>
+                <label for ="unit">Unit:</label>
+                <div />
+                <input type="text" id="unit" onChange={event => this.onUnitChange(event)}/>
                 </div>
                 <div>
-                <label>Unit:</label>
-                </div>
-                <div>
-                <input type="text" onChange={event => this.onUnitChange(event)}/>
-                </div>
-                <div>
-                <label>Price:</label>
-                </div>
-                <div>
-                <input type="text" onChange={event => this.onPriceChange(event)}/>
+                <label for="price">Price:</label>
+                <div />
+                <input type="text" id="price" onChange={event => this.onPriceChange(event)}/>
                 </div>
                 <div>
                 <button type="submit">Add</button>
                 </div>
             </form>
+            </div>
+            <div>
+            <h4>Name        :{this.name}</h4>
+            <h4>Date        :{this.date}</h4>
+            <h4>Total Amount:{this.Totalamount} </h4>
+            </div>
         </div>;
     }
 }

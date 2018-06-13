@@ -4,10 +4,10 @@ import React, {Component} 	from 'react';
 import PropTypes 			from "prop-types"
 
 
-export default class SearchPatient extends Component{
+export default class PrintInvoice extends Component{
     static get propTypes() {
         return {
-           name: PropTypes.string
+           Date: PropTypes.string
 
         }
     }
@@ -17,10 +17,10 @@ export default class SearchPatient extends Component{
         
     }
 
-    onNameChange(event) {
+    onDateChange(event) {
         event.preventDefault();
         event.stopPropagation();
-        this.name = event.target.value;
+        this.date = event.target.value;
     }
 
     
@@ -30,22 +30,21 @@ export default class SearchPatient extends Component{
         event.stopPropagation();
         
         
-            this.props.getOnePatient(this.name);
-            
+            this.props.getdayincome(this.date);
+            this.props.getdayamount(this.date);
             
             
         }
 
     render() {
-        return <div class="form">
+        return <div>
             <form onSubmit={event => this.onSubmit(event)}>
                 <div>
-                <label>Patient Name:</label>
+                <label>Description:</label>
                 </div>
-                 <div>   
-                <input type="text" onChange={event => this.onNameChange(event)}/>
-                <div />
-                <button type="Submit">Find</button>
+                <div>
+                <input type="text" onChange={event => this.onDateChange(event)}/>
+                <button type="submit">Find</button>
                 </div>
             </form>
         </div>;

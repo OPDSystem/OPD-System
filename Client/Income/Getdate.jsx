@@ -44,6 +44,7 @@ export default class Getdate extends Component{
                 </div>
                 <div>
                 <input type="text" onChange={event => this.onDateChange(event)}/>
+                <div />
                 <button type="submit">Find</button>
                 </div>
             </form>
