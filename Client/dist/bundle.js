@@ -1088,9 +1088,33 @@ var AddPatient = function (_Component) {
             "Language:"
           ),
           _react2.default.createElement("div", null),
-          _react2.default.createElement("input", { type: "text", onChange: function onChange(event) {
+          _react2.default.createElement("input", {
+            type: "radio",
+            name: "language",
+            value: "Sinhala",
+            onChange: function onChange(event) {
               return _this2.onLanguageChange(event);
-            } }),
+            }
+          }),
+          "Sinhala",
+          _react2.default.createElement("input", {
+            type: "radio",
+            name: "language",
+            value: "Tamil",
+            onChange: function onChange(event) {
+              return _this2.onLanguageChange(event);
+            }
+          }),
+          "Tamil",
+          _react2.default.createElement("input", {
+            type: "radio",
+            name: "language",
+            value: "English",
+            onChange: function onChange(event) {
+              return _this2.onLanguageChange(event);
+            }
+          }),
+          "English",
           _react2.default.createElement("div", null),
           _react2.default.createElement(
             "label",
@@ -1108,9 +1132,24 @@ var AddPatient = function (_Component) {
             "Gender:"
           ),
           _react2.default.createElement("div", null),
-          _react2.default.createElement("input", { type: "text", onChange: function onChange(event) {
+          _react2.default.createElement("input", {
+            type: "radio",
+            name: "gender",
+            value: "Male",
+            onChange: function onChange(event) {
               return _this2.onGenderChange(event);
-            } }),
+            }
+          }),
+          "Male",
+          _react2.default.createElement("input", {
+            type: "radio",
+            name: "gender",
+            value: "Female",
+            onChange: function onChange(event) {
+              return _this2.onGenderChange(event);
+            }
+          }),
+          "Female",
           _react2.default.createElement("div", null),
           _react2.default.createElement(
             "label",

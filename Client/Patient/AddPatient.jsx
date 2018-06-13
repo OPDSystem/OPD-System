@@ -96,7 +96,27 @@ export default class AddPatient extends Component {
           <div />
           <label>Language:</label>
           <div />
-          <input type="text" onChange={event => this.onLanguageChange(event)} />
+          <input
+            type="radio"
+            name="language"
+            value="Sinhala"
+            onChange={event => this.onLanguageChange(event)}
+          />
+          Sinhala
+          <input
+            type="radio"
+            name="language"
+            value="Tamil"
+            onChange={event => this.onLanguageChange(event)}
+          />
+          Tamil
+          <input
+            type="radio"
+            name="language"
+            value="English"
+            onChange={event => this.onLanguageChange(event)}
+          />
+          English
           <div />
           <label>Age:</label>
           <div />
@@ -104,7 +124,20 @@ export default class AddPatient extends Component {
           <div />
           <label>Gender:</label>
           <div />
-          <input type="text" onChange={event => this.onGenderChange(event)} />
+          <input
+            type="radio"
+            name="gender"
+            value="Male"
+            onChange={event => this.onGenderChange(event)}
+          />
+          Male
+          <input
+            type="radio"
+            name="gender"
+            value="Female"
+            onChange={event => this.onGenderChange(event)}
+          />
+          Female
           <div />
           <label>Gudian Contact Num:</label>
           <div />
