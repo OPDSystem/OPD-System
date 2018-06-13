@@ -515,6 +515,8 @@ var AddDescription = function (_Component) {
         key: 'propTypes',
         get: function get() {
             return {
+                addPatient: _propTypes2.default.func,
+                addIncome: _propTypes2.default.func,
                 Description: _propTypes2.default.string,
                 Unit: _propTypes2.default.number,
                 Price: _propTypes2.default.number,
@@ -533,6 +535,7 @@ var AddDescription = function (_Component) {
         var _this = _possibleConstructorReturn(this, (AddDescription.__proto__ || Object.getPrototypeOf(AddDescription)).call(this, props));
 
         _this.Totalamount = 0;
+
         return _this;
     }
 
@@ -572,6 +575,13 @@ var AddDescription = function (_Component) {
             this.date = event.target.value;
         }
     }, {
+        key: 'onChange',
+        value: function onChange(event) {
+            event.preventDefault();
+            event.stopPropagation();
+            this.date = event.target.value;
+        }
+    }, {
         key: 'onSubmit',
         value: function onSubmit(event) {
             event.preventDefault();
@@ -588,6 +598,14 @@ var AddDescription = function (_Component) {
             event.stopPropagation();
             this.name = this.name;
             this.date = this.date;
+        }
+    }, {
+        key: 'onPaySubmit',
+        value: function onPaySubmit(event) {
+            event.preventDefault();
+            event.stopPropagation();
+            this.props.addPatient({ name: this.name, date: this.date, Totalamount: this.Totalamount });
+            this.props.addIncome({ date: this.date, Totalamount: this.Totalamount });
         }
     }, {
         key: 'render',
@@ -712,6 +730,21 @@ var AddDescription = function (_Component) {
                         'Total Amount:',
                         this.Totalamount,
                         ' '
+                    )
+                ),
+                _react2.default.createElement(
+                    'div',
+                    { 'class': 'form' },
+                    _react2.default.createElement(
+                        'form',
+                        { onSubmit: function onSubmit(event) {
+                                return _this2.onPaySubmit(event);
+                            } },
+                        _react2.default.createElement(
+                            'button',
+                            { type: 'submit' },
+                            ' PAY '
+                        )
                     )
                 )
             );
@@ -914,6 +947,70 @@ var GetSubjects = function (_Component) {
 }(_react.Component);
 
 exports.default = GetSubjects;
+
+/***/ }),
+
+/***/ "./Invoice/PrintInvoice.jsx":
+/*!**********************************!*\
+  !*** ./Invoice/PrintInvoice.jsx ***!
+  \**********************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+
+var _react2 = _interopRequireDefault(_react);
+
+var _propTypes = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var PrintInvoice = function (_Component) {
+    _inherits(PrintInvoice, _Component);
+
+    function PrintInvoice(props) {
+        _classCallCheck(this, PrintInvoice);
+
+        return _possibleConstructorReturn(this, (PrintInvoice.__proto__ || Object.getPrototypeOf(PrintInvoice)).call(this, props));
+    }
+
+    _createClass(PrintInvoice, [{
+        key: 'render',
+        value: function render() {
+            return _react2.default.createElement(
+                'div',
+                null,
+                _react2.default.createElement(
+                    'h3',
+                    null,
+                    ' name:',
+                    this.props.name
+                )
+            );
+        }
+    }]);
+
+    return PrintInvoice;
+}(_react.Component);
+
+exports.default = PrintInvoice;
 
 /***/ }),
 
@@ -15063,6 +15160,14 @@ var _Descriptions = __webpack_require__(/*! ../Invoice/Descriptions */ "./Invoic
 
 var _Descriptions2 = _interopRequireDefault(_Descriptions);
 
+var _PrintInvoice = __webpack_require__(/*! ../Invoice/PrintInvoice */ "./Invoice/PrintInvoice.jsx");
+
+var _PrintInvoice2 = _interopRequireDefault(_PrintInvoice);
+
+var _axios = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+
+var _axios2 = _interopRequireDefault(_axios);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -15095,6 +15200,26 @@ var Invoice = function (_Component) {
             });
         }
     }, {
+        key: 'addPatient',
+        value: function addPatient(data) {
+            _axios2.default.post('http://localhost:8080/payment/customer', { name: data.name, date: data.date, amount: data.Totalamount }).then(function (result) {
+                if (result.status == 200) {
+
+                    console.log("ADDED Cus!!");
+                }
+            });
+        }
+    }, {
+        key: 'addIncome',
+        value: function addIncome(data) {
+            _axios2.default.post('http://localhost:8080/payment/income', { date: data.date, amount: data.Totalamount }).then(function (result) {
+                if (result.status == 200) {
+
+                    console.log("ADDED inc!!");
+                }
+            });
+        }
+    }, {
         key: 'render',
         value: function render() {
             var _this2 = this;
@@ -15109,8 +15234,13 @@ var Invoice = function (_Component) {
                 ),
                 _react2.default.createElement(_AddDescription2.default, { addDescrib: function addDescrib(data) {
                         return _this2.addDescrib(data);
+                    }, addPatient: function addPatient(data) {
+                        return _this2.addPatient(data);
+                    }, addIncome: function addIncome(data) {
+                        return _this2.addIncome(data);
                     } }),
-                _react2.default.createElement(_Descriptions2.default, { Recipt: this.state.Recipt })
+                _react2.default.createElement(_Descriptions2.default, { Recipt: this.state.Recipt }),
+                _react2.default.createElement(_PrintInvoice2.default, null)
             );
         }
     }]);
