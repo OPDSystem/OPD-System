@@ -19,7 +19,7 @@ router.get("/:id", function(request, response) {
     });
 });
 
-router.get("/:name", function(request, response) {
+router.get("/patientName/:name", function(request, response) {
     patientController.findPatient(request.params.name).then(function(data) {
         response.status(data.status).send({data: data.patientByName});
     }).catch(function(err) {
