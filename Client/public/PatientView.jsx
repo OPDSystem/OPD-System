@@ -23,7 +23,7 @@ export default class PatientView extends Component {
     }
 
     getOnePatient(id){
-
+        
     }
 
    	render() {
