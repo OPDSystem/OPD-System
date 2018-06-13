@@ -29,7 +29,7 @@ export default class GetSubjects extends Component {
 
         return <div class="table">
             <table>
-                <thead>
+                <tbody>
                 <tr>
                     <th>Description</th>
                     <th>Unit</th>
@@ -37,12 +37,9 @@ export default class GetSubjects extends Component {
                     <th>Total Unit Price</th>
 
                 </tr>
-                </thead>
-                <tbody>
                 {Recipt}
                 </tbody>
             </table>
-
         </div>;
     }
 

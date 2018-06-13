@@ -2,7 +2,7 @@ const mongoose = require("../DBSchema/DBConfig");
 const appointment = mongoose.model("appointment");
 
 var Controller = function() {
-    this.doctorconsult = function() {
+    this.doctorconsult = function(data) {
         return new Promise(function(resolve, reject){
             var appointmentdetails = new appointment({
                 id:data.id,
@@ -27,4 +27,37 @@ var Controller = function() {
             });
         });
     }
+
+    this.deleteappointment = function(id) {
+        return new Promise(function(resolve, reject) {
+            appointment.remove({id : id}).then(function(data) {
+                resolve({status: 200, message: "Successfully Deleted"});
+            }).catch(function(err) {
+                reject({status: 500, message: "Failed to delete Appointment" + err});
+            });
+        });
+    }
+
+    this.viewAppointment = function(id) {
+        return new Promise(function(resolve, reject) {
+            appointment.find({id: id}).exec().then(function(data) {
+                resolve({status: 200, appointmentdata: data});
+            }).catch(function(err) {
+                reject({status: 500, message: "Failed to search Appointment" + err});
+            })
+        })
+    }
+
+    this.findAllAppointment = function() {
+        return new Promise(function(resolve, reject) {
+            appointment.find().exec().then(function(data) {
+                resolve({status: 200, appointmentsdata: data});
+            }).catch(function(err) {
+                reject({status: 500, message: "Failed to search Appointments" + err});
+            });
+        });
+    }
+
 }
+
+module.exports = new Controller();

@@ -1,13 +1,13 @@
 'use strict';
 import React, {Component}   from 'react';
 import PropTypes            from 'prop-types';
-import Patient                 from './Patient';
+import Clinic                 from './Clinic';
 
 
-export default class Patients extends Component {
+export default class Clinics extends Component {
   static get propTypes() {
     return {
-      patients: PropTypes.array
+      clinics: PropTypes.array
     }
   }
 
@@ -20,24 +20,22 @@ export default class Patients extends Component {
   }
 
   render() {
-    this.patients = this.props.patients;
+    this.clinics = this.props.clinics;
     return <div class="table">
       <table>
         <thead>
           <tr>
             <th>ID</th>
-            <th>Name</th>
-            <th>Phone Num</th>
-            <th>Language</th>
-            <th>Age</th>
-            <th>Gender</th>
-            <th>Gudian PhoNum</th>
+            <th>DOCTOR</th>
+            <th>VISITING TIME</th>
+            <th>DATE</th>
+            <th>PATIENTS</th>
           </tr>
         </thead>
         <tbody>
           {
-              this.patients.map(data => {
-                  return <Patient key={data.id} patient={data} getOnePatient={() => this.props.getOnePatient()}/>
+              this.clinics.map(data => {
+                  return <Clinic key={data.id} clinic={data} getAllDoctors={() => this.props.getAllDoctors()}/>
               })
           }
         </tbody>

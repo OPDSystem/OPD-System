@@ -37,14 +37,11 @@ export default class SearchPatient extends Component{
         }
 
     render() {
-        return <div class="form">
+        return <div>
             <form onSubmit={event => this.onSubmit(event)}>
                 <div>
                 <label>Patient Name:</label>
-                </div>
-                 <div>   
                 <input type="text" onChange={event => this.onNameChange(event)}/>
-                <div />
                 <button type="Submit">Find</button>
                 </div>
             </form>
