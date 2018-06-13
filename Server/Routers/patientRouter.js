@@ -20,7 +20,7 @@ router.get("/:id", function(request, response) {
 });
 
 router.get("/patientName/:name", function(request, response) {
-    patientController.findPatient(request.params.name).then(function(data) {
+    patientController.findPatientByName(request.params.name).then(function(data) {
         response.status(data.status).send({data: data.patientByName});
     }).catch(function(err) {
         response.status(err.status).send({message: err.message});
