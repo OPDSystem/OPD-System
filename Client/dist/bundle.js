@@ -1685,7 +1685,7 @@ var Patients = function (_Component) {
   _inherits(Patients, _Component);
 
   _createClass(Patients, null, [{
-    key: 'propTypes',
+    key: "propTypes",
     get: function get() {
       return {
         patients: _propTypes2.default.array
@@ -1700,72 +1700,76 @@ var Patients = function (_Component) {
   }
 
   _createClass(Patients, [{
-    key: 'componentWillReceiveProps',
+    key: "componentWillReceiveProps",
     value: function componentWillReceiveProps(props) {
       this.setState(props);
     }
   }, {
-    key: 'render',
+    key: "render",
     value: function render() {
       var _this2 = this;
 
       this.patients = this.props.patients;
       return _react2.default.createElement(
-        'div',
-        { 'class': 'table' },
+        "div",
+        { "class": "table" },
         _react2.default.createElement(
-          'table',
+          "table",
           null,
           _react2.default.createElement(
-            'thead',
+            "thead",
             null,
             _react2.default.createElement(
-              'tr',
+              "tr",
               null,
               _react2.default.createElement(
-                'th',
+                "th",
                 null,
-                'ID'
+                "ID"
               ),
               _react2.default.createElement(
-                'th',
+                "th",
                 null,
-                'Name'
+                "Name"
               ),
               _react2.default.createElement(
-                'th',
+                "th",
                 null,
-                'Phone Num'
+                "Phone Num"
               ),
               _react2.default.createElement(
-                'th',
+                "th",
                 null,
-                'Language'
+                "Language"
               ),
               _react2.default.createElement(
-                'th',
+                "th",
                 null,
-                'Age'
+                "Age"
               ),
               _react2.default.createElement(
-                'th',
+                "th",
                 null,
-                'Gender'
+                "Gender"
               ),
               _react2.default.createElement(
-                'th',
+                "th",
                 null,
-                'Gudian PhoNum'
+                "Gudian PhoNum"
               )
             )
           ),
           _react2.default.createElement(
-            'tbody',
+            "tbody",
             null,
             this.patients.map(function (data) {
-              return _react2.default.createElement(_Patient2.default, { key: data.id, patient: data, getOnePatient: function getOnePatient() {
-                  return _this2.props.getOnePatient();
-                } });
+              return _react2.default.createElement(_Patient2.default, {
+                key: data.id,
+                patient: data,
+                getAllPatient: function getAllPatient() {
+                  return _this2.props.getAllPatient();
+                }
+              });
             })
           )
         )
@@ -15335,7 +15339,7 @@ exports.default = Patient;
 
 
 Object.defineProperty(exports, "__esModule", {
-    value: true
+  value: true
 });
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -15365,66 +15369,69 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 var PatientView = function (_Component) {
-    _inherits(PatientView, _Component);
+  _inherits(PatientView, _Component);
 
-    function PatientView(props) {
-        _classCallCheck(this, PatientView);
+  function PatientView(props) {
+    _classCallCheck(this, PatientView);
 
-        var _this = _possibleConstructorReturn(this, (PatientView.__proto__ || Object.getPrototypeOf(PatientView)).call(this, props));
+    var _this = _possibleConstructorReturn(this, (PatientView.__proto__ || Object.getPrototypeOf(PatientView)).call(this, props));
 
-        _this.state = {
-            patients: []
-        };
-        _this.getAllPatient();
-        return _this;
+    _this.state = {
+      patients: []
+    };
+    _this.getAllPatient();
+    return _this;
+  }
+
+  _createClass(PatientView, [{
+    key: "getAllPatient",
+    value: function getAllPatient() {
+      var _this2 = this;
+
+      _axios2.default.get("http://localhost:8080/patients/").then(function (res) {
+        _this2.setState({
+          patients: res.data.data
+        });
+      });
     }
+  }, {
+    key: "getOnePatient",
+    value: function getOnePatient(id) {
+      var _this3 = this;
 
-    _createClass(PatientView, [{
-        key: 'getAllPatient',
-        value: function getAllPatient() {
-            var _this2 = this;
+      _axios2.default.get("http://localhost:8080/patients/patientName/" + id).then(function (res) {
+        _this3.setState({
+          patients: res.data.data
+        });
+      });
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var _this4 = this;
 
-            _axios2.default.get('http://localhost:8080/patients/').then(function (res) {
-                _this2.setState({
-                    patients: res.data.data
-                });
-            });
-        }
-    }, {
-        key: 'getOnePatient',
-        value: function getOnePatient(id) {
-            var _this3 = this;
+      return _react2.default.createElement(
+        "div",
+        null,
+        _react2.default.createElement(
+          "h2",
+          null,
+          "PATIENT VIEW"
+        ),
+        _react2.default.createElement(_SearchPatient2.default, { getOnePatient: function getOnePatient(id) {
+            return _this4.getOnePatient(id);
+          } }),
+        _react2.default.createElement(_Patients2.default, {
+          patients: this.state.patients,
+          getAllPatient: function getAllPatient() {
+            return _this4.getAllPatient();
+          }
+        })
+      );
+    }
+  }]);
 
-            _axios2.default.get('http://localhost:8080/patients/patientName/' + id).then(function (res) {
-                _this3.setState({
-                    patients: res.data.data
-                });
-            });
-        }
-    }, {
-        key: 'render',
-        value: function render() {
-            var _this4 = this;
-
-            return _react2.default.createElement(
-                'div',
-                null,
-                _react2.default.createElement(
-                    'h2',
-                    null,
-                    'PATIENT VIEW'
-                ),
-                _react2.default.createElement(_SearchPatient2.default, { getOnePatient: function getOnePatient(id) {
-                        return _this4.getOnePatient(id);
-                    } }),
-                _react2.default.createElement(_Patients2.default, { patients: this.state.patients, getOnePatient: function getOnePatient() {
-                        return _this4.getOnePatient();
-                    } })
-            );
-        }
-    }]);
-
-    return PatientView;
+  return PatientView;
 }(_react.Component);
 
 exports.default = PatientView;
