@@ -4,7 +4,7 @@ const clinic = mongoose.model("clinic");
 var Controller = function() {
     this.assigndoctor = function() {
         return new Promise(function(resolve, reject){
-            var clinic = new clinicdetails({
+            var clinicdetails = new clinic({
                 id:data.id,
                 doctor:data.doctor,
                 time:data.time,

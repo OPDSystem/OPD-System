@@ -89,7 +89,7 @@ var clinicschema= new Schema({
     patients:[String]
 })
 
-var description= new Schema({
+var appointmentschema= new Schema({
     
     id: {
         type: String, 
@@ -102,7 +102,11 @@ var description= new Schema({
    consult:{
        type:boolean,
        require:true
-   }*/
+   }*/,
+   doctor:{
+       type:String,
+       require:true
+   }
     
 })
 
@@ -137,7 +141,7 @@ Mongoose.model('Customer',CustomerSchema);
 Mongoose.model('Income', IncomeSchema);
 Mongoose.model('clinic',clinicschema);
 Mongoose.model('Quessionnaire',questionnaireSchema);
-Mongoose.model('Queue',description);
+Mongoose.model('appointment',appointmentschema);
 
 Mongoose.connect('mongodb://127.0.0.1:27017/OPD', function (err) {
     if(err)

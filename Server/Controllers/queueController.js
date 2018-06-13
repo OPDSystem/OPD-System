@@ -1,7 +1,7 @@
 const mongoose = require("../DBSchema/DBConfig");
 const clinic = mongoose.model("clinic");
 const patientDetails= mongoose.model("patientDetails");
-const description= mongoose.model("Queue");
+const description= mongoose.model("appointment");
 
 var Controller= function(){
     this.viewQueue = function (id) {
@@ -22,7 +22,7 @@ var Controller= function(){
     this.getDescription=function(id){
         return new Promise(function (resolve, reject) {
             clinic.find({id:id}).exec().then(function (data) {
-                description.find({id:{$in:data[0].id}}).exec().then(function (data) {
+                appointmentschema.find({id:{$in:data[0].id}}).exec().then(function (data) {
                     resolve({status: 200, message: "Successfully displaying my queue description"});
                 }).catch(function (reason) {
                     reject({status: 404, message: "Error" + reason});
