@@ -9,9 +9,12 @@ import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
 import Income from './Income';
 import Invoice from './Invoice';
 import Paymentdetails from './Paymentdetails';
-import Patient   from './Patient'
-import PatientView  from './PatientView'
-
+import Patient   from './Patient';
+import PatientView  from './PatientView';
+import AppointmentView from './AppointmentView';
+import Appointment from './Appointment';
+import ClinicView from './ClinicView';
+import Clinic from './Clinic'
 
 export default class AppContainer extends Component {
     constructor(props) {
@@ -43,6 +46,18 @@ export default class AppContainer extends Component {
                         <div className="col-sm">
                             <Link to="/PatientView">Patient View</Link>
                         </div>
+                        <div className="col-sm">
+                            <Link to="/AppointmentView">Appointment View</Link>
+                        </div>
+                        <div className="col-sm">
+                            <Link to="/Appointment">Add Appointment</Link>
+                        </div>
+                        <div className="col-sm">
+                            <Link to="/ClinicView">Clinic View</Link>
+                        </div>
+                        <div className="col-sm">
+                            <Link to="/Clinic">Add Doctors to Clinic</Link>
+                        </div>
                     </div>
                     <Route exact path="/Invoice" render={props => {
                         return <Invoice/>
@@ -58,6 +73,18 @@ export default class AppContainer extends Component {
                     }}/>
                     <Route path="/PatientView" render={props => {
                         return <PatientView/>
+                    }}/>
+                    <Route path="/AppointmentView" render={props => {
+                        return <AppointmentView/>
+                    }}/>
+                    <Route path="/Appointment" render={props => {
+                        return <Appointment/>
+                    }}/>
+                    <Route path="/ClinicView" render={props => {
+                        return <ClinicView/>
+                    }}/>
+                    <Route path="/Clinic" render={props => {
+                        return <Clinic/>
                     }}/>
                 </div>
             </Router>
