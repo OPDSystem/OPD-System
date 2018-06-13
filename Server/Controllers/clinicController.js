@@ -4,7 +4,9 @@ const clinic = mongoose.model("clinic");
 var Controller = function() {
     this.assigndoctor = function(data) {
         return new Promise(function(resolve, reject){
-            var clinicd = new clinic({
+
+            var clinicdetails = new clinic({
+
                 id:data.id,
                 doctor:data.doctor,
                 time:data.time,
@@ -12,7 +14,7 @@ var Controller = function() {
                 patients:data.patients
             });
 
-            clinicd.save().then(function(data) {
+            clinicdetails.save().then(function(data) {
                 resolve({status: 200, message: "Successfully Added"});
             }).catch(function(err) {
                 reject({status: 500, message: "Failed to assign doctor" + err});
