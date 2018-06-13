@@ -20,9 +20,18 @@ router.post('/income',function(req,res){
 
 });
 
-router.get('/customer/:id',function (req,res) {
-    Controller.GetCustomerPayment(req.params.id).then(function (data) {
+router.get('/customer/:name',function (req,res) {
+    Controller.GetCustomerPayment(req.params.name).then(function (data) {
         res.status(data.status).send({data:data.customerdata});
+    }).catch(function (err) {
+        res.status(err.status).send({message: err.message});
+    })
+
+});
+
+router.get('/customer/',function (req,res) {
+    Controller.GetAllCustomerPayment().then(function (data) {
+        res.status(data.status).send({data:data.allcustomerdata});
     }).catch(function (err) {
         res.status(err.status).send({message: err.message});
     })
