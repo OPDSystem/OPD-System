@@ -9,8 +9,7 @@ var Controller = function(){
                 id:data.id,
                 name:data.name,
                 date:data.date,
-                amount:data.amount,
-                description:data.description
+                amount:data.amount
             });
             Customer.save().then(function () {
                 resolve({status:200,message:"Payment Details Insert successfully"});
