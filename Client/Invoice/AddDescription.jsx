@@ -7,13 +7,15 @@ import PropTypes 			from "prop-types"
 export default class AddDescription extends Component{
     static get propTypes() {
         return {
+            addPatient:PropTypes.func,
+            addIncome:PropTypes.func,
             Description: PropTypes.string,
             Unit: PropTypes.number,
             Price: PropTypes.number,
             Total:PropTypes.number,
             Totalamount:PropTypes.number,
             name:PropTypes.string,
-            data:PropTypes.string
+            data:PropTypes.string,
 
         }
     }
@@ -21,6 +23,7 @@ export default class AddDescription extends Component{
     constructor(props) {
         super(props);
         this.Totalamount =0;
+        
     }
 
     onDescriptionChange(event) {
@@ -53,6 +56,12 @@ export default class AddDescription extends Component{
         this.date = event.target.value;
     }
 
+    onChange(event) {
+        event.preventDefault();
+        event.stopPropagation();
+        this.date = event.target.value;
+    }
+
     onSubmit(event) {
         event.preventDefault();
         event.stopPropagation();
@@ -70,6 +79,14 @@ export default class AddDescription extends Component{
             this.date = this.date;
                 
             }
+
+            onPaySubmit(event) {
+                event.preventDefault();
+                event.stopPropagation();
+                this.props.addPatient({name:this.name,date:this.date,Totalamount:this.Totalamount});
+                this.props.addIncome({date:this.date,Totalamount:this.Totalamount});
+                    
+                }
 
     render() {
         return <div >
@@ -114,6 +131,11 @@ export default class AddDescription extends Component{
             <h4>Name        :{this.name}</h4>
             <h4>Date        :{this.date}</h4>
             <h4>Total Amount:{this.Totalamount} </h4>
+            </div>
+            <div class ="form">
+            <form onSubmit={event => this.onPaySubmit(event)}>
+            <button type ="submit"> PAY </button>
+            </form>
             </div>
         </div>;
     }
