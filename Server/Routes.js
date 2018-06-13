@@ -8,7 +8,7 @@ var clinicRoute=require('./Routers/clinicRouter');
 
 Routes.use('/payment/',PaymentRoute);
 Routes.use('/patients/',patientRouter);
-Routes.use('/Questionnaire/',QuestionnaireRoute);
+Routes.use('/questionnaire/',QuestionnaireRoute);
 Routes.use('/queue/',QueueRoute);
 Routes.use('/clinic/',clinicRoute);
 

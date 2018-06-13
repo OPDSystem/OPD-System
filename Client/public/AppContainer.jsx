@@ -10,6 +10,7 @@ import Income from './Income';
 import Invoice from './Invoice';
 import Paymentdetails from './Paymentdetails';
 import Patient   from './Patient'
+import Questionnaire from './Questionnaire';
 
 
 export default class AppContainer extends Component {
@@ -39,6 +40,9 @@ export default class AppContainer extends Component {
                         <div className="col-sm">
                             <Link to="/Patient">Patient</Link>
                         </div>
+                        <div className="col-sm">
+                            <Link to="/Questionnaire">Questionnaire</Link>
+                        </div>
                     </div>
                     <Route exact path="/Invoice" render={props => {
                         return <Invoice/>
@@ -51,6 +55,9 @@ export default class AppContainer extends Component {
                     }}/>
                     <Route path="/Patient" render={props => {
                         return <Patient/>
+                    }}/>
+                    <Route path="/Questionnaire" render={props => {
+                        return <Questionnaire/>
                     }}/>
                 </div>
             </Router>

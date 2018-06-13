@@ -1308,6 +1308,498 @@ exports.default = Patients;
 
 /***/ }),
 
+/***/ "./Questionnaire/AddQuestionnaire.jsx":
+/*!********************************************!*\
+  !*** ./Questionnaire/AddQuestionnaire.jsx ***!
+  \********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+
+var _react2 = _interopRequireDefault(_react);
+
+var _propTypes = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var AddQuestionnaire = function (_Component) {
+    _inherits(AddQuestionnaire, _Component);
+
+    _createClass(AddQuestionnaire, null, [{
+        key: 'propTypes',
+        get: function get() {
+            return {
+                addQuestionnaire: _propTypes2.default.func,
+                id: _propTypes2.default.string,
+                question: _propTypes2.default.string,
+                answer1: _propTypes2.default.string,
+                answer2: _propTypes2.default.string,
+                answer3: _propTypes2.default.string,
+                answer4: _propTypes2.default.string,
+                answer5: _propTypes2.default.string
+            };
+        }
+    }]);
+
+    function AddQuestionnaire(props) {
+        _classCallCheck(this, AddQuestionnaire);
+
+        return _possibleConstructorReturn(this, (AddQuestionnaire.__proto__ || Object.getPrototypeOf(AddQuestionnaire)).call(this, props));
+    }
+
+    _createClass(AddQuestionnaire, [{
+        key: 'onIdChange',
+        value: function onIdChange(event) {
+            event.preventDefault();
+            event.stopPropagation();
+            this.id = event.target.value;
+        }
+    }, {
+        key: 'onQuestionChange',
+        value: function onQuestionChange(event) {
+            event.preventDefault();
+            event.stopPropagation();
+            this.question = event.target.value;
+        }
+    }, {
+        key: 'onAnswer1Change',
+        value: function onAnswer1Change(event) {
+            event.preventDefault();
+            event.stopPropagation();
+            this.answer1 = event.target.value;
+        }
+    }, {
+        key: 'onAnswer2Change',
+        value: function onAnswer2Change(event) {
+            event.preventDefault();
+            event.stopPropagation();
+            this.answer2 = event.target.value;
+        }
+    }, {
+        key: 'onAnswer3Change',
+        value: function onAnswer3Change(event) {
+            event.preventDefault();
+            event.stopPropagation();
+            this.answer3 = event.target.value;
+        }
+    }, {
+        key: 'onAnswer4Change',
+        value: function onAnswer4Change(event) {
+            event.preventDefault();
+            event.stopPropagation();
+            this.answer4 = event.target.value;
+        }
+    }, {
+        key: 'onAnswer5Change',
+        value: function onAnswer5Change(event) {
+            event.preventDefault();
+            event.stopPropagation();
+            this.answer5 = event.target.value;
+        }
+    }, {
+        key: 'onSubmit',
+        value: function onSubmit(event) {
+            event.preventDefault();
+            event.stopPropagation();
+
+            this.props.addQuestionnaire({ id: this.id, question: this.question, answer1: this.answer1, answer2: this.answer2, answer3: this.answer3, answer4: this.answer4, answer5: this.answer5 });
+        }
+    }, {
+        key: 'render',
+        value: function render() {
+            var _this2 = this;
+
+            return _react2.default.createElement(
+                'div',
+                null,
+                _react2.default.createElement(
+                    'form',
+                    { onSubmit: function onSubmit(event) {
+                            return _this2.onSubmit(event);
+                        } },
+                    _react2.default.createElement(
+                        'label',
+                        null,
+                        'id:'
+                    ),
+                    _react2.default.createElement('input', { type: 'text', onChange: function onChange(event) {
+                            return _this2.onIdChange(event);
+                        } }),
+                    _react2.default.createElement(
+                        'label',
+                        null,
+                        'Question:'
+                    ),
+                    _react2.default.createElement('input', { type: 'text', onChange: function onChange(event) {
+                            return _this2.onQuestionChange(event);
+                        } }),
+                    _react2.default.createElement(
+                        'label',
+                        null,
+                        'Answer 1:'
+                    ),
+                    _react2.default.createElement('input', { type: 'text', onChange: function onChange(event) {
+                            return _this2.onAnswer1Change(event);
+                        } }),
+                    _react2.default.createElement(
+                        'label',
+                        null,
+                        'Answer 2:'
+                    ),
+                    _react2.default.createElement('input', { type: 'text', onChange: function onChange(event) {
+                            return _this2.onAnswer2Change(event);
+                        } }),
+                    _react2.default.createElement(
+                        'label',
+                        null,
+                        'Answer 3:'
+                    ),
+                    _react2.default.createElement('input', { type: 'text', onChange: function onChange(event) {
+                            return _this2.onAnswer3Change(event);
+                        } }),
+                    _react2.default.createElement(
+                        'label',
+                        null,
+                        'Answer 4:'
+                    ),
+                    _react2.default.createElement('input', { type: 'text', onChange: function onChange(event) {
+                            return _this2.onAnswer4Change(event);
+                        } }),
+                    _react2.default.createElement(
+                        'label',
+                        null,
+                        'Answer 5:'
+                    ),
+                    _react2.default.createElement('input', { type: 'text', onChange: function onChange(event) {
+                            return _this2.onAnswer5Change(event);
+                        } }),
+                    _react2.default.createElement(
+                        'button',
+                        { type: 'submit' },
+                        'Add Questionnaire'
+                    )
+                )
+            );
+        }
+    }]);
+
+    return AddQuestionnaire;
+}(_react.Component);
+
+exports.default = AddQuestionnaire;
+
+/***/ }),
+
+/***/ "./Questionnaire/Questionnaire.jsx":
+/*!*****************************************!*\
+  !*** ./Questionnaire/Questionnaire.jsx ***!
+  \*****************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+
+var _react2 = _interopRequireDefault(_react);
+
+var _propTypes = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+var _axios = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+
+var _axios2 = _interopRequireDefault(_axios);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Questionnaire = function (_Component) {
+    _inherits(Questionnaire, _Component);
+
+    _createClass(Questionnaire, null, [{
+        key: 'propTypes',
+        get: function get() {
+            return {
+                questionnaire: _propTypes2.default.object,
+                getAllQuestionnaire: _propTypes2.default.func
+
+            };
+        }
+    }]);
+
+    function Questionnaire(props) {
+        _classCallCheck(this, Questionnaire);
+
+        var _this = _possibleConstructorReturn(this, (Questionnaire.__proto__ || Object.getPrototypeOf(Questionnaire)).call(this, props));
+
+        _this.questionnaire = _this.props.questionnaire;
+        _this.getAllQuestionnaire = _this.props.getAllQuestionnaire;
+        return _this;
+    }
+
+    _createClass(Questionnaire, [{
+        key: 'update',
+        value: function update(id, question, answer1, answer2, answer3, answer4, answer5) {
+            var _this2 = this;
+
+            var updatedquestion = prompt("Please enter updated question:", question);
+            var updatedanswer1 = prompt("Please enter updated answer 1:", answer1);
+            var updatedanswer2 = prompt("Please enter updated answer 2:", answer2);
+            var updatedanswer3 = prompt("Please enter updated answer 3:", answer3);
+            var updatedanswer4 = prompt("Please enter updated answer 4:", answer4);
+            var updatedanswer5 = prompt("Please enter updated answer 5:", answer5);
+            _axios2.default.put('http://localhost:8080/Quessionnaire/' + id, { question: updatedquestion, answer1: updatedanswer1, answer2: updatedanswer2, answer3: updatedanswer3, answer4: updatedanswer4, answer5: updatedanswer5 }).then(function (results) {
+                if (results.status == 200) {
+                    _this2.getAllQuestionnaire();
+                }
+            });
+        }
+    }, {
+        key: 'delete',
+        value: function _delete(id) {
+            var _this3 = this;
+
+            _axios2.default.delete('http://localhost:8080/Quessionnaire/' + id).then(function (results) {
+                if (results.status == 200) {
+                    _this3.getAllQuestionnaire();
+                }
+            });
+        }
+    }, {
+        key: 'render',
+        value: function render() {
+            var _this4 = this;
+
+            return _react2.default.createElement(
+                'tr',
+                null,
+                _react2.default.createElement(
+                    'td',
+                    null,
+                    this.questionnaire._id
+                ),
+                _react2.default.createElement(
+                    'td',
+                    null,
+                    this.questionnaire.question
+                ),
+                _react2.default.createElement(
+                    'td',
+                    null,
+                    this.questionnaire.answer1
+                ),
+                _react2.default.createElement(
+                    'td',
+                    null,
+                    this.questionnaire.answer2
+                ),
+                _react2.default.createElement(
+                    'td',
+                    null,
+                    this.questionnaire.answer3
+                ),
+                _react2.default.createElement(
+                    'td',
+                    null,
+                    this.questionnaire.answer4
+                ),
+                _react2.default.createElement(
+                    'td',
+                    null,
+                    this.questionnaire.answer5
+                ),
+                _react2.default.createElement(
+                    'button',
+                    { onClick: function onClick(e) {
+                            return _this4.update(_this4.questionnaire.id, _this4.questionnaire.question, _this4.questionnaire.answer1, _this4.questionnaire.answer2, _this4.questionnaire.answer3, _this4.questionnaire.answer4, _this4.questionnaire.answer5);
+                        } },
+                    'Update'
+                ),
+                '\xA0',
+                _react2.default.createElement(
+                    'button',
+                    { onClick: function onClick(e) {
+                            return _this4.delete(_this4.questionnaire.id);
+                        } },
+                    'Delete'
+                )
+            );
+        }
+    }]);
+
+    return Questionnaire;
+}(_react.Component);
+
+exports.default = Questionnaire;
+
+/***/ }),
+
+/***/ "./Questionnaire/Questionnaires.jsx":
+/*!******************************************!*\
+  !*** ./Questionnaire/Questionnaires.jsx ***!
+  \******************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+
+var _react2 = _interopRequireDefault(_react);
+
+var _propTypes = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+var _Questionnaire = __webpack_require__(/*! ./Questionnaire */ "./Questionnaire/Questionnaire.jsx");
+
+var _Questionnaire2 = _interopRequireDefault(_Questionnaire);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Questionnaires = function (_Component) {
+  _inherits(Questionnaires, _Component);
+
+  _createClass(Questionnaires, null, [{
+    key: 'propTypes',
+    get: function get() {
+      return {
+        questionnaires: _propTypes2.default.array
+      };
+    }
+  }]);
+
+  function Questionnaires(props) {
+    _classCallCheck(this, Questionnaires);
+
+    return _possibleConstructorReturn(this, (Questionnaires.__proto__ || Object.getPrototypeOf(Questionnaires)).call(this, props));
+  }
+
+  _createClass(Questionnaires, [{
+    key: 'componentWillReceiveProps',
+    value: function componentWillReceiveProps(props) {
+      this.setState(props);
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      var _this2 = this;
+
+      this.questionnaires = this.props.questionnaires;
+      return _react2.default.createElement(
+        'div',
+        null,
+        _react2.default.createElement(
+          'table',
+          null,
+          _react2.default.createElement(
+            'thead',
+            null,
+            _react2.default.createElement(
+              'tr',
+              null,
+              _react2.default.createElement(
+                'th',
+                null,
+                'QUE ID'
+              ),
+              _react2.default.createElement(
+                'th',
+                null,
+                'QUESTIONS'
+              ),
+              _react2.default.createElement(
+                'th',
+                null,
+                'ANSWER 1'
+              ),
+              _react2.default.createElement(
+                'th',
+                null,
+                'ANSWER 2'
+              ),
+              _react2.default.createElement(
+                'th',
+                null,
+                'ANSWER 3'
+              ),
+              _react2.default.createElement(
+                'th',
+                null,
+                'ANSWER 4'
+              ),
+              _react2.default.createElement(
+                'th',
+                null,
+                'ANSWER 5'
+              )
+            )
+          ),
+          _react2.default.createElement(
+            'tbody',
+            null,
+            this.questionnaires.map(function (data) {
+              return _react2.default.createElement(_Questionnaire2.default, { key: data.id, questionnaire: data, getAllQuestionnaire: function getAllQuestionnaire() {
+                  return _this2.props.getAllQuestionnaire();
+                } });
+            })
+          )
+        )
+      );
+    }
+  }]);
+
+  return Questionnaires;
+}(_react.Component);
+
+exports.default = Questionnaires;
+
+/***/ }),
+
 /***/ "./node_modules/axios/index.js":
 /*!*************************************!*\
   !*** ./node_modules/axios/index.js ***!
@@ -14286,6 +14778,10 @@ var _Patient = __webpack_require__(/*! ./Patient */ "./public/Patient.jsx");
 
 var _Patient2 = _interopRequireDefault(_Patient);
 
+var _Questionnaire = __webpack_require__(/*! ./Questionnaire */ "./public/Questionnaire.jsx");
+
+var _Questionnaire2 = _interopRequireDefault(_Questionnaire);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -14361,6 +14857,15 @@ var AppContainer = function (_Component) {
                                         { to: '/Patient' },
                                         'Patient'
                                     )
+                                ),
+                                _react2.default.createElement(
+                                    'div',
+                                    { className: 'col-sm' },
+                                    _react2.default.createElement(
+                                        _reactRouterDom.Link,
+                                        { to: '/Questionnaire' },
+                                        'Questionnaire'
+                                    )
                                 )
                             ),
                             _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/Invoice', render: function render(props) {
@@ -14374,6 +14879,9 @@ var AppContainer = function (_Component) {
                                 } }),
                             _react2.default.createElement(_reactRouterDom.Route, { path: '/Patient', render: function render(props) {
                                     return _react2.default.createElement(_Patient2.default, null);
+                                } }),
+                            _react2.default.createElement(_reactRouterDom.Route, { path: '/Questionnaire', render: function render(props) {
+                                    return _react2.default.createElement(_Questionnaire2.default, null);
                                 } })
                         )
                     )
@@ -14769,6 +15277,116 @@ var Paymentdetails = function (_Component) {
 }(_react.Component);
 
 exports.default = Paymentdetails;
+
+/***/ }),
+
+/***/ "./public/Questionnaire.jsx":
+/*!**********************************!*\
+  !*** ./public/Questionnaire.jsx ***!
+  \**********************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+
+var _react2 = _interopRequireDefault(_react);
+
+var _axios = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+
+var _axios2 = _interopRequireDefault(_axios);
+
+var _AddQuestionnaire = __webpack_require__(/*! ../Questionnaire/AddQuestionnaire */ "./Questionnaire/AddQuestionnaire.jsx");
+
+var _AddQuestionnaire2 = _interopRequireDefault(_AddQuestionnaire);
+
+var _Questionnaires = __webpack_require__(/*! ../Questionnaire/Questionnaires */ "./Questionnaire/Questionnaires.jsx");
+
+var _Questionnaires2 = _interopRequireDefault(_Questionnaires);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Quessionnaire = function (_Component) {
+    _inherits(Quessionnaire, _Component);
+
+    function Quessionnaire(props) {
+        _classCallCheck(this, Quessionnaire);
+
+        var _this = _possibleConstructorReturn(this, (Quessionnaire.__proto__ || Object.getPrototypeOf(Quessionnaire)).call(this, props));
+
+        _this.state = {
+            questionnaires: []
+        };
+        _this.getAllQuestionnaire();
+        return _this;
+    }
+
+    _createClass(Quessionnaire, [{
+        key: 'getAllQuestionnaire',
+        value: function getAllQuestionnaire() {
+            var _this2 = this;
+
+            _axios2.default.get('http://localhost:8080/Questionnaire/').then(function (res) {
+                _this2.setState({
+                    questionnaires: res.data.data
+                });
+            });
+        }
+    }, {
+        key: 'addQuestionnaire',
+        value: function addQuestionnaire(data) {
+            var _this3 = this;
+
+            _axios2.default.post('http://localhost:8080/Questionnaire/', { id: data.id, question: data.question, answer1: data.answer1, answer2: data.answer2, answer3: data.answer3, answer4: data.answer4, answer5: data.answer5 }).then(function (result) {
+                if (result.status == 200) {
+                    _this3.getAllQuestionnaire();
+                    console.log("ADDED Questionnaire!!");
+                }
+            }).catch(function (err) {
+                alert(err);
+            });
+        }
+    }, {
+        key: 'render',
+        value: function render() {
+            var _this4 = this;
+
+            return _react2.default.createElement(
+                'div',
+                null,
+                _react2.default.createElement(
+                    'h2',
+                    null,
+                    'Add Questionnaire'
+                ),
+                _react2.default.createElement(_AddQuestionnaire2.default, { addQuestionnaire: function addQuestionnaire(data) {
+                        return _this4.addQuestionnaire(data);
+                    } }),
+                _react2.default.createElement(_Questionnaires2.default, { questionnaires: this.state.questionnaires, getAllQuestionnaire: function getAllQuestionnaire() {
+                        return _this4.getAllQuestionnaire();
+                    } })
+            );
+        }
+    }]);
+
+    return Quessionnaire;
+}(_react.Component);
+
+exports.default = Quessionnaire;
 
 /***/ }),
 
