@@ -928,7 +928,7 @@ exports.default = GetSubjects;
 
 
 Object.defineProperty(exports, "__esModule", {
-    value: true
+  value: true
 });
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -950,167 +950,228 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 var AddPatient = function (_Component) {
-    _inherits(AddPatient, _Component);
+  _inherits(AddPatient, _Component);
 
-    _createClass(AddPatient, null, [{
-        key: 'propTypes',
-        get: function get() {
-            return {
-                addPatient: _propTypes2.default.func,
-                id: _propTypes2.default.string,
-                name: _propTypes2.default.string,
-                contactnum: _propTypes2.default.number,
-                language: _propTypes2.default.string,
-                Age: _propTypes2.default.number,
-                gender: _propTypes2.default.string,
-                gadcontactnum: _propTypes2.default.number
-            };
-        }
-    }]);
-
-    function AddPatient(props) {
-        _classCallCheck(this, AddPatient);
-
-        return _possibleConstructorReturn(this, (AddPatient.__proto__ || Object.getPrototypeOf(AddPatient)).call(this, props));
+  _createClass(AddPatient, null, [{
+    key: "propTypes",
+    get: function get() {
+      return {
+        addPatient: _propTypes2.default.func,
+        id: _propTypes2.default.string,
+        name: _propTypes2.default.string,
+        contactnum: _propTypes2.default.number,
+        language: _propTypes2.default.string,
+        Age: _propTypes2.default.number,
+        gender: _propTypes2.default.string,
+        gadcontactnum: _propTypes2.default.number
+      };
     }
+  }]);
 
-    _createClass(AddPatient, [{
-        key: 'onIdChange',
-        value: function onIdChange(event) {
-            event.preventDefault();
-            event.stopPropagation();
-            this.id = event.target.value;
-        }
-    }, {
-        key: 'onPhoNumChange',
-        value: function onPhoNumChange(event) {
-            event.preventDefault();
-            event.stopPropagation();
-            this.contactnum = event.target.value;
-        }
-    }, {
-        key: 'onNameChange',
-        value: function onNameChange(event) {
-            event.preventDefault();
-            event.stopPropagation();
-            this.name = event.target.value;
-        }
-    }, {
-        key: 'onLanguageChange',
-        value: function onLanguageChange(event) {
-            event.preventDefault();
-            event.stopPropagation();
-            this.language = event.target.value;
-        }
-    }, {
-        key: 'onAgeChange',
-        value: function onAgeChange(event) {
-            event.preventDefault();
-            event.stopPropagation();
-            this.Age = event.target.value;
-        }
-    }, {
-        key: 'onGenderChange',
-        value: function onGenderChange(event) {
-            event.preventDefault();
-            event.stopPropagation();
-            this.gender = event.target.value;
-        }
-    }, {
-        key: 'onGPhoNumChange',
-        value: function onGPhoNumChange(event) {
-            event.preventDefault();
-            event.stopPropagation();
-            this.gadcontactnum = event.target.value;
-        }
-    }, {
-        key: 'onSubmit',
-        value: function onSubmit(event) {
-            event.preventDefault();
-            event.stopPropagation();
+  function AddPatient(props) {
+    _classCallCheck(this, AddPatient);
 
-            this.props.addPatient({ id: this.id, name: this.name, contactnum: this.contactnum, language: this.language, Age: this.Age, gender: this.gender, gadcontactnum: this.gadcontactnum });
-        }
-    }, {
-        key: 'render',
-        value: function render() {
-            var _this2 = this;
+    return _possibleConstructorReturn(this, (AddPatient.__proto__ || Object.getPrototypeOf(AddPatient)).call(this, props));
+  }
 
-            return _react2.default.createElement(
-                'div',
-                null,
-                _react2.default.createElement(
-                    'form',
-                    { onSubmit: function onSubmit(event) {
-                            return _this2.onSubmit(event);
-                        } },
-                    _react2.default.createElement(
-                        'label',
-                        null,
-                        'id:'
-                    ),
-                    _react2.default.createElement('input', { type: 'text', onChange: function onChange(event) {
-                            return _this2.onIdChange(event);
-                        } }),
-                    _react2.default.createElement(
-                        'label',
-                        null,
-                        'Name:'
-                    ),
-                    _react2.default.createElement('input', { type: 'text', onChange: function onChange(event) {
-                            return _this2.onNameChange(event);
-                        } }),
-                    _react2.default.createElement(
-                        'label',
-                        null,
-                        'Phone Num:'
-                    ),
-                    _react2.default.createElement('input', { type: 'text', onChange: function onChange(event) {
-                            return _this2.onPhoNumChange(event);
-                        } }),
-                    _react2.default.createElement(
-                        'label',
-                        null,
-                        'Language:'
-                    ),
-                    _react2.default.createElement('input', { type: 'text', onChange: function onChange(event) {
-                            return _this2.onLanguageChange(event);
-                        } }),
-                    _react2.default.createElement(
-                        'label',
-                        null,
-                        'Age:'
-                    ),
-                    _react2.default.createElement('input', { type: 'text', onChange: function onChange(event) {
-                            return _this2.onAgeChange(event);
-                        } }),
-                    _react2.default.createElement(
-                        'label',
-                        null,
-                        'Gender:'
-                    ),
-                    _react2.default.createElement('input', { type: 'text', onChange: function onChange(event) {
-                            return _this2.onGenderChange(event);
-                        } }),
-                    _react2.default.createElement(
-                        'label',
-                        null,
-                        'Gudian Contact Num:'
-                    ),
-                    _react2.default.createElement('input', { type: 'text', onChange: function onChange(event) {
-                            return _this2.onGPhoNumChange(event);
-                        } }),
-                    _react2.default.createElement(
-                        'button',
-                        { type: 'submit' },
-                        'Add'
-                    )
-                )
-            );
-        }
-    }]);
+  _createClass(AddPatient, [{
+    key: "onIdChange",
+    value: function onIdChange(event) {
+      event.preventDefault();
+      event.stopPropagation();
+      this.id = event.target.value;
+    }
+  }, {
+    key: "onPhoNumChange",
+    value: function onPhoNumChange(event) {
+      event.preventDefault();
+      event.stopPropagation();
+      this.contactnum = event.target.value;
+    }
+  }, {
+    key: "onNameChange",
+    value: function onNameChange(event) {
+      event.preventDefault();
+      event.stopPropagation();
+      this.name = event.target.value;
+    }
+  }, {
+    key: "onLanguageChange",
+    value: function onLanguageChange(event) {
+      event.preventDefault();
+      event.stopPropagation();
+      this.language = event.target.value;
+    }
+  }, {
+    key: "onAgeChange",
+    value: function onAgeChange(event) {
+      event.preventDefault();
+      event.stopPropagation();
+      this.Age = event.target.value;
+    }
+  }, {
+    key: "onGenderChange",
+    value: function onGenderChange(event) {
+      event.preventDefault();
+      event.stopPropagation();
+      this.gender = event.target.value;
+    }
+  }, {
+    key: "onGPhoNumChange",
+    value: function onGPhoNumChange(event) {
+      event.preventDefault();
+      event.stopPropagation();
+      this.gadcontactnum = event.target.value;
+    }
+  }, {
+    key: "onSubmit",
+    value: function onSubmit(event) {
+      event.preventDefault();
+      event.stopPropagation();
 
-    return AddPatient;
+      this.props.addPatient({
+        id: this.id,
+        name: this.name,
+        contactnum: this.contactnum,
+        language: this.language,
+        Age: this.Age,
+        gender: this.gender,
+        gadcontactnum: this.gadcontactnum
+      });
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var _this2 = this;
+
+      return _react2.default.createElement(
+        "div",
+        { "class": "form" },
+        _react2.default.createElement(
+          "form",
+          { onSubmit: function onSubmit(event) {
+              return _this2.onSubmit(event);
+            } },
+          _react2.default.createElement(
+            "label",
+            null,
+            "id:"
+          ),
+          _react2.default.createElement("div", null),
+          _react2.default.createElement("input", { type: "text", onChange: function onChange(event) {
+              return _this2.onIdChange(event);
+            } }),
+          _react2.default.createElement("div", null),
+          _react2.default.createElement(
+            "label",
+            null,
+            "Name:"
+          ),
+          _react2.default.createElement("div", null),
+          _react2.default.createElement("input", { type: "text", onChange: function onChange(event) {
+              return _this2.onNameChange(event);
+            } }),
+          _react2.default.createElement("div", null),
+          _react2.default.createElement(
+            "label",
+            null,
+            "Phone Num:"
+          ),
+          _react2.default.createElement("div", null),
+          _react2.default.createElement("input", { type: "text", onChange: function onChange(event) {
+              return _this2.onPhoNumChange(event);
+            } }),
+          _react2.default.createElement("div", null),
+          _react2.default.createElement(
+            "label",
+            null,
+            "Language:"
+          ),
+          _react2.default.createElement("div", null),
+          _react2.default.createElement("input", {
+            type: "radio",
+            name: "language",
+            value: "Sinhala",
+            onChange: function onChange(event) {
+              return _this2.onLanguageChange(event);
+            }
+          }),
+          "Sinhala",
+          _react2.default.createElement("input", {
+            type: "radio",
+            name: "language",
+            value: "Tamil",
+            onChange: function onChange(event) {
+              return _this2.onLanguageChange(event);
+            }
+          }),
+          "Tamil",
+          _react2.default.createElement("input", {
+            type: "radio",
+            name: "language",
+            value: "English",
+            onChange: function onChange(event) {
+              return _this2.onLanguageChange(event);
+            }
+          }),
+          "English",
+          _react2.default.createElement("div", null),
+          _react2.default.createElement(
+            "label",
+            null,
+            "Age:"
+          ),
+          _react2.default.createElement("div", null),
+          _react2.default.createElement("input", { type: "text", onChange: function onChange(event) {
+              return _this2.onAgeChange(event);
+            } }),
+          _react2.default.createElement("div", null),
+          _react2.default.createElement(
+            "label",
+            null,
+            "Gender:"
+          ),
+          _react2.default.createElement("div", null),
+          _react2.default.createElement("input", {
+            type: "radio",
+            name: "gender",
+            value: "Male",
+            onChange: function onChange(event) {
+              return _this2.onGenderChange(event);
+            }
+          }),
+          "Male",
+          _react2.default.createElement("input", {
+            type: "radio",
+            name: "gender",
+            value: "Female",
+            onChange: function onChange(event) {
+              return _this2.onGenderChange(event);
+            }
+          }),
+          "Female",
+          _react2.default.createElement("div", null),
+          _react2.default.createElement(
+            "label",
+            null,
+            "Gudian Contact Num:"
+          ),
+          _react2.default.createElement("div", null),
+          _react2.default.createElement("input", { type: "text", onChange: function onChange(event) {
+              return _this2.onGPhoNumChange(event);
+            } }),
+          _react2.default.createElement("div", null),
+          _react2.default.createElement(
+            "button",
+            { type: "submit" },
+            "Add"
+          )
+        )
+      );
+    }
+  }]);
+
+  return AddPatient;
 }(_react.Component);
 
 exports.default = AddPatient;
@@ -14767,7 +14828,7 @@ module.exports = warning;
 
 
 Object.defineProperty(exports, "__esModule", {
-    value: true
+  value: true
 });
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -14807,107 +14868,122 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 var AppContainer = function (_Component) {
-    _inherits(AppContainer, _Component);
+  _inherits(AppContainer, _Component);
 
-    function AppContainer(props) {
-        _classCallCheck(this, AppContainer);
+  function AppContainer(props) {
+    _classCallCheck(this, AppContainer);
 
-        return _possibleConstructorReturn(this, (AppContainer.__proto__ || Object.getPrototypeOf(AppContainer)).call(this, props));
-    }
+    return _possibleConstructorReturn(this, (AppContainer.__proto__ || Object.getPrototypeOf(AppContainer)).call(this, props));
+  }
 
-    _createClass(AppContainer, [{
-        key: 'render',
-        value: function render() {
-            return _react2.default.createElement(
-                'div',
-                null,
+  _createClass(AppContainer, [{
+    key: "render",
+    value: function render() {
+      return _react2.default.createElement(
+        "div",
+        null,
+        _react2.default.createElement(
+          "div",
+          null,
+          _react2.default.createElement(
+            "h3",
+            null,
+            "payment"
+          ),
+          _react2.default.createElement(
+            _reactRouterDom.BrowserRouter,
+            null,
+            _react2.default.createElement(
+              "div",
+              null,
+              _react2.default.createElement(
+                "div",
+                { className: "row" },
                 _react2.default.createElement(
-                    'div',
-                    null,
-                    _react2.default.createElement(
-                        'h3',
-                        null,
-                        'payment'
-                    ),
-                    _react2.default.createElement(
-                        _reactRouterDom.BrowserRouter,
-                        null,
-                        _react2.default.createElement(
-                            'div',
-                            null,
-                            _react2.default.createElement(
-                                'div',
-                                { className: 'row' },
-                                _react2.default.createElement(
-                                    'div',
-                                    { className: 'col-sm' },
-                                    _react2.default.createElement(
-                                        _reactRouterDom.Link,
-                                        { to: '/Invoice' },
-                                        'Invoice'
-                                    )
-                                ),
-                                _react2.default.createElement(
-                                    'div',
-                                    { className: 'col-sm' },
-                                    _react2.default.createElement(
-                                        _reactRouterDom.Link,
-                                        { to: '/Income' },
-                                        'Income'
-                                    )
-                                ),
-                                _react2.default.createElement(
-                                    'div',
-                                    { className: 'col-sm' },
-                                    _react2.default.createElement(
-                                        _reactRouterDom.Link,
-                                        { to: '/Paymentdetails' },
-                                        'Paymentdetails'
-                                    )
-                                ),
-                                _react2.default.createElement(
-                                    'div',
-                                    { className: 'col-sm' },
-                                    _react2.default.createElement(
-                                        _reactRouterDom.Link,
-                                        { to: '/Patient' },
-                                        'Register Patient'
-                                    )
-                                ),
-                                _react2.default.createElement(
-                                    'div',
-                                    { className: 'col-sm' },
-                                    _react2.default.createElement(
-                                        _reactRouterDom.Link,
-                                        { to: '/PatientView' },
-                                        'Patient View'
-                                    )
-                                )
-                            ),
-                            _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/Invoice', render: function render(props) {
-                                    return _react2.default.createElement(_Invoice2.default, null);
-                                } }),
-                            _react2.default.createElement(_reactRouterDom.Route, { path: '/Income', render: function render(props) {
-                                    return _react2.default.createElement(_Income2.default, null);
-                                } }),
-                            _react2.default.createElement(_reactRouterDom.Route, { path: '/Paymentdetails', render: function render(props) {
-                                    return _react2.default.createElement(_Paymentdetails2.default, null);
-                                } }),
-                            _react2.default.createElement(_reactRouterDom.Route, { path: '/Patient', render: function render(props) {
-                                    return _react2.default.createElement(_Patient2.default, null);
-                                } }),
-                            _react2.default.createElement(_reactRouterDom.Route, { path: '/PatientView', render: function render(props) {
-                                    return _react2.default.createElement(_PatientView2.default, null);
-                                } })
-                        )
-                    )
+                  "div",
+                  { className: "col-sm" },
+                  _react2.default.createElement(
+                    _reactRouterDom.Link,
+                    { to: "/Invoice" },
+                    "Invoice"
+                  )
                 ),
-                ';'
-            );
-        }
-    }]);
+                _react2.default.createElement(
+                  "div",
+                  { className: "col-sm" },
+                  _react2.default.createElement(
+                    _reactRouterDom.Link,
+                    { to: "/Income" },
+                    "Income"
+                  )
+                ),
+                _react2.default.createElement(
+                  "div",
+                  { className: "col-sm" },
+                  _react2.default.createElement(
+                    _reactRouterDom.Link,
+                    { to: "/Paymentdetails" },
+                    "Paymentdetails"
+                  )
+                ),
+                _react2.default.createElement(
+                  "div",
+                  { className: "col-sm" },
+                  _react2.default.createElement(
+                    _reactRouterDom.Link,
+                    { to: "/Patient" },
+                    "Register Patient"
+                  )
+                ),
+                _react2.default.createElement(
+                  "div",
+                  { className: "col-sm" },
+                  _react2.default.createElement(
+                    _reactRouterDom.Link,
+                    { to: "/PatientView" },
+                    "Patient View"
+                  )
+                )
+              ),
+              _react2.default.createElement(_reactRouterDom.Route, {
+                exact: true,
+                path: "/Invoice",
+                render: function render(props) {
+                  return _react2.default.createElement(_Invoice2.default, null);
+                }
+              }),
+              _react2.default.createElement(_reactRouterDom.Route, {
+                path: "/Income",
+                render: function render(props) {
+                  return _react2.default.createElement(_Income2.default, null);
+                }
+              }),
+              _react2.default.createElement(_reactRouterDom.Route, {
+                path: "/Paymentdetails",
+                render: function render(props) {
+                  return _react2.default.createElement(_Paymentdetails2.default, null);
+                }
+              }),
+              _react2.default.createElement(_reactRouterDom.Route, {
+                path: "/Patient",
+                render: function render(props) {
+                  return _react2.default.createElement(_Patient2.default, null);
+                }
+              }),
+              _react2.default.createElement(_reactRouterDom.Route, {
+                path: "/PatientView",
+                render: function render(props) {
+                  return _react2.default.createElement(_PatientView2.default, null);
+                }
+              })
+            )
+          )
+        )
+      );
+    }
+  }]);
 
-    return AppContainer;
+  return AppContainer;
 }(_react.Component);
 
 exports.default = AppContainer;
