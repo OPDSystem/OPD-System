@@ -1189,7 +1189,7 @@ exports.default = AddPatient;
 
 
 Object.defineProperty(exports, "__esModule", {
-    value: true
+  value: true
 });
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -1215,120 +1215,128 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 var Patient = function (_Component) {
-    _inherits(Patient, _Component);
+  _inherits(Patient, _Component);
 
-    _createClass(Patient, null, [{
-        key: 'propTypes',
-        get: function get() {
-            return {
-                patient: _propTypes2.default.object,
-                getAllPatient: _propTypes2.default.func
-
-            };
-        }
-    }]);
-
-    function Patient(props) {
-        _classCallCheck(this, Patient);
-
-        var _this = _possibleConstructorReturn(this, (Patient.__proto__ || Object.getPrototypeOf(Patient)).call(this, props));
-
-        _this.patient = _this.props.patient;
-        _this.getAllPatient = _this.props.getAllPatient;
-        return _this;
+  _createClass(Patient, null, [{
+    key: "propTypes",
+    get: function get() {
+      return {
+        patient: _propTypes2.default.object,
+        getAllPatient: _propTypes2.default.func
+      };
     }
+  }]);
 
-    _createClass(Patient, [{
-        key: 'update',
-        value: function update(id, fullName, contactNumber, language, age, gender, gudianContactNumber) {
-            var _this2 = this;
+  function Patient(props) {
+    _classCallCheck(this, Patient);
 
-            var updatedName = prompt("Please enter updated Name:", fullName);
-            var updatedconactnum = prompt("Please enter updated phonenumber:", contactNumber);
-            var updatedlanguage = prompt("Please enter updated Language:", language);
-            var updatedage = prompt("Please enter updated Age:", age);
-            var updatedgender = prompt("Please enter updated Gender:", gender);
-            var updatedgadcontactnum = prompt("Please enter updated Gudian PhoneNumber:", gudianContactNumber);
-            _axios2.default.put('http://localhost:8080/patients/' + id, { fullName: updatedName, contactNumber: updatedconactnum, language: updatedlanguage, age: updatedage, gender: updatedgender, gudianContactNumber: updatedgadcontactnum }).then(function (results) {
-                if (results.status == 200) {
-                    _this2.getAllPatient();
-                }
-            });
+    var _this = _possibleConstructorReturn(this, (Patient.__proto__ || Object.getPrototypeOf(Patient)).call(this, props));
+
+    _this.patient = _this.props.patient;
+    _this.getAllPatient = _this.props.getAllPatient;
+    return _this;
+  }
+
+  _createClass(Patient, [{
+    key: "update",
+    value: function update(id, fullName, contactNumber, language, age, gender, gudianContactNumber) {
+      var _this2 = this;
+
+      var updatedName = prompt("Please enter updated Name:", fullName);
+      var updatedconactnum = prompt("Please enter updated phonenumber:", contactNumber);
+      var updatedlanguage = prompt("Please enter updated Language:", language);
+      var updatedage = prompt("Please enter updated Age:", age);
+      var updatedgender = prompt("Please enter updated Gender:", gender);
+      var updatedgadcontactnum = prompt("Please enter updated Gudian PhoneNumber:", gudianContactNumber);
+      _axios2.default.put("http://localhost:8080/patients/" + id, {
+        fullName: updatedName,
+        contactNumber: updatedconactnum,
+        language: updatedlanguage,
+        age: updatedage,
+        gender: updatedgender,
+        gudianContactNumber: updatedgadcontactnum
+      }).then(function (results) {
+        if (results.status == 200) {
+          _this2.getAllPatient();
         }
-    }, {
-        key: 'delete',
-        value: function _delete(id) {
-            var _this3 = this;
+      });
+    }
+  }, {
+    key: "delete",
+    value: function _delete(id) {
+      var _this3 = this;
 
-            _axios2.default.delete('http://localhost:8080/patients/' + id).then(function (results) {
-                if (results.status == 200) {
-                    _this3.getAllPatient();
-                }
-            });
+      _axios2.default.delete("http://localhost:8080/patients/" + id).then(function (results) {
+        if (results.status == 200) {
+          _this3.getAllPatient();
         }
-    }, {
-        key: 'render',
-        value: function render() {
-            var _this4 = this;
+      });
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var _this4 = this;
 
-            return _react2.default.createElement(
-                'tr',
-                null,
-                _react2.default.createElement(
-                    'td',
-                    null,
-                    this.patient.id
-                ),
-                _react2.default.createElement(
-                    'td',
-                    null,
-                    this.patient.fullName
-                ),
-                _react2.default.createElement(
-                    'td',
-                    null,
-                    this.patient.contactNumber
-                ),
-                _react2.default.createElement(
-                    'td',
-                    null,
-                    this.patient.language
-                ),
-                _react2.default.createElement(
-                    'td',
-                    null,
-                    this.patient.age
-                ),
-                _react2.default.createElement(
-                    'td',
-                    null,
-                    this.patient.gender
-                ),
-                _react2.default.createElement(
-                    'td',
-                    null,
-                    this.patient.gudianContactNumber
-                ),
-                _react2.default.createElement(
-                    'button',
-                    { onClick: function onClick(e) {
-                            return _this4.update(_this4.patient.id, _this4.patient.fullName, _this4.patient.contactNumber, _this4.patient.language, _this4.patient.age, _this4.patient.gender, _this4.patient.gudianContactNumber);
-                        } },
-                    'Update'
-                ),
-                '\xA0',
-                _react2.default.createElement(
-                    'button',
-                    { onClick: function onClick(e) {
-                            return _this4.delete(_this4.patient.id);
-                        } },
-                    'Delete'
-                )
-            );
-        }
-    }]);
+      return _react2.default.createElement(
+        "tr",
+        null,
+        _react2.default.createElement(
+          "td",
+          null,
+          this.patient.id
+        ),
+        _react2.default.createElement(
+          "td",
+          null,
+          this.patient.fullName
+        ),
+        _react2.default.createElement(
+          "td",
+          null,
+          this.patient.contactNumber
+        ),
+        _react2.default.createElement(
+          "td",
+          null,
+          this.patient.language
+        ),
+        _react2.default.createElement(
+          "td",
+          null,
+          this.patient.age
+        ),
+        _react2.default.createElement(
+          "td",
+          null,
+          this.patient.gender
+        ),
+        _react2.default.createElement(
+          "td",
+          null,
+          this.patient.gudianContactNumber
+        ),
+        _react2.default.createElement(
+          "button",
+          {
+            onClick: function onClick(e) {
+              return _this4.update(_this4.patient.id, _this4.patient.fullName, _this4.patient.contactNumber, _this4.patient.language, _this4.patient.age, _this4.patient.gender, _this4.patient.gudianContactNumber);
+            }
+          },
+          "Update"
+        ),
+        "\xA0",
+        _react2.default.createElement(
+          "button",
+          { onClick: function onClick(e) {
+              return _this4.delete(_this4.patient.id);
+            } },
+          "Delete"
+        )
+      );
+    }
+  }]);
 
-    return Patient;
+  return Patient;
 }(_react.Component);
 
 exports.default = Patient;
@@ -1481,7 +1489,7 @@ exports.default = Patients;
 
 
 Object.defineProperty(exports, "__esModule", {
-    value: true
+  value: true
 });
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -1507,122 +1515,130 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 var Patient = function (_Component) {
-    _inherits(Patient, _Component);
+  _inherits(Patient, _Component);
 
-    _createClass(Patient, null, [{
-        key: 'propTypes',
-        get: function get() {
-            return {
-                patient: _propTypes2.default.object,
-                getOnePatient: _propTypes2.default.func,
-                getAllPatient: _propTypes2.default.func
-
-            };
-        }
-    }]);
-
-    function Patient(props) {
-        _classCallCheck(this, Patient);
-
-        var _this = _possibleConstructorReturn(this, (Patient.__proto__ || Object.getPrototypeOf(Patient)).call(this, props));
-
-        _this.patient = _this.props.patient;
-        _this.getOnePatient = _this.props.getOnePatient;
-        _this.getAllPatient = _this.props.getAllPatient;
-        return _this;
+  _createClass(Patient, null, [{
+    key: "propTypes",
+    get: function get() {
+      return {
+        patient: _propTypes2.default.object,
+        getOnePatient: _propTypes2.default.func,
+        getAllPatient: _propTypes2.default.func
+      };
     }
+  }]);
 
-    _createClass(Patient, [{
-        key: 'update',
-        value: function update(id, fullName, contactNumber, language, age, gender, gudianContactNumber) {
-            var _this2 = this;
+  function Patient(props) {
+    _classCallCheck(this, Patient);
 
-            var updatedName = prompt("Please enter updated Name:", fullName);
-            var updatedconactnum = prompt("Please enter updated phonenumber:", contactNumber);
-            var updatedlanguage = prompt("Please enter updated Language:", language);
-            var updatedage = prompt("Please enter updated Age:", age);
-            var updatedgender = prompt("Please enter updated Gender:", gender);
-            var updatedgadcontactnum = prompt("Please enter updated Gudian PhoneNumber:", gudianContactNumber);
-            _axios2.default.put('http://localhost:8080/patients/' + id, { fullName: updatedName, contactNumber: updatedconactnum, language: updatedlanguage, age: updatedage, gender: updatedgender, gudianContactNumber: updatedgadcontactnum }).then(function (results) {
-                if (results.status == 200) {
-                    _this2.getOnePatient();
-                }
-            });
+    var _this = _possibleConstructorReturn(this, (Patient.__proto__ || Object.getPrototypeOf(Patient)).call(this, props));
+
+    _this.patient = _this.props.patient;
+    _this.getOnePatient = _this.props.getOnePatient;
+    _this.getAllPatient = _this.props.getAllPatient;
+    return _this;
+  }
+
+  _createClass(Patient, [{
+    key: "update",
+    value: function update(id, fullName, contactNumber, language, age, gender, gudianContactNumber) {
+      var _this2 = this;
+
+      var updatedName = prompt("Please enter updated Name:", fullName);
+      var updatedconactnum = prompt("Please enter updated phonenumber:", contactNumber);
+      var updatedlanguage = prompt("Please enter updated Language:", language);
+      var updatedage = prompt("Please enter updated Age:", age);
+      var updatedgender = prompt("Please enter updated Gender:", gender);
+      var updatedgadcontactnum = prompt("Please enter updated Gudian PhoneNumber:", gudianContactNumber);
+      _axios2.default.put("http://localhost:8080/patients/" + id, {
+        fullName: updatedName,
+        contactNumber: updatedconactnum,
+        language: updatedlanguage,
+        age: updatedage,
+        gender: updatedgender,
+        gudianContactNumber: updatedgadcontactnum
+      }).then(function (results) {
+        if (results.status == 200) {
+          _this2.getOnePatient();
         }
-    }, {
-        key: 'delete',
-        value: function _delete(id) {
-            var _this3 = this;
+      });
+    }
+  }, {
+    key: "delete",
+    value: function _delete(id) {
+      var _this3 = this;
 
-            _axios2.default.delete('http://localhost:8080/patients/' + id).then(function (results) {
-                if (results.status == 200) {
-                    _this3.getAllPatient();
-                }
-            });
+      _axios2.default.delete("http://localhost:8080/patients/" + id).then(function (results) {
+        if (results.status == 200) {
+          _this3.getAllPatient();
         }
-    }, {
-        key: 'render',
-        value: function render() {
-            var _this4 = this;
+      });
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var _this4 = this;
 
-            return _react2.default.createElement(
-                'tr',
-                null,
-                _react2.default.createElement(
-                    'td',
-                    null,
-                    this.patient.id
-                ),
-                _react2.default.createElement(
-                    'td',
-                    null,
-                    this.patient.fullName
-                ),
-                _react2.default.createElement(
-                    'td',
-                    null,
-                    this.patient.contactNumber
-                ),
-                _react2.default.createElement(
-                    'td',
-                    null,
-                    this.patient.language
-                ),
-                _react2.default.createElement(
-                    'td',
-                    null,
-                    this.patient.age
-                ),
-                _react2.default.createElement(
-                    'td',
-                    null,
-                    this.patient.gender
-                ),
-                _react2.default.createElement(
-                    'td',
-                    null,
-                    this.patient.gudianContactNumber
-                ),
-                _react2.default.createElement(
-                    'button',
-                    { onClick: function onClick(e) {
-                            return _this4.update(_this4.patient.id, _this4.patient.fullName, _this4.patient.contactNumber, _this4.patient.language, _this4.patient.age, _this4.patient.gender, _this4.patient.gudianContactNumber);
-                        } },
-                    'Update'
-                ),
-                '\xA0',
-                _react2.default.createElement(
-                    'button',
-                    { onClick: function onClick(e) {
-                            return _this4.delete(_this4.patient.id);
-                        } },
-                    'Delete'
-                )
-            );
-        }
-    }]);
+      return _react2.default.createElement(
+        "tr",
+        null,
+        _react2.default.createElement(
+          "td",
+          null,
+          this.patient.id
+        ),
+        _react2.default.createElement(
+          "td",
+          null,
+          this.patient.fullName
+        ),
+        _react2.default.createElement(
+          "td",
+          null,
+          this.patient.contactNumber
+        ),
+        _react2.default.createElement(
+          "td",
+          null,
+          this.patient.language
+        ),
+        _react2.default.createElement(
+          "td",
+          null,
+          this.patient.age
+        ),
+        _react2.default.createElement(
+          "td",
+          null,
+          this.patient.gender
+        ),
+        _react2.default.createElement(
+          "td",
+          null,
+          this.patient.gudianContactNumber
+        ),
+        _react2.default.createElement(
+          "button",
+          {
+            onClick: function onClick(e) {
+              return _this4.update(_this4.patient.id, _this4.patient.fullName, _this4.patient.contactNumber, _this4.patient.language, _this4.patient.age, _this4.patient.gender, _this4.patient.gudianContactNumber);
+            }
+          },
+          "Update"
+        ),
+        "\xA0",
+        _react2.default.createElement(
+          "button",
+          { onClick: function onClick(e) {
+              return _this4.delete(_this4.patient.id);
+            } },
+          "Delete"
+        )
+      );
+    }
+  }]);
 
-    return Patient;
+  return Patient;
 }(_react.Component);
 
 exports.default = Patient;
