@@ -37,7 +37,7 @@ export default class Getdate extends Component{
         }
 
     render() {
-        return <div class="form">
+        return <div>
             <form onSubmit={event => this.onSubmit(event)}>
                 <div>
                 <label>Description:</label>
