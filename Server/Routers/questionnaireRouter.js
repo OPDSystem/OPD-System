@@ -27,4 +27,12 @@ router.delete("/:id", function(request, response) {
     });
 });
 
+router.get("/", function(request, response) {
+    questionnaireController.findAllQuestionnaire().then(function(data) {
+        response.status(data.status).send({data: data.displayingQuestionnaires});
+    }).catch(function(err) {
+        response.status(err.status).send({message: err.message});
+    });
+});
+
 module.exports = router;

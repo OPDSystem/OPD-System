@@ -4,7 +4,7 @@ const patientDetails= mongoose.model("patientDetails");
 const description= mongoose.model("appointment");
 
 var Controller= function(){
-    this.viewQueue = function (id) {
+   /* this.viewQueue = function (id) {
         return new Promise(function (resolve, reject) {
             clinic.find({id:id}).exec().then(function (data) {
                 patientDetails.find({id:{$in:data[0].id}}).exec().then(function (data) {
@@ -22,7 +22,7 @@ var Controller= function(){
     this.getDescription=function(id){
         return new Promise(function (resolve, reject) {
             clinic.find({id:id}).exec().then(function (data) {
-                appointmentschema.find({id:{$in:data[0].id}}).exec().then(function (data) {
+                description.find({id:{$in:data[0].id}}).exec().then(function (data) {
                     resolve({status: 200, message: "Successfully displaying my queue description"});
                 }).catch(function (reason) {
                     reject({status: 404, message: "Error" + reason});
@@ -32,7 +32,20 @@ var Controller= function(){
             })
 
         })
+    }*/
+
+    this.getQueue=function(id){
+        return new Promise(function(resolve,reject){
+            description.find({id:id}.exec().then(function(data){
+                resolve({status: 200, searchedPatient: data});
+            }).catch(function(err) {
+                reject({status: 500, message: "Failed to search patient" + err});
+            }))
+        })
     }
+
+
+
     }
 
 module.exports=new Controller();
