@@ -14,7 +14,9 @@ import ClinicView from "./ClinicView";
 import Clinic from "./Clinic";
 import Questionnaire from "./Questionnaire";
 import Queue from "./QueueView";
-
+import Loyality from "./Loyality";
+import AppointmentPay from "./AppointmentPay";
+import Loyality from "./Loyality";
 
 export default class AppContainer extends Component {
   constructor(props) {
@@ -66,7 +68,9 @@ export default class AppContainer extends Component {
                   <Link to="/Loyality">Calculate Loyality</Link>
                 </div>
                 <div className="col-sm">
-                  <Link to="/AppointmentPay">Calculate Appointment Payment</Link>
+                  <Link to="/AppointmentPay">
+                    Calculate Appointment Payment
+                  </Link>
                 </div>
               </div>
               <Route
