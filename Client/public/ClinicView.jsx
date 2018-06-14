@@ -32,7 +32,7 @@ export default class ClinicView extends Component {
 
    	render() {
         return <div>
-           <h2>CLINIC VIEW</h2>
+           <h2>Clinic View</h2>
             <Searchclinic getOneClinic={date => this.getOneClinic(date)}/>
             <View clinics={this.state.clinics} getAllDoctors = {() => this.getAllDoctors()}/>
         </div>;
