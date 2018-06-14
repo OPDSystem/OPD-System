@@ -40,7 +40,7 @@ export default class GetPaymentDetails extends Component{
         return <div class="form">
             <form onSubmit={event => this.onSubmit(event)}>
                 <div>
-                <label>Patient Name:</label>
+                <label>Patient ID:</label>
                 </div>
                 <div>
                 <input type="text" onChange={event => this.onDateChange(event)}/>
