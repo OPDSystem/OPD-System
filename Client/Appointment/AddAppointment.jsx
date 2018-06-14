@@ -55,7 +55,7 @@ export default class AddAppointment extends Component {
                <div/>
                <input type="text" onChange={event => this.ondoctorChange(event)}/>
                <div/>
-               <label>description :</label>
+               <label>Description :</label>
                <div/>
                <input type="text" onChange={event => this.ondescriptionChange(event)}/>
                <div/>

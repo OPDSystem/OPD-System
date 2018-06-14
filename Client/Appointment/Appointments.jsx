@@ -27,7 +27,7 @@ export default class getAppointmentvalue extends Component {
           <tr>
             <th>Patient ID</th>
             <th>Doctor ID</th>
-            <th>DESCRIPTION</th>
+            <th>Description</th>
           </tr>
         </thead>
         <tbody>
