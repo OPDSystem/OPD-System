@@ -12,6 +12,8 @@ import AppointmentView from "./AppointmentView";
 import Appointment from "./Appointment";
 import ClinicView from "./ClinicView";
 import Clinic from "./Clinic";
+import Questionnaire from "./Questionnaire";
+import Queue from "./QueueView";
 
 export default class AppContainer extends Component {
   constructor(props) {
@@ -52,6 +54,12 @@ export default class AppContainer extends Component {
                 </div>
                 <div className="col-sm">
                   <Link to="/Clinic">Add Doctors to Clinic</Link>
+                </div>
+                <div className="col-sm">
+                  <Link to="/Questionnaire">Questionnaire</Link>
+                </div>
+                <div className="col-sm">
+                  <Link to="/Queue">Queue</Link>
                 </div>
               </div>
               <Route
@@ -107,6 +115,18 @@ export default class AppContainer extends Component {
                 path="/Clinic"
                 render={props => {
                   return <Clinic />;
+                }}
+              />
+              <Route
+                path="/Questionnaire"
+                render={props => {
+                  return <Questionnaire />;
+                }}
+              />
+              <Route
+                path="/Queue"
+                render={props => {
+                  return <Queue />;
                 }}
               />
             </div>
