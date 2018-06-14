@@ -15,6 +15,9 @@ import Clinic from "./Clinic";
 import Questionnaire from "./Questionnaire";
 import Queue from "./QueueView";
 import Loyality from "./Loyality";
+//import Loyality from "./Loyality";
+import AppointmentPay from "./AppointmentPay";
+import Loyality from "./Loyality";
 
 export default class AppContainer extends Component {
   constructor(props) {
