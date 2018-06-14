@@ -14,7 +14,10 @@ export default class Income1 extends Component {
     }
 
     getTotal(amount){
-        
+        this.setState({
+            totals:this.state.totals.concat({total:amount.total})
+            
+        })
     }
 
 
