@@ -37,11 +37,13 @@ export default class SearchClinic extends Component{
         }
 
     render() {
-        return <div>
+        return <div class="form">
             <form onSubmit={event => this.onSubmit(event)}>
                 <div>
                 <label>Clinic Date:</label>
+                <div/>
                 <input type="text" onChange={event => this.ondateChange(event)}/>
+                <div/>
                 <button type="Submit">Find</button>
                 </div>
             </form>

@@ -37,11 +37,13 @@ export default class SearchAppointment extends Component{
         }
 
     render() {
-        return <div>
+        return <div class="form">
             <form onSubmit={event => this.onSubmit(event)}>
                 <div>
                 <label>Patient ID:</label>
+                <div/>
                 <input type="text" onChange={event => this.onIdChange(event)}/>
+                <div/>
                 <button type="Submit">Find</button>
                 </div>
             </form>
