@@ -1,7 +1,7 @@
 "use strict";
 import React, { Component } from "react";
 import PropTypes from "prop-types";
-import Patient from "./Patient";
+import Patient from "./Loyality";
 
 export default class Patients extends Component {
   static get propTypes() {
@@ -25,13 +25,7 @@ export default class Patients extends Component {
         <table>
           <thead>
             <tr>
-              <th>ID</th>
-              <th>Name</th>
-              <th>Phone Num</th>
-              <th>Language</th>
-              <th>Age</th>
-              <th>Gender</th>
-              <th>Gudian PhoNum</th>
+              <th>Total Points</th>
             </tr>
           </thead>
           <tbody>
@@ -40,7 +34,7 @@ export default class Patients extends Component {
                 <Patient
                   key={data.id}
                   patient={data}
-                  getAllPatient={() => this.props.getAllPatient()}
+                  totalLoyality={() => this.props.totalLoyality()}
                 />
               );
             })}

@@ -2,28 +2,20 @@
 
 import React, { Component } from "react";
 import axios from "axios";
-import Searchpatient from "../Loyality/SearchPatient";
-import View from "../Loyality/Patients";
+import Searchpatient from "../Loyality/CalculateLoyality";
+import View from "../Loyality/LoyalityInt";
 
 export default class PatientView extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      patients: []
+      patients: [],
+      totalLoyality: ""
     };
-    this.getAllPatient();
   }
 
-  getAllPatient() {
-    axios.get("http://localhost:8080/patients/").then(res => {
-      this.setState({
-        patients: res.data.data
-      });
-    });
-  }
-
-  getOnePatient(id) {
-    axios.get("http://localhost:8080/patients/patientName/" + id).then(res => {
+  totalLoyality(id) {
+    axios.get("http://localhost:8080/payment/customer/" + id).then(res => {
       this.setState({
         patients: res.data.data
       });
@@ -34,11 +26,8 @@ export default class PatientView extends Component {
     return (
       <div>
         <h2>Loyality</h2>
-        <Searchpatient getOnePatient={id => this.getOnePatient(id)} />
-        <View
-          patients={this.state.patients}
-          getAllPatient={() => this.getAllPatient()}
-        />
+        <Searchpatient totalLoyality={id => this.totalLoyality(id)} />
+        <View patients={this.state.patients} />
       </div>
     );
   }
