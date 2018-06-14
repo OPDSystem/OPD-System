@@ -29,7 +29,7 @@ export default class QueueView extends Component {
 
    	render() {
         return <div>
-           <h2>MY PATIENTS VIEW</h2>
+           <h2>QUEUE VIEW</h2>
             <SearchQueue getOnePatient = {id => this.getOnePatient(id)} />
             <View patients={this.state.patients} />
         </div>;

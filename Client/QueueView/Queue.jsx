@@ -19,11 +19,20 @@ export default class Patient extends Component {
     
   }
 
+  delete(id) {
+    axios.delete('http://localhost:8080/appointment/' + id).then(results => {
+        if(results.status == 200) {
+          this.getOnePatient(this.patient.doctor);
+        }
+    })
+}
+
   render() {
     return (
       <tr>
         <td>{this.patient.id}</td>
         <td>{this.patient.description}</td>
+        <button onClick={(e) => this.delete(this.patient.id)}>Next</button>
       </tr>
     );
   }
