@@ -30,7 +30,7 @@ export default class Getdate extends Component{
         event.stopPropagation();
         
         
-            this.props.getdayincome(this.date);
+            this.props.getdaytotalincome(this.date);
             
         }
 

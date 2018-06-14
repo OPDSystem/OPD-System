@@ -4,13 +4,14 @@ import React, {Component} from 'react';
 import axios from 'axios';
 import Getdate  from '../Income/Getdate';
 import Income   from '../Income/Incomes';
-import GetTotal from '../Income/Income1';
+//mport GetTotal from '../Income/Income1';
 
 export default class income extends Component {
     constructor(props) {
         super(props);
         this.state={
             Income:[],
+            Amount:[]
             
         }
         
@@ -26,15 +27,26 @@ export default class income extends Component {
        
     }
 
+    getdaytotalincome(data){
+        axios.get('http://localhost:8080/payment/income/fee/'+data).then(res => {
+            this.setState({
+                Amount: res.data.data,
+                
+            })
+            console.log(Amount);
+        })
+       
+    }
+
    
     
     
     render() {
         return <div>
             <h3>income</h3>
-            <Getdate getdayincome={data => this.getdayincome(data)}/>
+            <Getdate getdaytotalincome={data => this.getdaytotalincome(data)}/>
             <Income Income={this.state.Income} getdayincome = {() => this.getdayincome()} />
-            <GetTotal />
+           
         </div>;
     }
 }
