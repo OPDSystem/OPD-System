@@ -1,7 +1,7 @@
 "use strict";
 import React, { Component } from "react";
 import PropTypes from "prop-types";
-import Patient from "./Patient";
+import Patient from "./Loyality";
 
 export default class Patients extends Component {
   static get propTypes() {

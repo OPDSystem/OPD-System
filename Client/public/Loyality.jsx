@@ -2,8 +2,8 @@
 
 import React, { Component } from "react";
 import axios from "axios";
-import Searchpatient from "../Loyality/SearchPatient";
-import View from "../Loyality/Patients";
+import Searchpatient from "../Loyality/CalculateLoyality";
+import View from "../Loyality/LoyalityInt";
 
 export default class PatientView extends Component {
   constructor(props) {
