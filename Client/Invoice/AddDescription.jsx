@@ -93,7 +93,7 @@ export default class AddDescription extends Component{
             <div class = "form">
             <form onSubmit={event => this.onNameSubmit(event)}>
                 <div>
-                <label for="name">Patient Name:</label>
+                <label for="name">Patient ID:</label>
                 <div />
                 <input type="text" id="name" onChange={event => this.onNameChange(event)}/>
                 </div>
@@ -128,7 +128,7 @@ export default class AddDescription extends Component{
             </form>
             </div>
             <div>
-            <h4>Name        :{this.name}</h4>
+            <h4>Patient ID  :{this.name}</h4>
             <h4>Date        :{this.date}</h4>
             <h4>Total Amount:{this.Totalamount} </h4>
             </div>
