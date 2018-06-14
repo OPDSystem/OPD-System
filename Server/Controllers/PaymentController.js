@@ -36,10 +36,20 @@ var Controller = function(){
         })
     }
 
-    this.GetCustomerPayment =function (id) {
+    this.GetCustomerPayment =function (name) {
         return new Promise(function (resolve, reject) {
-            CustomerSchema.find({id:id}).exec().then(function (data) {
+            CustomerSchema.find({name:name}).exec().then(function (data) {
                 resolve({status:200,customerdata : data});
+            }).catch(function (reason) {
+                reject({status:404 ,message:"Error" + reason});
+            })
+        })
+    }
+
+    this.GetAllCustomerPayment =function () {
+        return new Promise(function (resolve, reject) {
+            CustomerSchema.find().exec().then(function (data) {
+                resolve({status:200,allcustomerdata : data});
             }).catch(function (reason) {
                 reject({status:404 ,message:"Error" + reason});
             })
