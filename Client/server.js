@@ -3,7 +3,7 @@
 const express = require('express'),
  mongoose = require('mongoose');
 
-mongoose.connect('mongodb://127.0.0.1:27017/OPD', function (err) {
+mongoose.connect('mongodb://opd:asdfgf007@ds159110.mlab.com:59110/opd-system', function (err) {
     if (err) {
         console.error(err);
         process.exit(-1);

@@ -31,8 +31,6 @@ export default class Getdate extends Component{
         
         
             this.props.getdayincome(this.date);
-            this.props.getdayamount(this.date);
-            
             
         }
 

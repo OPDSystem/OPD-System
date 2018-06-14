@@ -32,7 +32,7 @@ export default class income extends Component {
     render() {
         return <div>
             <h3>income</h3>
-            <Getdate getdayincome={data => this.getdayincome(data)} getdayamount={ data => this.getdayamount(data)}/>
+            <Getdate getdayincome={data => this.getdayincome(data)}/>
             <Income Income={this.state.Income} getdayincome = {() => this.getdayincome()} />
             <GetTotal getTotal ={data => this.getTotal(data)}/>
         </div>;
