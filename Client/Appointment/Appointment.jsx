@@ -18,10 +18,9 @@ export default class appointmentvalues extends Component {
         this.getallAppointment = this.props.getallAppointment;
     }
 
-    update(id, doctor ,description) {
-        var updatedoctor = prompt("Please enter updated Doctor :",doctor );
+    update(id,description) {
         var updatedescription = prompt("Please enter updated description:", description);
-        axios.put('http://localhost:8080/appointment/' + id, {doctor: updatedoctor, description:updatedescription}).then(results => {
+        axios.put('http://localhost:8080/appointment/' + id, {description:updatedescription}).then(results => {
             if(results.status == 200) {
                 this.getallAppointment();
             }
@@ -43,7 +42,7 @@ export default class appointmentvalues extends Component {
             <td>{this.appointment.id}</td>
             <td>{this.appointment.doctor}</td>
             <td>{this.appointment.description}</td>
-            <button onClick={(e) => this.update(this.appointment.id,this.appointment.doctor,this.appointment.description)}>Update</button>&nbsp;
+            <button onClick={(e) => this.update(this.appointment.id,this.appointment.description)}>Update</button>&nbsp;
             <button onClick={(e) => this.delete(this.appointment.id)}>Delete</button>
         </tr>
     }

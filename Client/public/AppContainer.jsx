@@ -14,10 +14,7 @@ import ClinicView from "./ClinicView";
 import Clinic from "./Clinic";
 import Questionnaire from "./Questionnaire";
 import Queue from "./QueueView";
-import Loyality from "./Loyality";
-//import Loyality from "./Loyality";
-import AppointmentPay from "./AppointmentPay";
-import Loyality from "./Loyality";
+
 
 export default class AppContainer extends Component {
   constructor(props) {
@@ -28,7 +25,7 @@ export default class AppContainer extends Component {
     return (
       <div>
         <div>
-          <h3>payment</h3>
+          <h3>OPD</h3>
           <Router>
             <div>
               <div className="row">
@@ -67,6 +64,9 @@ export default class AppContainer extends Component {
                 </div>
                 <div className="col-sm">
                   <Link to="/Loyality">Calculate Loyality</Link>
+                </div>
+                <div className="col-sm">
+                  <Link to="/AppointmentPay">Calculate Appointment Payment</Link>
                 </div>
               </div>
               <Route
@@ -140,6 +140,12 @@ export default class AppContainer extends Component {
                 path="/Loyality"
                 render={props => {
                   return <Loyality />;
+                }}
+              />
+              <Route
+                path="/AppointmentPay"
+                render={props => {
+                  return <AppointmentPay />;
                 }}
               />
             </div>

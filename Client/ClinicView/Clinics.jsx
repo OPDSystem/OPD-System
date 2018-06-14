@@ -29,7 +29,6 @@ export default class Clinics extends Component {
             <th>DOCTOR</th>
             <th>VISITING TIME</th>
             <th>DATE</th>
-            <th>PATIENTS</th>
           </tr>
         </thead>
         <tbody>
