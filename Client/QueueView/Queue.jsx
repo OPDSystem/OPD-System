@@ -19,23 +19,11 @@ export default class Patient extends Component {
     
   }
 
- 
-  
-
-  
-  
-
   render() {
     return (
       <tr>
         <td>{this.patient.id}</td>
-        <td>{this.patient.fullName}</td>
-        <td>{this.patient.contactNumber}</td>
-        <td>{this.patient.language}</td>
-        <td>{this.patient.age}</td>
-        <td>{this.patient.gender}</td>
-        <td>{this.patient.gudianContactNumber}</td>
-        
+        <td>{this.patient.description}</td>
       </tr>
     );
   }
