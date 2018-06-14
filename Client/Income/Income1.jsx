@@ -1,6 +1,7 @@
 'use strict';
 import React, {Component} from 'react';
 import PropTypes 			from "prop-types";
+import Total       from './Incomes1'
 
 export default class Income1 extends Component {
 
@@ -24,7 +25,7 @@ export default class Income1 extends Component {
 
     render() {
         return <div>
-            <h3>Total Income:{this.total}</h3>
+            <Total totals={this.state.totals}/>
         </div>;
     }
 

@@ -1,8 +1,7 @@
 'use strict';
 import React, {Component}   from 'react';
 import PropTypes            from 'prop-types';
-import Incomeamo                 from './Income';
-
+import Totalamo                 from './Income2';
 
 
 export default class Incomes extends Component {
@@ -19,11 +18,11 @@ export default class Incomes extends Component {
     }
 
     render() {
-        let Income;
+        let totals;
 
-            Income = this.props.Income.map(function (data) {
+            totals = this.props.totals.map(function (data) {
                 return(
-                    <Incomeamo key={data._id} income={data} getdayincome={() => this.prop.getdayincome()} />
+                    <Totalamo  key={data._id} income2={data} getTotal={() => this.prop.getTotal()} />
                 );
             });
 
@@ -32,13 +31,12 @@ export default class Incomes extends Component {
             <table>
                 <thead>
                 <tr>
-                    <th>Recipt Id</th>
-                    <th>Date</th>
-                    <th>Amount</th>
+                    <th>Total Income</th>
+                    
                 </tr>
                 </thead>
                 <tbody>
-                {Income}
+                {totals}
                 </tbody>
             </table>
         </div>;
