@@ -35,7 +35,7 @@ export default class Clinic extends Component {
 
    	render() {
         return <div>
-           <h2>ADD Doctors to Clinic</h2>
+           <h2>Add Doctors to Clinic</h2>
             <AddDoctor addDoctor={data => this.addDoctor(data)}/>
             <Register clinics={this.state.clinics} getAllDoctors = {() => this.getAllDoctors()}/>
         </div>;
