@@ -19,7 +19,7 @@ export default class Patient extends Component {
     
   }
   delete(id){
-    this.props.getOnePatient();
+   
     this.status = id;
   }
   
