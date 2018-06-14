@@ -47,15 +47,15 @@ export default class AddAppointment extends Component {
     render() {
         return <div class ="form">
             <form onSubmit={event => this.onSubmit(event)}>
-               <label>id:</label>
+               <label>Patient ID:</label>
                <div/>
                <input type="text" onChange={event => this.onIdChange(event)}/>
                <div/>
-               <label>doctor:</label>
+               <label>Doctor ID:</label>
                <div/>
                <input type="text" onChange={event => this.ondoctorChange(event)}/>
                <div/>
-               <label>description :</label>
+               <label>Description :</label>
                <div/>
                <input type="text" onChange={event => this.ondescriptionChange(event)}/>
                <div/>
