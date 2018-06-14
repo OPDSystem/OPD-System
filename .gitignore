@@ -4,3 +4,9 @@ node_modules/
 dist/
 package.json
 package-lock.json
+target/
+.metadata
+.recommenders
+.setting
+.classpath
+.project
