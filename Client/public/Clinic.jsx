@@ -23,7 +23,7 @@ export default class Clinic extends Component {
     }
 
    	addDoctor(data) {
-   		axios.post('http://localhost:8080/clinic/',{id:data.id, doctor:data.doctor, time:data.time, date:data.date, patients:data.patients}).then(result => {
+   		axios.post('http://localhost:8080/clinic/',{doctor:data.doctor, time:data.time, date:data.date}).then(result => {
    			if(result.status == 200) {
                    this.getAllDoctors();
                    console.log("ADDED!!");

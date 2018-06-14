@@ -20,12 +20,12 @@ export default class Clinic extends Component {
         this.getAllDoctors = this.props.getAllDoctors;
     }
 
-    update(id, doctor ,time, date, patients) {
-        var updatedDoctor = prompt("Please enter updated Doctor:",doctor );
+    update(id,time, date) {
+      
         var updatedtime = prompt("Please enter updated time:", time);
         var updateddate = prompt("Please enter updated date:", date);
-        var updatedpatients = prompt("Please enter updated patients:", patients);
-        axios.put('http://localhost:8080/clinic/' + id, {doctor: updatedDoctor, time:updatedtime,date:updateddate, patients:updatedpatients}).then(results => {
+       
+        axios.put('http://localhost:8080/clinic/' + id, {time:updatedtime,date:updateddate}).then(results => {
             if(results.status == 200) {
                 this.getAllDoctors();
             }
@@ -44,13 +44,12 @@ export default class Clinic extends Component {
 
     render() {
         return <tr>
-            <td>{this.clinic.id}</td>
+            <td>{this.clinic._id}</td>
             <td>{this.clinic.doctor}</td>
             <td>{this.clinic.time}</td>
             <td>{this.clinic.date}</td>
-            <td>{this.clinic.patients}</td>
-            <button onClick={(e) => this.update(this.clinic.id,this.clinic.doctor,this.clinic.time,this.clinic.date,this.clinic.patients)}>Update</button>&nbsp;
-            <button onClick={(e) => this.delete(this.clinic.id)}>Delete</button>
+            <button onClick={(e) => this.update(this.clinic._id,this.clinic.time,this.clinic.date)}>Update</button>&nbsp;
+            <button onClick={(e) => this.delete(this.clinic._id)}>Delete</button>
         </tr>
     }
 }

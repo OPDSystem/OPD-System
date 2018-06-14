@@ -26,7 +26,7 @@ export default class Patients extends Component {
         <thead>
           <tr>
           <th>Paatient ID</th>
-            <th>Doctor ID</th>
+            <th>Doctor</th>
             <th>Description</th>
           </tr>
         </thead>

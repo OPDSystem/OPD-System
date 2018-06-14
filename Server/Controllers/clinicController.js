@@ -6,8 +6,6 @@ var Controller = function() {
         return new Promise(function(resolve, reject){
 
             var clinicdetails = new clinic({
-
-                id:data.id,
                 doctor:data.doctor,
                 time:data.time,
                 date:data.date,
@@ -24,7 +22,7 @@ var Controller = function() {
 
     this.updateClinic = function(id, data) {
         return new Promise(function(resolve, reject) {
-            clinic.update({id: id}, data).then(function(data) {
+            clinic.update({_id: id}, data).then(function(data) {
                 resolve({status: 200, message: "Successfully Updated"});
             }).catch(function(err) {
                 reject({status: 500, message: "Failed to update clinic" + err});
@@ -34,7 +32,7 @@ var Controller = function() {
 
     this.deleteClinic = function(id) {
         return new Promise(function(resolve, reject) {
-            clinic.remove({id : id}).then(function(data) {
+            clinic.remove({_id : id}).then(function(data) {
                 resolve({status: 200, message: "Successfully Deleted"});
             }).catch(function(err) {
                 reject({status: 500, message: "Failed to delete clinic" + err});

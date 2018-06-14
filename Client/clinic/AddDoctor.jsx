@@ -7,23 +7,15 @@ export default class AddDoctor extends Component {
     static get propTypes() {
         return {
             AddDoctor: PropTypes.func,
-            id:PropTypes.string,
             doctor: PropTypes.string,
             time:PropTypes.string,
             date:PropTypes.string,
-            patients:PropTypes.string
         }
     }
 
     constructor(props) {
        super(props);
     }
-
-    onIdChange(event) {
-        event.preventDefault();
-        event.stopPropagation();
-        this.id = event.target.value;
-     }
 
     ondoctorChange(event) {
        event.preventDefault();
@@ -54,20 +46,23 @@ export default class AddDoctor extends Component {
         event.preventDefault();
         event.stopPropagation();
        
-           this.props.addDoctor({id:this.id, doctor:this.doctor, time:this.time, date:this.date, patients:this.patients});
+           this.props.addDoctor({doctor:this.doctor, time:this.time, date:this.date});
            
         }
 
     render() {
         return <div class="form">
             <form onSubmit={event => this.onSubmit(event)}>
-               <label>id:</label>
-               <div/>
-               <input type="text" onChange={event => this.onIdChange(event)}/>
-               <div/>
                <label>doctor:</label>
                <div/>
-               <input type="text" onChange={event => this.ondoctorChange(event)}/>
+               <select onChange={event => this.ondoctorChange(event)}>
+                   <option value="none">Select Doctor</option>
+                   <option value="Yaathra">Yaathra</option>
+                   <option value="Diva TJ">Diva TJ</option>
+                   <option value="Keerthana Vije">Keerthana Vije</option>
+                   <option value="Tharish Thiva">Tharish Thiva</option>
+                   <option value="Mithra">Mithra</option>
+                   </select>
                <div/>
                <label>time :</label>
                <div/>
