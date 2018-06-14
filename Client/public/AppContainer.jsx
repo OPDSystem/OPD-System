@@ -14,6 +14,7 @@ import ClinicView from "./ClinicView";
 import Clinic from "./Clinic";
 import Questionnaire from "./Questionnaire";
 import Queue from "./QueueView";
+//import Loyality from "./Loyality";
 
 export default class AppContainer extends Component {
   constructor(props) {
@@ -60,6 +61,9 @@ export default class AppContainer extends Component {
                 </div>
                 <div className="col-sm">
                   <Link to="/Queue">Queue</Link>
+                </div>
+                <div className="col-sm">
+                  <Link to="/Loyality">Calculate Loyality</Link>
                 </div>
               </div>
               <Route
@@ -127,6 +131,12 @@ export default class AppContainer extends Component {
                 path="/Queue"
                 render={props => {
                   return <Queue />;
+                }}
+              />
+              <Route
+                path="/Loyality"
+                render={props => {
+                  return <Loyality />;
                 }}
               />
             </div>
