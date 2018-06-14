@@ -13,7 +13,7 @@ export default class Income extends Component {
 
     constructor(props) {
         super(props);
-        this.props.getTotal({total:this.props.income.amount});
+        
 
     }
 
@@ -21,7 +21,7 @@ export default class Income extends Component {
 
     render() {
         return <tr>
-            <td>{this.props.income.id}</td>
+            <td>{this.props.income._id}</td>
             <td>{this.props.income.date}</td>
             <td>{this.props.income.amount}</td>
         </tr>

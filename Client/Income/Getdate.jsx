@@ -31,6 +31,7 @@ export default class Getdate extends Component{
         
         
             this.props.getdaytotalincome(this.date);
+            this.props.getdayincome(this.date);
             
         }
 
@@ -38,10 +39,10 @@ export default class Getdate extends Component{
         return <div>
             <form onSubmit={event => this.onSubmit(event)}>
                 <div>
-                <label>Description:</label>
+                <label for="date">Description:</label>
                 </div>
                 <div>
-                <input type="text" onChange={event => this.onDateChange(event)}/>
+                <input type="text" id="date" onChange={event => this.onDateChange(event)}/>
                 <div />
                 <button type="submit">Find</button>
                 </div>

@@ -4,7 +4,6 @@ import React, {Component} from 'react';
 import axios from 'axios';
 import Getdate  from '../Income/Getdate';
 import Income   from '../Income/Incomes';
-//mport GetTotal from '../Income/Income1';
 
 export default class income extends Component {
     constructor(props) {
@@ -23,6 +22,8 @@ export default class income extends Component {
                 Income: res.data.data,
                 
             })
+            
+            
         })
        
     }
@@ -33,7 +34,7 @@ export default class income extends Component {
                 Amount: res.data.data,
                 
             })
-            console.log(Amount);
+            
         })
        
     }
@@ -44,9 +45,10 @@ export default class income extends Component {
     render() {
         return <div>
             <h3>income</h3>
-            <Getdate getdaytotalincome={data => this.getdaytotalincome(data)}/>
+            <Getdate getdaytotalincome={data => this.getdaytotalincome(data)} getdayincome={data => this.getdayincome(data)}/>
             <Income Income={this.state.Income} getdayincome = {() => this.getdayincome()} />
-           
+            
+            <h2>Total Income This Day:{this.state.Amount}</h2>
         </div>;
     }
 }
