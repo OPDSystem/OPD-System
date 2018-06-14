@@ -35,7 +35,7 @@ export default class Appointment extends Component {
 
    	render() {
         return <div>
-           <h2>ADD Appointments</h2>
+           <h2>Add Appointments</h2>
             <AddAppointment addAppointment={data => this.addAppointment(data)}/>
             <Register appointments={this.state.appointments} getallAppointment = {() => this.getallAppointment()}/>
         </div>;
