@@ -4,10 +4,15 @@ import PropTypes 			from "prop-types";
 
 export default class Income extends Component {
 
+    static get propTypes() {
+        return {
+          total: PropTypes.number
+        };
+      }
 
     constructor(props) {
         super(props);
-        this.props.getTotal(this.props.income.amount)
+        this.props.getTotal({total:this.props.income.amount})
 
     }
 

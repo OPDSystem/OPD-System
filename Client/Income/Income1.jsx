@@ -11,7 +11,7 @@ export default class Income1 extends Component {
     }
 
     getTotal(amount){
-        this.total= this.total+{amount};
+        this.total= this.total+ amount.total;
     }
 
 

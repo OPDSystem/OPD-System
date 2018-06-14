@@ -142,7 +142,7 @@ Mongoose.model('clinic',clinicschema);
 Mongoose.model('Quessionnaire',questionnaireSchema);
 Mongoose.model('appointment',appointmentschema);
 
-Mongoose.connect('mongodb://127.0.0.1:27017/OPD', function (err) {
+Mongoose.connect('mongodb://opd:asdfgf007@ds159110.mlab.com:59110/opd-system', function (err) {
     if(err)
     {
         console.log(err);
