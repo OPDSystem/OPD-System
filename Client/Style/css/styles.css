@@ -106,9 +106,10 @@ table thead tr{
 }
 .myheading{
 	height:100px;
-	background:#e6e929;
+	background:#818170;
 	padding:20px;
 	text-align:center;
+	color: #e6e929
 }
 .mynavigation{
 	height:50px;
@@ -161,7 +162,6 @@ input[type=text],select {
 
  .form{
     border-radius: 5px;
-    background-color: #b8b4b4de;
     padding: 20px;
 }
 
@@ -186,3 +186,17 @@ button[type=hold] {
     border-radius: 4px;
     cursor: pointer;
 }
+
+.mydesign1{
+	background-color:  rgb(255, 255, 255);
+}
+
+.mydesign2{
+	background-color:  rgba(235, 220, 17, 0.61);
+}
+
+.mydesign3{
+	float: right;
+	background-color: rgb(255, 255, 255);
+}
+
