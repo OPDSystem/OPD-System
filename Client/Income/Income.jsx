@@ -6,13 +6,14 @@ export default class Income extends Component {
 
     static get propTypes() {
         return {
-          total: PropTypes.number
+          total: PropTypes.number,
+          getTotal:PropTypes.func
         };
       }
 
     constructor(props) {
         super(props);
-        this.props.getTotal({total:this.props.income.amount})
+        this.props.getTotal({total:this.props.income.amount});
 
     }
 

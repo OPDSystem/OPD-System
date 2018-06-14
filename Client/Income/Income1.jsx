@@ -8,10 +8,13 @@ export default class Income1 extends Component {
     constructor(props) {
         super(props);
         this.total = 0;
+        this.state={
+            totals:[]
+        }
     }
 
     getTotal(amount){
-        this.total= this.total+ amount.total;
+        
     }
 
 
