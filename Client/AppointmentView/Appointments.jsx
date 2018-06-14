@@ -25,9 +25,9 @@ export default class Patients extends Component {
       <table>
         <thead>
           <tr>
-          <th>ID</th>
-            <th>DOCTOR</th>
-            <th>DESCRIPTION</th>
+          <th>Paatient ID</th>
+            <th>Doctor ID</th>
+            <th>Description</th>
           </tr>
         </thead>
         <tbody>
