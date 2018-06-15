@@ -70,7 +70,7 @@ export default class AddDoctor extends Component {
                <div/>
                <label>date:</label>
                <div/>
-               <input type="date" min="2018-01-01" onChange={event => this.ondateChange(event)}/>
+               <input type="date" min="2018-01-01" max="2018-12-31" onChange={event => this.ondateChange(event)}/>
                <div/>
                <button type="submit">Add</button>
             </form>
