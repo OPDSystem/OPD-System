@@ -16,6 +16,7 @@ import Questionnaire from "./Questionnaire";
 import Queue from "./QueueView";
 import AppointmentPay from "./AppointmentPay";
 import Loyality from "./Loyality";
+import Payment  from './Payment';
 
 export default class AppContainer extends Component {
   constructor(props) {
@@ -30,6 +31,9 @@ export default class AppContainer extends Component {
           <Router>
             <div>
               <div className="column" class="mydesign1">
+              <div>
+                  <Link to="/Payment">Dashboard</Link>
+                </div>
                 <div>
                   <Link to="/Patient">Register Patient</Link>
                 </div>
@@ -70,6 +74,13 @@ export default class AppContainer extends Component {
                   <Link to="/AppointmentPay">Calculate Appointment Fee</Link>
                 </div>
               </div>
+              <Route
+                exact
+                path="/Payment"
+                render={props => {
+                  return <Payment />;
+                }}
+              />
               <Route
                 exact
                 path="/Invoice"

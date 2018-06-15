@@ -35,7 +35,7 @@ export default class Payments extends Component {
         <tbody>
           {
               this.payments.map(data => {
-                  return <Payment key={data.id} payment={data} getAllPaymentDetails={() => this.props.getAllPaymentDetails()}/>
+                  return <Payment key={data._id} payment={data} getAllPaymentDetails={() => this.props.getAllPaymentDetails()}/>
               })
           }
         </tbody>
