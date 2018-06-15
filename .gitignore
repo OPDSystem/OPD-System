@@ -9,6 +9,6 @@ pom.xml
 target/
 .metadata
 .recommenders
-.setting
+.settings
 .classpath
 .project
