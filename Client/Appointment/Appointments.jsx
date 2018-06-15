@@ -4,7 +4,7 @@ import PropTypes            from 'prop-types';
 import Appointment       from './Appointment';
 
 
-export default class getAppointmentvalue extends Component {
+export default class Appointmens extends Component {
   static get propTypes() {
     return {
         appointments: PropTypes.array

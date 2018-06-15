@@ -4,7 +4,7 @@ import PropTypes            from 'prop-types';
 import Clinic                 from './Clinic';
 
 
-export default class Patients extends Component {
+export default class Clinics extends Component {
   static get propTypes() {
     return {
       clinics: PropTypes.array

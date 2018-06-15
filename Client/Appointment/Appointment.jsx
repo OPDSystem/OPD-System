@@ -3,7 +3,7 @@ import React, {Component}   from 'react';
 import PropTypes            from 'prop-types';
 import axios                from 'axios';
 
-export default class appointmentvalues extends Component {
+export default class Appointment extends Component {
     static get propTypes() {
         return {
             appointment: PropTypes.object,
