@@ -2,10 +2,6 @@
 
 import React, {Component} from 'react';
 
-import Income from './Income';
-import Invoice from './Invoice';
-import Paymentdetails from './Paymentdetails';
-
 export default class Payment extends Component {
 
     constructor(props) {
@@ -18,36 +14,18 @@ export default class Payment extends Component {
 
 
     render() {
-        return <Payment>
-        <div>
-            <h3>payment</h3>
-            <Router>
-                <div>
-                    <div className="row">
-                        <div className="col-sm">
-                            <Link to="/Invoice">Invoice</Link>
-                        </div>
-                        <div className="col-sm">
-                            <Link to="/Income">Income</Link>
-                        </div>
-                        <div className="col-sm">
-                            <Link to="/Paymentdetails">Paymentdetails</Link>
-                        </div>
+        return   <div class="col-sm-10" id="contentView">
+                 <div class="row">
+                 <div class="col-sm-3">
+                    <div class="well dashboard_well" >
+                        <h1>{new Date().getDate()}</h1>
+                        <h1>{new Date().getMonth() +1}</h1>
                     </div>
-                    <Route exact path="/Invoice" render={props => {
-                        return <Invoice/>
-                    }}/>
-                    <Route path="/Income" render={props => {
-                        return <Income/>
-                    }}/>
-                    <Route path="/Paymentdetails" render={props => {
-                        return <Paymentdetails/>
-                    }}/>
                 </div>
-            </Router>
-            
+                
+                 </div>
         </div>;
-        </Payment>
+        
     }
 
 }

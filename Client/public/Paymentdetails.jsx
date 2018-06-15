@@ -15,9 +15,9 @@ export default class Paymentdetails extends Component {
     }
 
     getAllPaymentDetails() {
-        axios.get("http://localhost:8081/customer/").then(res => {
+        axios.get("http://localhost:8080/payment/customer/").then(res => {
           this.setState({
-            payments: res.data
+            payments: res.data.data
           });
         });
       }

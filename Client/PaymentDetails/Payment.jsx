@@ -22,7 +22,7 @@ export default class Payment extends Component {
   render() {
     return (
       <tr>
-        <td>{this.payment.id}</td>
+        <td>{this.payment._id}</td>
         <td>{this.payment.name}</td>
         <td>{this.payment.date}</td>
         <td>{this.payment.amount}</td>

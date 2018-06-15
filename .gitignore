@@ -1,9 +1,11 @@
 .idea/
 node_modules/
+bin/
 .DS_Store
 dist/
 package.json
 package-lock.json
+pom.xml
 target/
 .metadata
 .recommenders

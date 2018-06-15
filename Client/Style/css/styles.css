@@ -34,16 +34,6 @@ footer {
   text-align: left;
 }
 
-input[type="number"] {
-  width: 50%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  display: inline-block;
-  border: 1px solid #f2f2f2;
-  border-radius: 4px;
-  box-sizing: border-box;
-}
-
 .topControls {
   height: 10vh;
   background: #475577;
@@ -151,6 +141,9 @@ table thead tr {
 }
 
 input[type="text"],
+input[type="date"],
+input[type="time"],
+input[type="number"],
 select {
   width: 50%;
   padding: 12px 20px;

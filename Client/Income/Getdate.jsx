@@ -39,10 +39,10 @@ export default class Getdate extends Component{
         return <div>
             <form onSubmit={event => this.onSubmit(event)}>
                 <div>
-                <label for="date">Description:</label>
+                <label for="date">Date:</label>
                 </div>
                 <div>
-                <input type="text" id="date" onChange={event => this.onDateChange(event)}/>
+                <input type="date" id="date" onChange={event => this.onDateChange(event)}/>
                 <div />
                 <button type="submit">Find</button>
                 </div>

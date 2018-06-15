@@ -29,11 +29,12 @@ export default class income extends Component {
     }
 
     getdaytotalincome(data){
-        axios.get('http://localhost:8080/payment/income/fee/'+data).then(res => {
+        axios.get('http://localhost:8081/income/'+data).then(res => {
             this.setState({
-                Amount: res.data.data,
+                Amount: res.data,
                 
             })
+           
             
         })
        
