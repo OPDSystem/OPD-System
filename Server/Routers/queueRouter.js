@@ -11,4 +11,12 @@ router.get("/:doctor", function(request, response) {
     });
 });
 
+router.get("/des/:id", function(request, response) {
+    queueController.getDescription(request.params.id).then(function(data) {
+        response.status(data.status).send({data: data.searchedPatient});
+    }).catch(function(err) {
+        response.status(err.status).send({message: err.message});
+    });
+});
+
 module.exports = router;

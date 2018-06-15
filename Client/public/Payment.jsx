@@ -64,7 +64,7 @@ export default class Payment extends Component {
 
 
     render() {
-        return   <div class="col-sm-10" >
+        return   <div  >
                  <div class="row">
                  <div class="col-sm-3">
                     <div class="well dashboard_well" >

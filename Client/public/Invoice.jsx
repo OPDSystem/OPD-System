@@ -43,7 +43,9 @@ export default class Invoice extends Component {
 		})
     }
    
-    
+   myFunction(){
+    window.print();
+   }
     
     
     
@@ -53,6 +55,7 @@ export default class Invoice extends Component {
             <hr/>
             <AddDes addDescrib={data => this.addDescrib(data)} addPatient={data =>this.addPatient(data)} addIncome={data => this.addIncome(data)}/>
             <Describ Recipt={this.state.Recipt}/> 
+            <a titlt="print screen" alt="print screen" onLoad={this.myFunction()} target="_blank">print</a>
            
         </div>;
     }
