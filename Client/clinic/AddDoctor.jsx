@@ -58,9 +58,9 @@ export default class AddDoctor extends Component {
                <select onChange={event => this.ondoctorChange(event)}>
                    <option value="none">Select Doctor</option>
                    <option value="Yaathra">Yaathra</option>
-                   <option value="Diva TJ">Diva TJ</option>
-                   <option value="Keerthana Vije">Keerthana Vije</option>
-                   <option value="Tharish Thiva">Tharish Thiva</option>
+                   <option value="DivaTJ">Diva TJ</option>
+                   <option value="KeerthanaVije">Keerthana Vije</option>
+                   <option value="Tharish">Tharish Thiva</option>
                    <option value="Mithra">Mithra</option>
                    </select>
                <div/>
