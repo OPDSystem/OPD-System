@@ -24,7 +24,7 @@ export default class PatientView extends Component {
 
   render() {
     return (
-      <div>
+      <div class="mydesign2">
         <h2>Loyality</h2>
         <Searchpatient totalLoyality={id => this.totalLoyality(id)} />
         <View patients={this.state.patients} />
