@@ -23,8 +23,9 @@ export default class AppointmentPay extends Component {
     }
 
    	render() {
-        return <div>
+        return <div class="mydesign2">
            <h2>Appointments Annual Pay</h2>
+           <hr/>
             <GetPay getOneDoctor={date => this.getOneDoctor(date)}/>
             <View apppays={this.state.apppays} getOneDoctor = {() => this.getOneDoctor()}/>
         </div>;
