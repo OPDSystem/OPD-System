@@ -42,7 +42,7 @@ export default class SearchClinic extends Component{
                 <div>
                 <label>Clinic Date:</label>
                 <div/>
-                <input type="text" onChange={event => this.ondateChange(event)}/>
+                <input type="date" min="2018-01-01" max="2018-12-31" onChange={event => this.ondateChange(event)}/>
                 <div/>
                 <button type="Submit">Find</button>
                 </div>
