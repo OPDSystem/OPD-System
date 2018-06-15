@@ -100,7 +100,7 @@ export default class AddDescription extends Component{
                 <div>
                 <label for ="Date">Date:</label>
                 <div />
-                <input type="text" id="Date" onChange={event => this.onDateChange(event)}/>
+                <input type="date" id="Date" onChange={event => this.onDateChange(event)}/>
                 </div>
             </form>
             </div>
@@ -115,12 +115,12 @@ export default class AddDescription extends Component{
                 <div>
                 <label for ="unit">Unit:</label>
                 <div />
-                <input type="text" id="unit" onChange={event => this.onUnitChange(event)}/>
+                <input type="number" id="unit" onChange={event => this.onUnitChange(event)}/>
                 </div>
                 <div>
                 <label for="price">Price:</label>
                 <div />
-                <input type="text" id="price" onChange={event => this.onPriceChange(event)}/>
+                <input type="number" id="price" onChange={event => this.onPriceChange(event)}/>
                 </div>
                 <div>
                 <button type="submit">Add</button>
