@@ -3,7 +3,7 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 
-export default class SearchPatient extends Component {
+export default class CalculateLoyality extends Component {
   static get propTypes() {
     return {
       name: PropTypes.string
