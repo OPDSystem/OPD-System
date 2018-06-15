@@ -31,8 +31,9 @@ export default class AppointmentView extends Component {
     }
 
    	render() {
-        return <div>
+        return <div class="mydesign2">
            <h2>Appointment View</h2>
+           <hr/>
             <Searchappointment getOneAppointment={id => this.getOneAppointment(id)}/>
             <View appointments={this.state.appointments} getallAppointments= {() => this.getallAppointments()}/>
         </div>;

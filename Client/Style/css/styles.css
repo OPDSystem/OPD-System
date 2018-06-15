@@ -150,7 +150,7 @@ table thead tr {
   padding: 20px;
 }
 
-input[type="text"],
+input[type="text"], input[type="date"],input[type="time"],
 select {
   width: 50%;
   padding: 12px 20px;
