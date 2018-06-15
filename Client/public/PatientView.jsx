@@ -32,7 +32,7 @@ export default class PatientView extends Component {
 
   render() {
     return (
-      <div>
+      <div class="mydesign2">
         <h2>PATIENT VIEW</h2>
         <Searchpatient getOnePatient={id => this.getOnePatient(id)} />
         <View
