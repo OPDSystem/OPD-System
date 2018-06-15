@@ -28,50 +28,47 @@ export default class AppContainer extends Component {
         <div>
           <h1 class="myheading">K.R.N.V HOSPITAL</h1>
           <Router>
-            <div >
-              <div className="column" class="mydesign1"  >
-              <div >
+            <div>
+              <div className="column" class="mydesign1">
+                <div>
                   <Link to="/Patient">Register Patient</Link>
                 </div>
-                <div >
-                  <Link to="/PatientView">Patient View</Link>
+                <div>
+                  <Link to="/PatientView">Manage Patients</Link>
                 </div>
-                <div >
+                <div>
                   <Link to="/Clinic">Add Doctors to Clinic</Link>
                 </div>
-                <div >
+                <div>
                   <Link to="/Appointment">Add Appointment</Link>
                 </div>
-                <div >
+                <div>
                   <Link to="/Queue">Queue</Link>
                 </div>
-                <div >
+                <div>
                   <Link to="/ClinicView">Clinic View</Link>
                 </div>
-                <div >
+                <div>
                   <Link to="/AppointmentView">Appointment View</Link>
                 </div>
-                <div >
+                <div>
                   <Link to="/Invoice">Billing</Link>
                 </div>
-                <div >
+                <div>
                   <Link to="/Income">Income Per Day</Link>
                 </div>
-                <div >
+                <div>
                   <Link to="/Paymentdetails">Patient Payment Details</Link>
                 </div>
-                <div >
+                <div>
                   <Link to="/Loyality">Calculate Loyality</Link>
                 </div>
-                <div >
+                <div>
                   <Link to="/Questionnaire">Questionnaire</Link>
                 </div>
-                <div >
-                  <Link to="/AppointmentPay">
-                    Calculate Appointment Fee
-                  </Link>
+                <div>
+                  <Link to="/AppointmentPay">Calculate Appointment Fee</Link>
                 </div>
-                
               </div>
               <Route
                 exact
