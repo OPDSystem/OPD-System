@@ -19,6 +19,14 @@ router.get("/:id", function(request, response) {
     });
 });
 
+router.get("/check/:id", function(request, response) {
+    patientController.checkName(request.params.id).then(function(data) {
+        response.status(data.status).send({data: data.searchedPatient});
+    }).catch(function(err) {
+        response.status(err.status).send({message: err.message});
+    });
+});
+
 router.get("/patientName/:name", function(request, response) {
     patientController.findPatientByName(request.params.name).then(function(data) {
         response.status(data.status).send({data: data.patientByName});

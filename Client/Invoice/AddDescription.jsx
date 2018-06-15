@@ -2,7 +2,7 @@
 
 import React, {Component} 	from 'react';
 import PropTypes 			from "prop-types"
-
+import axios   from 'axios';
 
 export default class AddDescription extends Component{
     static get propTypes() {
@@ -16,6 +16,8 @@ export default class AddDescription extends Component{
             Totalamount:PropTypes.number,
             name:PropTypes.string,
             data:PropTypes.string,
+            cid:PropTypes.string
+           
 
         }
     }
@@ -23,7 +25,21 @@ export default class AddDescription extends Component{
     constructor(props) {
         super(props);
         this.Totalamount =0;
+        this.state={
+            Check:[]
+        }
         
+    }
+
+    CheckName(id){
+        axios.get('http://localhost:8080/patients/check/'+id).then(res => {
+            this.setState({
+                Check: res.data.data,     
+            })
+
+            document.getElementById("name").defaultValue = this.state.Check;
+           
+        })
     }
 
     onDescriptionChange(event) {
@@ -48,13 +64,24 @@ export default class AddDescription extends Component{
         event.preventDefault();
         event.stopPropagation();
         this.name = event.target.value;
+        
+        
     }
 
     onDateChange(event) {
         event.preventDefault();
         event.stopPropagation();
         this.date = event.target.value;
+
     }
+
+    onIDChange(event) {
+        event.preventDefault();
+        event.stopPropagation();
+        this.cid = event.target.value;
+        
+    }
+
 
     onChange(event) {
         event.preventDefault();
@@ -88,14 +115,38 @@ export default class AddDescription extends Component{
                     
                 }
 
+                onCheckSubmit(event) {
+                    event.preventDefault();
+                    event.stopPropagation();
+                    this.CheckName(this.cid);
+                        
+                    }
+
+               
+
     render() {
         return <div >
+
+            <form onSubmit={event => this.onCheckSubmit(event)}>
+                <div>
+                <label for="date">Patient ID:</label>
+                </div>
+                <div>
+                <input type="text" id="date" onChange={event => this.onIDChange(event)}/>
+                <div />
+                <button type="submit">Get Name</button>
+                </div>
+            </form>
+
+
+
+
             <div class = "form">
             <form onSubmit={event => this.onNameSubmit(event)}>
                 <div>
-                <label for="name">Patient ID:</label>
+                <label for="name">Name:</label>
                 <div />
-                <input type="text" id="name" onChange={event => this.onNameChange(event)}/>
+                <input type="text" id="name" disabled onChange={event => this.onNameChange(event)}/>
                 </div>
                 <div>
                 <label for ="Date">Date:</label>
@@ -128,7 +179,7 @@ export default class AddDescription extends Component{
             </form>
             </div>
             <div>
-            <h4>Patient ID  :{this.name}</h4>
+            <h4>Patient ID  :{this.cid}</h4>
             <h4>Date        :{this.date}</h4>
             <h4>Total Amount:{this.Totalamount} </h4>
             </div>
