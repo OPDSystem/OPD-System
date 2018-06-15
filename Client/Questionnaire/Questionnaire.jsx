@@ -44,15 +44,15 @@ export default class Questionnaire extends Component {
 
     render() {
         return<tc>
-           <li>Question ID:<td>{this.questionnaire._id}</td></li>
-           <li>Question<td>{this.questionnaire.question}</td></li>
-           <li>Answer 1<td>{this.questionnaire.answer1}</td></li>
-            <li>Answer 2<td>{this.questionnaire.answer2}</td></li>
-            <li>Answer 3<td>{this.questionnaire.answer3}</td></li>
-           <li>Answer 4<td>{this.questionnaire.answer4}</td></li>
-           <li>Answer 5<td>{this.questionnaire.answer5}</td></li>
-           <button onClick={(e) => this.update(this.questionnaire.id,this.questionnaire.question,this.questionnaire.answer1,this.questionnaire.answer2,this.questionnaire.answer3,this.questionnaire.answer4,this.questionnaire.answer5)}>Update</button>&nbsp;
-            <button onClick={(e) => this.delete(this.questionnaire.id)}>Delete</button>
+           <li><b>Question ID:</b><td>{this.questionnaire._id}</td></li>
+           <li><b>Question</b><td>{this.questionnaire.question}></td></li>
+           <li><b>Answer 1</b><td>{this.questionnaire.answer1}</td></li>
+            <li><b>Answer 2</b><td>{this.questionnaire.answer2}</td></li>
+            <li><b>Answer 3</b><td>{this.questionnaire.answer3}</td></li>
+           <li><b>Answer 4</b><td>{this.questionnaire.answer4}</td></li>
+           <li><b>Answer 5</b><td>{this.questionnaire.answer5}</td></li>
+           <button onClick={(e) => this.update(this.questionnaire.id,this.questionnaire.question,this.questionnaire.answer1,this.questionnaire.answer2,this.questionnaire.answer3,this.questionnaire.answer4,this.questionnaire.answer5)}><b>Update</b></button>&nbsp;
+            <button onClick={(e) => this.delete(this.questionnaire.id)}><b>Delete</b></button>
         </tc>
        
     }
