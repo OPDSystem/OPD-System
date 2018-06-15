@@ -20,19 +20,17 @@ export default class Questionnaires extends Component {
   }
 
   render() {
+  
     this.questionnaires = this.props.questionnaires;
     return <div>
+       
+         
+     
+     
       <table>
         <thead>
-          <tr>
-            <th>QUE ID</th>
-            <th>QUESTIONS</th>
-            <th>ANSWER 1</th>
-            <th>ANSWER 2</th>
-            <th>ANSWER 3</th>
-            <th>ANSWER 4</th>
-            <th>ANSWER 5</th>
-          </tr>
+          
+          
         </thead>
         <tbody>
           {
@@ -40,8 +38,11 @@ export default class Questionnaires extends Component {
                   return <Questionnaire key={data.id} questionnaire={data} getAllQuestionnaire={() => this.props.getAllQuestionnaire()}/>
               })
           }
+         
         </tbody>
       </table>
+ 
   </div>;
+ 
   }
 }

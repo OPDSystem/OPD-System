@@ -75,21 +75,21 @@ export default class AddQuestionnaire extends Component {
     render() {
         return <div>
             <form onSubmit={event => this.onSubmit(event)}>
-               <label>id:</label>
-               <input type="text" onChange={event => this.onIdChange(event)}/>
-               <label>Question:</label>
-               <input type="text" onChange={event => this.onQuestionChange(event)}/>
-               <label>Answer 1:</label>
-               <input type="text" onChange={event => this.onAnswer1Change(event)}/>
-               <label>Answer 2:</label>
-               <input type="text" onChange={event => this.onAnswer2Change(event)}/>
-               <label>Answer 3:</label>
-               <input type="text" onChange={event => this.onAnswer3Change(event)}/>
-               <label>Answer 4:</label>
-               <input type="text" onChange={event => this.onAnswer4Change(event)}/>
-               <label>Answer 5:</label>
-               <input type="text" onChange={event => this.onAnswer5Change(event)}/>
-               <button type="submit">Add Questionnaire</button>
+              <div> <label>id:</label></div>
+              <div> <input type="text" onChange={event => this.onIdChange(event)}/></div>
+              <div> <label>Question:</label></div>
+              <div> <input type="text" onChange={event => this.onQuestionChange(event)}/></div>
+              <div> <label>Answer 1:</label></div>
+              <div> <input type="text" onChange={event => this.onAnswer1Change(event)}/></div>
+              <div><label>Answer 2:</label></div>
+              <div><input type="text" onChange={event => this.onAnswer2Change(event)}/></div>
+              <div> <label>Answer 3:</label></div>
+              <div><input type="text" onChange={event => this.onAnswer3Change(event)}/></div>
+              <div><label>Answer 4:</label></div>
+              <div> <input type="text" onChange={event => this.onAnswer4Change(event)}/></div>
+              <div> <label>Answer 5:</label></div>
+              <div> <input type="text" onChange={event => this.onAnswer5Change(event)}/></div>
+              <div> <button type="submit">Add Questionnaire</button></div>
             </form>
         </div>;
     }
