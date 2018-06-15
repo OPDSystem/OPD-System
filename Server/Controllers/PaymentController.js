@@ -83,7 +83,7 @@ var Controller = function(){
                 var totalamount = 0;
                 for(var n =0; n<data.length; n++)
                 {
-                    totalamount += data[0].amount;
+                    totalamount += data[n].amount;
                 }
                 resolve({status:200, totalincome: totalamount});
             }).catch(function (reason) {
