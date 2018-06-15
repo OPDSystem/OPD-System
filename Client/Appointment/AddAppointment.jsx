@@ -100,6 +100,7 @@ export default class AddAppointment extends Component {
                    <option value="KeerthanaVije">Keerthana Vije</option>
                    <option value="TharishThiva">Tharish Thiva</option>
                    <option value="Mithra">Mithra</option>
+                   <option value="Vithusan">Vithusan</option>
                    </select>
                <div/>
                <label>Description :</label>

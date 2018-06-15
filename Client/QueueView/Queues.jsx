@@ -3,6 +3,7 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import Patient from "./Queue";
 
+
 export default class Queues extends Component {
   static get propTypes() {
     return {
@@ -13,6 +14,8 @@ export default class Queues extends Component {
   constructor(props) {
     super(props);
   }
+
+  
 
   componentWillReceiveProps(props) {
     this.setState(props);
@@ -31,15 +34,18 @@ export default class Queues extends Component {
             </tr>
           </thead>
           <tbody>
+            
             {this.patients.map(data => {
               return (
                 <Patient
                   key={data.id}
                   patient={data}
-                  getOnePatient={() => this.props.getOnePatient()}
+                  
                 />
               );
             })}
+            
+          
           </tbody>
         </table>
       </div>

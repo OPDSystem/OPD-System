@@ -62,6 +62,7 @@ export default class AddDoctor extends Component {
                    <option value="KeerthanaVije">Keerthana Vije</option>
                    <option value="Tharish">Tharish Thiva</option>
                    <option value="Mithra">Mithra</option>
+                   <option value="Vithusan">Vithusan</option>
                    </select>
                <div/>
                <label>time :</label>

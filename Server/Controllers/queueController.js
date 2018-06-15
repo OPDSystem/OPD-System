@@ -44,6 +44,16 @@ var Controller= function(){
         })
     }
 
+    this.getDescription=function(id){
+        return new Promise(function(resolve,reject){
+            description.find({id:id}).exec().then(function(data){
+                resolve({status: 200, searchedPatient: data[0].description});
+            }).catch(function(err) {
+                reject({status: 500, message: "Failed to search patient" + err});
+            })
+        })
+    }
+
 
 
     }
