@@ -195,7 +195,7 @@ export default class AddDescription extends Component{
             <form onSubmit={event => this.onPaySubmit(event)}>
             <button type ="submit"> PAY </button>
             </form>
-            <button type ="submit" onSubmit={this.printfrom('printSectionId')}> PRINT BILL </button>
+            <button type ="submit" > PRINT BILL </button>
             </div>
         </div>;
     }
