@@ -10,6 +10,10 @@ import axios   from 'axios';
 export default class Invoice extends Component {
     constructor(props) {
         super(props);
+        myFunction()
+     {
+         window.print();
+     }
         this.state ={
             Recipt:[],
             Total:Number
@@ -42,7 +46,10 @@ export default class Invoice extends Component {
 		})
     }
    
-     
+     myFunction()
+     {
+         window.print();
+     }
     
     
     render() {
@@ -51,6 +58,7 @@ export default class Invoice extends Component {
             <hr/>
             <AddDes addDescrib={data => this.addDescrib(data)} addPatient={data =>this.addPatient(data)} addIncome={data => this.addIncome(data)}/>
             <Describ Recipt={this.state.Recipt}/> 
+            <button onClick="myFunction()">print</button>
            
         </div>;
     }
