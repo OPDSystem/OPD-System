@@ -92,7 +92,7 @@ export default class AddPatient extends Component {
           <div />
           <label>Phone Num:</label>
           <div />
-          <input type="text" onChange={event => this.onPhoNumChange(event)} />
+          <input type="number" onChange={event => this.onPhoNumChange(event)} />
           <div />
           <label>Language:</label>
           <div />
@@ -120,7 +120,7 @@ export default class AddPatient extends Component {
           <div />
           <label>Age:</label>
           <div />
-          <input type="text" onChange={event => this.onAgeChange(event)} />
+          <input type="number" onChange={event => this.onAgeChange(event)} />
           <div />
           <label>Gender:</label>
           <div />
@@ -141,7 +141,10 @@ export default class AddPatient extends Component {
           <div />
           <label>Gudian Contact Num:</label>
           <div />
-          <input type="text" onChange={event => this.onGPhoNumChange(event)} />
+          <input
+            type="number"
+            onChange={event => this.onGPhoNumChange(event)}
+          />
           <div />
           <button type="submit">Add</button>
         </form>
