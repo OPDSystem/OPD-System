@@ -120,7 +120,12 @@ export default class AddPatient extends Component {
           <div />
           <label>Age:</label>
           <div />
-          <input type="number" onChange={event => this.onAgeChange(event)} />
+          <input
+            type="number"
+            min="1"
+            max="115"
+            onChange={event => this.onAgeChange(event)}
+          />
           <div />
           <label>Gender:</label>
           <div />
