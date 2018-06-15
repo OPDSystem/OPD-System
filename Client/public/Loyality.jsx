@@ -2,7 +2,7 @@
 
 import React, { Component } from "react";
 import axios from "axios";
-import Searchpatient from "../Loyality/CalculateLoyality";
+import CalculateLoyality from "../Loyality/CalculateLoyality";
 
 export default class PatientView extends Component {
   constructor(props) {
@@ -25,7 +25,7 @@ export default class PatientView extends Component {
       <div class="mydesign2">
         <h2>Loyality</h2>
         <hr />
-        <Searchpatient totalLoyality={id => this.totalLoyality(id)} />
+        <CalculateLoyality totalLoyality={id => this.totalLoyality(id)} />
         <h3>Total Loyality Points - {this.state.patients}</h3>
       </div>
     );
