@@ -3,9 +3,9 @@
 import React, { Component } from "react";
 import axios from "axios";
 import Searchpatient from "../PatientView/SearchPatient";
-import View from "../PatientView/Patients";
+import View from "../PatientView/PatientsTable";
 
-export default class PatientView extends Component {
+export default class ManagePatients extends Component {
   constructor(props) {
     super(props);
     this.state = {

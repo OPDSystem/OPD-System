@@ -3,7 +3,7 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 
-export default class AddPatient extends Component {
+export default class RegisterPatients extends Component {
   static get propTypes() {
     return {
       addPatient: PropTypes.func,
