@@ -34,6 +34,7 @@ export default class PatientView extends Component {
     return (
       <div class="mydesign2">
         <h2>PATIENT VIEW</h2>
+        <hr />
         <Searchpatient getOnePatient={id => this.getOnePatient(id)} />
         <View
           patients={this.state.patients}

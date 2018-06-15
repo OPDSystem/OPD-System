@@ -48,6 +48,7 @@ export default class Patient extends Component {
     return (
       <div class="mydesign2">
         <h2>REGISTER PATIENTS</h2>
+        <hr />
         <AddPatient addPatient={data => this.addPatient(data)} />
         <Register
           patients={this.state.patients}
