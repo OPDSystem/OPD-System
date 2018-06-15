@@ -2,10 +2,10 @@
 
 import React, { Component } from "react";
 import axios from "axios";
-import AddPatient from "../Patient/AddPatient";
-import Register from "../Patient/Patients";
+import AddPatient from "../Patient/RegisterPatients";
+import Register from "../Patient/PatientsTable";
 
-export default class Patient extends Component {
+export default class RegisterPatients extends Component {
   constructor(props) {
     super(props);
     this.state = {

@@ -6,8 +6,8 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import Income from "./Income";
 import Invoice from "./Invoice";
 import Paymentdetails from "./Paymentdetails";
-import Patient from "./Patient";
-import PatientView from "./PatientView";
+import Registeration from "./RegisterPatients";
+import ManagePatients from "./ManagePatients";
 import AppointmentView from "./AppointmentView";
 import Appointment from "./Appointment";
 import ClinicView from "./ClinicView";
@@ -16,7 +16,7 @@ import Questionnaire from "./Questionnaire";
 import Queue from "./QueueView";
 import AppointmentPay from "./AppointmentPay";
 import Loyality from "./Loyality";
-import Payment  from './Payment';
+import Payment from "./Payment";
 
 export default class AppContainer extends Component {
   constructor(props) {
@@ -31,14 +31,14 @@ export default class AppContainer extends Component {
           <Router>
             <div>
               <div className="column" class="mydesign1">
-              <div>
+                <div>
                   <Link to="/">Dashboard</Link>
                 </div>
                 <div>
-                  <Link to="/Patient">Register Patient</Link>
+                  <Link to="/Registeration">Register Patient</Link>
                 </div>
                 <div>
-                  <Link to="/PatientView">Manage Patients</Link>
+                  <Link to="/ManagePatients">Manage Patients</Link>
                 </div>
                 <div>
                   <Link to="/Clinic">Add Doctors to Clinic</Link>
@@ -101,15 +101,15 @@ export default class AppContainer extends Component {
                 }}
               />
               <Route
-                path="/Patient"
+                path="/Registeration"
                 render={props => {
-                  return <Patient />;
+                  return <Registeration />;
                 }}
               />
               <Route
-                path="/PatientView"
+                path="/ManagePatients"
                 render={props => {
-                  return <PatientView />;
+                  return <ManagePatients />;
                 }}
               />
               <Route

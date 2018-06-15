@@ -3,7 +3,7 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import axios from "axios";
 
-export default class Patient extends Component {
+export default class PatientRow extends Component {
   static get propTypes() {
     return {
       patient: PropTypes.object,

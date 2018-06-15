@@ -1,9 +1,9 @@
 "use strict";
 import React, { Component } from "react";
 import PropTypes from "prop-types";
-import Patient from "./Patient";
+import Patient from "./PatientRow";
 
-export default class Patients extends Component {
+export default class PatientsTable extends Component {
   static get propTypes() {
     return {
       patients: PropTypes.array
