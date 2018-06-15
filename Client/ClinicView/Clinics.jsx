@@ -34,7 +34,7 @@ export default class Clinics extends Component {
         <tbody>
           {
               this.clinics.map(data => {
-                  return <Clinic key={data.id} clinic={data} getAllDoctors={() => this.props.getAllDoctors()}/>
+                  return <Clinic key={data.date} clinic={data} getAllDoctors={() => this.props.getAllDoctors()}/>
               })
           }
         </tbody>
