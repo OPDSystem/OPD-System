@@ -2,6 +2,8 @@
 
 import React, {Component} 	from 'react';
 import PropTypes 			from "prop-types";
+import axios   from 'axios';
+
 
 export default class AddAppointment extends Component {
     static get propTypes() {
@@ -10,11 +12,23 @@ export default class AddAppointment extends Component {
             id:PropTypes.string,
             doctor: PropTypes.string,
             description:PropTypes.string,
+            cid:PropTypes.string
         }
     }
 
     constructor(props) {
        super(props);
+    }
+
+    CheckName(id){
+        axios.get('http://localhost:8080/patients/check/'+id).then(res => {
+            this.setState({
+                Check: res.data.data,     
+            })
+
+            document.getElementById("name").defaultValue = this.state.Check;
+           
+        })
     }
 
     onIdChange(event) {
@@ -35,21 +49,47 @@ export default class AddAppointment extends Component {
         this.description = event.target.value;
      }
 
+     onIDChange(event) {
+        event.preventDefault();
+        event.stopPropagation();
+        this.cid = event.target.value;
+        
+    }
+
 
     onSubmit(event) {
         event.preventDefault();
         event.stopPropagation();
        
-           this.props.addAppointment({id:this.id, doctor:this.doctor, description:this.description});
+           this.props.addAppointment({id:this.cid, doctor:this.doctor, description:this.description});
            
         }
+    
+        onCheckSubmit(event) {
+            event.preventDefault();
+            event.stopPropagation();
+            this.CheckName(this.cid);
+                
+            }
 
     render() {
         return <div class ="form">
+            
+            <form onSubmit={event => this.onCheckSubmit(event)}>
+                <div>
+                <label for="date">Patient ID:</label>
+                </div>
+                <div>
+                <input type="text" id="date" onChange={event => this.onIDChange(event)}/>
+                <div />
+                <button type="submit">Get Name</button>
+                </div>
+            </form>
+
             <form onSubmit={event => this.onSubmit(event)}>
-               <label>Patient ID:</label>
+               <label for="name">Patient Name:</label>
                <div/>
-               <input type="text" onChange={event => this.onIdChange(event)}/>
+               <input type="text" id="name" disabled onChange={event => this.onIdChange(event)}/>
                <div/>
                <label>Doctor:</label>
                <div/>
