@@ -31,6 +31,14 @@ export default class AddDescription extends Component{
         
     }
 
+    printfrom(printSectionId){
+        let innerContents = document.getElementById(printSectionId).innerHTML;
+        let popupWinindow = window.open('', '_blank', 'width=600,height=700,scrollbars=no,menubar=no,toolbar=no,location=no,status=no,titlebar=no');
+        popupWinindow.document.open();
+        popupWinindow.document.write('<html><head> <link rel="stylesheet" ></head><body onload="window.print()">' + innerContents + '</html>');
+        popupWinindow.document.close();
+       }
+
     CheckName(id){
         axios.get('http://localhost:8080/patients/check/'+id).then(res => {
             this.setState({
@@ -178,7 +186,7 @@ export default class AddDescription extends Component{
                 </div>
             </form>
             </div>
-            <div>
+            <div id="printSectionId">
             <h4>Patient ID  :{this.cid}</h4>
             <h4>Date        :{this.date}</h4>
             <h4>Total Amount:{this.Totalamount} </h4>
@@ -187,6 +195,7 @@ export default class AddDescription extends Component{
             <form onSubmit={event => this.onPaySubmit(event)}>
             <button type ="submit"> PAY </button>
             </form>
+            <button type ="submit" onSubmit={this.printfrom('printSectionId')}> PRINT BILL </button>
             </div>
         </div>;
     }
