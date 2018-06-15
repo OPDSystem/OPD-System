@@ -10,18 +10,33 @@ export default class PrintInvoice extends Component{
         
     }
 
-    printfrom(printSectionId){
-        let innerContents = document.getElementById(printSectionId).innerHTML;
-        let popupWinindow = window.open('', '_blank', 'width=600,height=700,scrollbars=no,menubar=no,toolbar=no,location=no,status=no,titlebar=no');
-        popupWinindow.document.open();
-        popupWinindow.document.write('<html><head> <link rel="stylesheet" ></head><body onload="window.print()">' + innerContents + '</html>');
-        popupWinindow.document.close();
+    printfrom(){
+        var chart = new CanvasJS.Chart("chartContainer", {
+            theme: "theme2",
+            title:{
+                text: "Print Chart using print() method"              
+            },
+            data: [              
+            {
+                type: "column",
+                dataPoints: [
+                    { label: "apple",  y: 10  },
+                    { label: "orange", y: 15  },
+                    { label: "banana", y: 25  },
+                    { label: "mango",  y: 30  },
+                    { label: "grape",  y: 28  }
+                ]
+            }
+            ]
+        });
+      
+        chart.render();
        }
         
    
     render() {
         return <div>
-            <a titlt="print screen" alt="print screen" onLoad={this.myFunction()} target="_blank">print</a>
+            
         </div>;
     }
 }
