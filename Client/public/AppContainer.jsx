@@ -32,7 +32,7 @@ export default class AppContainer extends Component {
             <div>
               <div className="column" class="mydesign1">
               <div>
-                  <Link to="/Payment">Dashboard</Link>
+                  <Link to="/">Dashboard</Link>
                 </div>
                 <div>
                   <Link to="/Patient">Register Patient</Link>
@@ -76,7 +76,7 @@ export default class AppContainer extends Component {
               </div>
               <Route
                 exact
-                path="/Payment"
+                path="/"
                 render={props => {
                   return <Payment />;
                 }}
