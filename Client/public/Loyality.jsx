@@ -3,14 +3,12 @@
 import React, { Component } from "react";
 import axios from "axios";
 import Searchpatient from "../Loyality/CalculateLoyality";
-import View from "../Loyality/LoyalityInt";
 
 export default class PatientView extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      patients: [],
-      totalLoyality: ""
+      patients: []
     };
   }
 
