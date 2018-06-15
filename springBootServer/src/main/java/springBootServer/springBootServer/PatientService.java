@@ -36,7 +36,7 @@ public class PatientService {
  		} catch( Exception e) {
  			e.printStackTrace();
  		} finally {
- 			return total;
+ 			return total/1000;
  		}
 	}
 }
