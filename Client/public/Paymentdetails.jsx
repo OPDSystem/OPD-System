@@ -32,7 +32,7 @@ export default class Paymentdetails extends Component {
 
     
     render() {
-        return <div>
+        return <div class="mydesign2">
             <h3>PATIENT PAYMENT DETAILS</h3>
             <hr/>
 

@@ -46,11 +46,11 @@ export default class Invoice extends Component {
     
     
     render() {
-        return <div>
-            <h3>Invoice</h3>
+        return <div class="mydesign2">
+            <h3>BILLING</h3>
+            <hr/>
             <AddDes addDescrib={data => this.addDescrib(data)} addPatient={data =>this.addPatient(data)} addIncome={data => this.addIncome(data)}/>
-            <Describ Recipt={this.state.Recipt}/>
-            <Pay />
+            <Describ Recipt={this.state.Recipt}/> 
            
         </div>;
     }

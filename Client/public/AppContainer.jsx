@@ -26,51 +26,52 @@ export default class AppContainer extends Component {
     return (
       <div>
         <div>
-          <h3>OPD</h3>
+          <h1 class="myheading">K.R.N.V HOSPITAL</h1>
           <Router>
-            <div>
-              <div className="row">
-                <div className="col-sm">
-                  <Link to="/Invoice">Invoice</Link>
-                </div>
-                <div className="col-sm">
-                  <Link to="/Income">Income</Link>
-                </div>
-                <div className="col-sm">
-                  <Link to="/Paymentdetails">Paymentdetails</Link>
-                </div>
-                <div className="col-sm">
+            <div >
+              <div className="column" class="mydesign1"  >
+              <div >
                   <Link to="/Patient">Register Patient</Link>
                 </div>
-                <div className="col-sm">
+                <div >
                   <Link to="/PatientView">Patient View</Link>
                 </div>
-                <div className="col-sm">
-                  <Link to="/AppointmentView">Appointment View</Link>
-                </div>
-                <div className="col-sm">
-                  <Link to="/Appointment">Add Appointment</Link>
-                </div>
-                <div className="col-sm">
-                  <Link to="/ClinicView">Clinic View</Link>
-                </div>
-                <div className="col-sm">
+                <div >
                   <Link to="/Clinic">Add Doctors to Clinic</Link>
                 </div>
-                <div className="col-sm">
-                  <Link to="/Questionnaire">Questionnaire</Link>
+                <div >
+                  <Link to="/Appointment">Add Appointment</Link>
                 </div>
-                <div className="col-sm">
+                <div >
                   <Link to="/Queue">Queue</Link>
                 </div>
-                <div className="col-sm">
+                <div >
+                  <Link to="/ClinicView">Clinic View</Link>
+                </div>
+                <div >
+                  <Link to="/AppointmentView">Appointment View</Link>
+                </div>
+                <div >
+                  <Link to="/Invoice">Billing</Link>
+                </div>
+                <div >
+                  <Link to="/Income">Income Per Day</Link>
+                </div>
+                <div >
+                  <Link to="/Paymentdetails">Patient Payment Details</Link>
+                </div>
+                <div >
                   <Link to="/Loyality">Calculate Loyality</Link>
                 </div>
-                <div className="col-sm">
+                <div >
+                  <Link to="/Questionnaire">Questionnaire</Link>
+                </div>
+                <div >
                   <Link to="/AppointmentPay">
-                    Calculate Appointment Payment
+                    Calculate Appointment Fee
                   </Link>
                 </div>
+                
               </div>
               <Route
                 exact
