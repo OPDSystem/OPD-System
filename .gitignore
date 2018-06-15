@@ -5,6 +5,7 @@ bin/
 dist/
 package.json
 package-lock.json
+pom.xml
 target/
 .metadata
 .recommenders
