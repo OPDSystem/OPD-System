@@ -34,7 +34,7 @@ export default class Quessionnaire extends Component {
    	}
 
    	render() {
-        return <div>
+        return <div class="mydesign2">
            <h2>Add Questionnaire</h2>
             <AddQuestionnaire addQuestionnaire={data => this.addQuestionnaire(data)}/>
             <Register  questionnaires={this.state.questionnaires} getAllQuestionnaire = {() => this.getAllQuestionnaire()}/>
