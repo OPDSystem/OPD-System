@@ -25,7 +25,7 @@ export default class Questionnaire extends Component {
         var updatedanswer3 = prompt("Please enter updated answer 3:", answer3);
         var updatedanswer4 = prompt("Please enter updated answer 4:", answer4);
         var updatedanswer5 = prompt("Please enter updated answer 5:", answer5);
-        axios.put('http://localhost:8080/Quessionnaire/' + id, {question: updatedquestion, answer1:updatedanswer1,answer2:updatedanswer2, answer3:updatedanswer3, answer4:updatedanswer4, answer5:updatedanswer5}).then(results => {
+        axios.put('http://localhost:8080/Questionnaire/' + id, {question: updatedquestion, answer1:updatedanswer1,answer2:updatedanswer2, answer3:updatedanswer3, answer4:updatedanswer4, answer5:updatedanswer5}).then(results => {
             if(results.status == 200) {
                 this.getAllQuestionnaire();
             }
@@ -35,7 +35,7 @@ export default class Questionnaire extends Component {
     }
 
     delete(id) {
-        axios.delete('http://localhost:8080/Quessionnaire/' + id).then(results => {
+        axios.delete('http://localhost:8080/Questionnaire/' + id).then(results => {
             if(results.status == 200) {
                 this.getAllQuestionnaire();
             }
@@ -44,7 +44,7 @@ export default class Questionnaire extends Component {
 
     render() {
         return<tc>
-           <li><b>Question ID:</b><td>{this.questionnaire._id}</td></li>
+           <li><b>Question ID:</b><td>{this.questionnaire.id}</td></li>
            <li><b>Question</b><td>{this.questionnaire.question}></td></li>
            <li><b>Answer 1</b><td>{this.questionnaire.answer1}</td></li>
             <li><b>Answer 2</b><td>{this.questionnaire.answer2}</td></li>
