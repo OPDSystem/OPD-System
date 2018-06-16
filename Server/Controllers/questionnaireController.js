@@ -33,7 +33,7 @@ var Controller= function(){
 
     this.deleteQuestionnaire = function(id) {
         return new Promise(function(resolve, reject) {
-            questionnaire.remove({_id: id}).then(function(data) {
+            questionnaire.remove({id: id}).then(function(data) {
                 resolve({status: 200, message: "Successfully Deleted"});
             }).catch(function(err) {
                 reject({status: 500, message: "Failed to delete patient" + err});

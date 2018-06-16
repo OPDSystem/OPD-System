@@ -18,7 +18,8 @@ export default class Myqueue extends Component{
         super(props);
        //this.hold ="Off Hold" ;
        this.state={
-           des:[]
+           des:[],
+           total:[]
        }
     }
 
@@ -44,6 +45,14 @@ export default class Myqueue extends Component{
           }
       })
       
+      }
+
+      getTotal(id){
+        axios.get('http://localhost:8081/que/'+ id).then(res => {
+            this.setState({
+				total: res.data
+			});
+        })
       }
 
 
@@ -84,6 +93,7 @@ export default class Myqueue extends Component{
         event.preventDefault();
         event.stopPropagation();
             this.props.getOnePatient(this.id);
+            this.getTotal(this.id);
             this.hold = "ON Process";
             this.status="";
             document.getElementById("queue").defaultValue ="ID";  
@@ -131,6 +141,10 @@ export default class Myqueue extends Component{
             </form>
             </div>
         
+            <div>
+            <h2>Patient Total : {this.state.total} </h2>
+            </div>
+
             <div>
             <h2>Status : {this.hold} </h2>
             </div>
