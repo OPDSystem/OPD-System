@@ -4,7 +4,7 @@ import React, {Component} from 'react';
 import AddDes from '../Invoice/AddDescription';
 import Describ from '../Invoice/Descriptions';
 import Pay from '../Invoice/PrintInvoice';
-import Print from '../Invoice/PrintInvoice';
+//import Print from '../Invoice/PrintInvoice';
 
 import axios   from 'axios';
 
