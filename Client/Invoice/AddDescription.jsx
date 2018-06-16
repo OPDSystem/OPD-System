@@ -118,8 +118,9 @@ export default class AddDescription extends Component{
             onPaySubmit(event) {
                 event.preventDefault();
                 event.stopPropagation();
-                this.props.addPatient({name:this.name,date:this.date,Totalamount:this.Totalamount});
+                this.props.addPatient({name:this.cid,date:this.date,Totalamount:this.Totalamount});
                 this.props.addIncome({date:this.date,Totalamount:this.Totalamount});
+                this.paid="PAID";
                     
                 }
 
@@ -194,6 +195,7 @@ export default class AddDescription extends Component{
             <div class ="form">
             <form onSubmit={event => this.onPaySubmit(event)}>
             <button type ="submit"> PAY </button>
+            <h4>{this.paid}</h4>
             </form>
             <button type ="submit" > PRINT BILL </button>
             </div>

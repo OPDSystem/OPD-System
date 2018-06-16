@@ -27,7 +27,7 @@ export default class AppContainer extends Component {
     return (
       <div>
         <div>
-          <h1 class="myheading">K.R.N.V HOSPITAL</h1>
+          <h1 class="myheading">K.R.S.V HOSPITAL</h1>
           <Router>
             <div>
               <div className="column" class="mydesign1">
